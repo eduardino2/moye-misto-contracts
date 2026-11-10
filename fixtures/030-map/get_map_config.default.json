@@ -1,0 +1,40 @@
+{
+  "city_id": "7c1f0c5e-6a54-4c0f-9a59-1d6f3a2b0001",
+  "style_url": "https://tiles.moyemisto.example/styles/light/style.json",
+  "style_url_dark": "https://tiles.moyemisto.example/styles/dark/style.json",
+  "attribution": "© Учасники OpenStreetMap",
+  "initial": {
+    "center": { "lat": 51.4982, "lng": 31.2893 },
+    "zoom": 12.5
+  },
+  "bounds": { "south": 51.43, "west": 31.17, "north": 51.56, "east": 31.42 },
+  "min_zoom": 10,
+  "max_zoom": 18,
+  "layer_groups": [
+    { "slug": "safety", "title": "Безпека" },
+    { "slug": "food", "title": "Поїсти" },
+    { "slug": "entertainment", "title": "Розваги" },
+    { "slug": "services", "title": "Сервіси" },
+    { "slug": "essentials", "title": "Корисне" }
+  ],
+  "layers": [
+    { "slug": "shelters", "title": "Укриття", "icon": { "key": "shelter", "url": null }, "color": "#2E7D32", "group": "safety", "default_on": true, "version": 31, "points_count": 1187 },
+    { "slug": "invincibility_points", "title": "Пункти незламності", "icon": { "key": "invincibility_point", "url": null }, "color": "#EF6C00", "group": "safety", "default_on": false, "version": 12, "points_count": 64 },
+    { "slug": "food", "title": "Поїсти", "icon": { "key": "food", "url": null }, "color": "#C62828", "group": "food", "default_on": false, "version": 9, "points_count": 142 },
+    { "slug": "theatres", "title": "Театри", "icon": { "key": "theatre", "url": null }, "color": "#6A1B9A", "group": "entertainment", "default_on": false, "version": 2, "points_count": 3 },
+    { "slug": "cinemas", "title": "Кіно", "icon": { "key": "cinema", "url": null }, "color": "#6A1B9A", "group": "entertainment", "default_on": false, "version": 1, "points_count": 1 },
+    { "slug": "concert_halls", "title": "Концертні зали", "icon": { "key": "concert", "url": null }, "color": "#6A1B9A", "group": "entertainment", "default_on": false, "version": 1, "points_count": 2 },
+    { "slug": "museums", "title": "Музеї", "icon": { "key": "museum", "url": null }, "color": "#4527A0", "group": "entertainment", "default_on": false, "version": 3, "points_count": 9 },
+    { "slug": "quests", "title": "Квести", "icon": { "key": "quest", "url": null }, "color": "#4527A0", "group": "entertainment", "default_on": false, "version": 1, "points_count": 6 },
+    { "slug": "clubs", "title": "Клуби", "icon": { "key": "club", "url": null }, "color": "#4527A0", "group": "entertainment", "default_on": false, "version": 1, "points_count": 5 },
+    { "slug": "bowling", "title": "Боулінг", "icon": { "key": "bowling", "url": null }, "color": "#4527A0", "group": "entertainment", "default_on": false, "version": 1, "points_count": 2 },
+    { "slug": "parks", "title": "Парки", "icon": { "key": "park", "url": null }, "color": "#558B2F", "group": "entertainment", "default_on": false, "version": 2, "points_count": 18 },
+    { "slug": "car_washes", "title": "Автомийки", "icon": { "key": "car_wash", "url": null }, "color": "#0277BD", "group": "services", "default_on": false, "version": 4, "points_count": 23 },
+    { "slug": "tire_and_auto_service", "title": "Шиномонтаж і СТО", "icon": { "key": "auto_service", "url": null }, "color": "#0277BD", "group": "services", "default_on": false, "version": 4, "points_count": 31 },
+    { "slug": "hair_salons", "title": "Перукарні", "icon": { "key": "hair_salon", "url": null }, "color": "#AD1457", "group": "services", "default_on": false, "version": 5, "points_count": 40 },
+    { "slug": "beauty_salons", "title": "Салони краси", "icon": { "key": "beauty_salon", "url": null }, "color": "#AD1457", "group": "services", "default_on": false, "version": 5, "points_count": 36 },
+    { "slug": "vet_clinics", "title": "Ветеринарки", "icon": { "key": "vet_clinic", "url": null }, "color": "#00695C", "group": "essentials", "default_on": false, "version": 2, "points_count": 11 },
+    { "slug": "gas_stations", "title": "АЗС", "icon": { "key": "gas_station", "url": null }, "color": "#455A64", "group": "essentials", "default_on": false, "version": 2, "points_count": 27 }
+  ],
+  "generated_at": "2026-11-10T09:00:00Z"
+}

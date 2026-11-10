@@ -1,0 +1,43 @@
+{
+  "card": {
+    "id": "a0000000-0000-4000-8000-000000000020",
+    "title": "Укриття в школі № 1",
+    "image": null,
+    "categories": ["shelters"],
+    "address": "вул. Гетьмана Полуботка, 14",
+    "district": "Центр",
+    "location": { "lat": 51.4928, "lng": 31.3015 },
+    "location_approximate": false,
+    "open_status": { "state": "always_open", "changes_at": null },
+    "price_text": null,
+    "contacts": [],
+    "badges": [
+      { "key": "always_open", "title": "Цілодобове" },
+      { "key": "accessible", "title": "Доступне для маломобільних" }
+    ],
+    "is_promoted": false,
+    "distance_m": null,
+    "verified_at": "2026-10-28"
+  },
+  "description": "Вхід із двору, праворуч від центрального входу.",
+  "images": [],
+  "opening_hours": {
+    "always_open": true,
+    "weekly": [],
+    "exceptions": [],
+    "note": null
+  },
+  "attributes": [
+    { "key": "shelter_type", "title": "Тип", "value": "Найпростіше укриття" },
+    { "key": "capacity", "title": "Місткість", "value": "150 осіб" }
+  ],
+  "upcoming_events": [],
+  "fuel_prices": [],
+  "source": {
+    "name": "Чернігівська міська рада",
+    "url": "https://rada.example/ukryttia"
+  },
+  "share_url": "https://moyemisto.example/p/a0000000-0000-4000-8000-000000000020",
+  "updated_at": "2026-10-28T09:00:00Z",
+  "generated_at": "2026-11-10T09:00:00Z"
+}

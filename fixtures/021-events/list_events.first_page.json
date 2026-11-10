@@ -1,0 +1,139 @@
+{
+  "items": [
+    {
+      "id": "e0000000-0000-4000-8000-000000000003",
+      "title": "Довга дорога додому",
+      "image": {
+        "url": "https://cdn.moyemisto.example/events/e0000000-0000-4000-8000-000000000003/cover.jpg",
+        "thumb_url": "https://cdn.moyemisto.example/events/e0000000-0000-4000-8000-000000000003/cover_thumb.jpg",
+        "width": 800,
+        "height": 1200,
+        "blurhash": "L6PZfSi_.AyE_3t7t7R**0o#DgR4"
+      },
+      "categories": ["cinema"],
+      "venue": {
+        "place_id": "a0000000-0000-4000-8000-000000000005",
+        "title": "Кінотеатр «Десна»",
+        "address": "вул. Шевченка, 50",
+        "location": { "lat": 51.4925, "lng": 31.3105 }
+      },
+      "starts_at": "2026-11-05T08:00:00Z",
+      "ends_at": "2026-11-19T21:00:00Z",
+      "next_session_at": "2026-11-10T12:30:00Z",
+      "sessions_count": 14,
+      "price": { "from": 130, "to": 220, "is_free": false, "currency": "UAH" },
+      "age_limit": 16,
+      "status": "scheduled",
+      "badges": [],
+      "is_promoted": false,
+      "ending_soon": false,
+      "distance_m": 1240
+    },
+    {
+      "id": "e0000000-0000-4000-8000-000000000001",
+      "title": "Кайдашева сім'я",
+      "image": {
+        "url": "https://cdn.moyemisto.example/events/e0000000-0000-4000-8000-000000000001/cover.jpg",
+        "thumb_url": "https://cdn.moyemisto.example/events/e0000000-0000-4000-8000-000000000001/cover_thumb.jpg",
+        "width": 1200,
+        "height": 800,
+        "blurhash": "LEHV6nWB2yk8pyo0adR*.7kCMdnj"
+      },
+      "categories": ["theatre"],
+      "venue": {
+        "place_id": "a0000000-0000-4000-8000-000000000001",
+        "title": "Драмтеатр ім. Т. Г. Шевченка",
+        "address": "просп. Миру, 23",
+        "location": { "lat": 51.4939, "lng": 31.2947 }
+      },
+      "starts_at": "2026-11-10T16:00:00Z",
+      "ends_at": "2026-11-21T18:30:00Z",
+      "next_session_at": "2026-11-10T16:00:00Z",
+      "sessions_count": 2,
+      "price": { "from": 150, "to": 400, "is_free": false, "currency": "UAH" },
+      "age_limit": 12,
+      "status": "scheduled",
+      "badges": [],
+      "is_promoted": false,
+      "ending_soon": false,
+      "distance_m": 420
+    },
+    {
+      "id": "e0000000-0000-4000-8000-000000000006",
+      "title": "Вечір джазу",
+      "image": null,
+      "categories": ["concerts"],
+      "venue": {
+        "place_id": "a0000000-0000-4000-8000-000000000004",
+        "title": "Філармонійний центр",
+        "address": "просп. Миру, 15",
+        "location": { "lat": 51.4925, "lng": 31.2953 }
+      },
+      "starts_at": "2026-11-20T17:00:00Z",
+      "ends_at": "2026-11-20T19:00:00Z",
+      "next_session_at": "2026-11-20T17:00:00Z",
+      "sessions_count": 1,
+      "price": { "from": 300, "to": 600, "is_free": false, "currency": "UAH" },
+      "age_limit": null,
+      "status": "rescheduled",
+      "badges": [],
+      "is_promoted": false,
+      "ending_soon": false,
+      "distance_m": 510
+    },
+    {
+      "id": "e0000000-0000-4000-8000-000000000004",
+      "title": "Чернігів у фотографіях ХХ століття",
+      "image": {
+        "url": "https://cdn.moyemisto.example/events/e0000000-0000-4000-8000-000000000004/cover.jpg",
+        "thumb_url": "https://cdn.moyemisto.example/events/e0000000-0000-4000-8000-000000000004/cover_thumb.jpg",
+        "width": 1200,
+        "height": 800,
+        "blurhash": null
+      },
+      "categories": ["exhibitions"],
+      "venue": {
+        "place_id": "a0000000-0000-4000-8000-000000000006",
+        "title": "Історичний музей ім. В. В. Тарновського",
+        "address": "вул. Музейна, 4",
+        "location": { "lat": 51.4893, "lng": 31.3083 }
+      },
+      "starts_at": "2026-10-01T07:00:00Z",
+      "ends_at": "2026-11-15T16:00:00Z",
+      "next_session_at": null,
+      "sessions_count": 0,
+      "price": { "from": 80, "to": 80, "is_free": false, "currency": "UAH" },
+      "age_limit": null,
+      "status": "scheduled",
+      "badges": [],
+      "is_promoted": false,
+      "ending_soon": true,
+      "distance_m": 1090
+    },
+    {
+      "id": "e0000000-0000-4000-8000-000000000005",
+      "title": "Ковзанка на Красній площі",
+      "image": null,
+      "categories": ["other_events", "sport"],
+      "venue": {
+        "place_id": null,
+        "title": "Красна площа",
+        "address": "Красна площа",
+        "location": { "lat": 51.4935, "lng": 31.299 }
+      },
+      "starts_at": "2026-12-01T08:00:00Z",
+      "ends_at": "2027-02-28T20:00:00Z",
+      "next_session_at": null,
+      "sessions_count": 0,
+      "price": { "from": 100, "to": 150, "is_free": false, "currency": "UAH" },
+      "age_limit": null,
+      "status": "scheduled",
+      "badges": [{ "key": "seasonal", "title": "Сезонне" }],
+      "is_promoted": false,
+      "ending_soon": false,
+      "distance_m": 300
+    }
+  ],
+  "next_cursor": "b2Zmc2V0OjIw",
+  "generated_at": "2026-11-10T09:00:00Z"
+}

@@ -1,0 +1,37 @@
+{
+  "contract_version": "0.1.0",
+  "server_time": "2026-11-10T09:00:00Z",
+  "app": {
+    "min_supported_version": "1.0.0",
+    "latest_version": "1.0.0",
+    "update_required": false,
+    "store_url": null
+  },
+  "default_city_id": "7c1f0c5e-6a54-4c0f-9a59-1d6f3a2b0001",
+  "cities": [
+    {
+      "id": "7c1f0c5e-6a54-4c0f-9a59-1d6f3a2b0001",
+      "slug": "chernihiv",
+      "name": "Чернігів",
+      "timezone": "Europe/Kyiv",
+      "center": { "lat": 51.4982, "lng": 31.2893 },
+      "bounds": { "south": 51.43, "west": 31.17, "north": 51.56, "east": 31.42 },
+      "default_community": {
+        "id": "0b8f6f1e-2f0a-4d1b-8a53-5f2c9d7e0101",
+        "name": "Чернігівська громада"
+      },
+      "enabled_tabs": ["home", "entertainment", "map", "profile"]
+    }
+  ],
+  "contacts": {
+    "support_email": "support@moyemisto.example",
+    "support_url": "https://moyemisto.example/support",
+    "partner_url": "https://moyemisto.example/partners"
+  },
+  "legal": {
+    "privacy_policy_url": "https://moyemisto.example/privacy",
+    "terms_url": "https://moyemisto.example/terms",
+    "alert_disclaimer": "Додаток не замінює офіційні системи оповіщення. Під час тривоги пройдіть в укриття."
+  },
+  "generated_at": "2026-11-10T09:00:00Z"
+}

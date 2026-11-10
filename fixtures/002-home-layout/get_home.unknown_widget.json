@@ -1,0 +1,48 @@
+{
+  "city_id": "7c1f0c5e-6a54-4c0f-9a59-1d6f3a2b0001",
+  "layout_version": 4,
+  "header": {
+    "title": "Моє Місто",
+    "actions": []
+  },
+  "widgets": [
+    {
+      "id": "alert",
+      "type": "alert",
+      "config": {},
+      "data": null
+    },
+    {
+      "id": "power",
+      "type": "power",
+      "config": {},
+      "data": null
+    },
+    {
+      "id": "fundraiser_main",
+      "type": "fundraiser",
+      "config": { "title": "Збір тижня" },
+      "data": { "goal": 500000, "collected": 312000 }
+    },
+    {
+      "id": "categories",
+      "type": "category_grid",
+      "config": {
+        "columns": 2,
+        "tiles": [
+          { "id": "shelters", "title": "Карта укриттів", "icon": { "key": "shelter", "url": null }, "deeplink": "moyemisto://map?layers=shelters" },
+          { "id": "food", "title": "Поїсти", "icon": { "key": "food", "url": null }, "deeplink": "moyemisto://category/food" },
+          { "id": "pharmacies", "title": "Аптеки", "icon": { "key": "pharmacy", "url": "https://cdn.moyemisto.example/icons/pharmacy.png" }, "deeplink": "moyemisto://pharmacies/on-duty" }
+        ]
+      },
+      "data": null
+    },
+    {
+      "id": "events_today",
+      "type": "events_today",
+      "config": { "title": "Сьогодні в місті", "limit": 10 },
+      "data": null
+    }
+  ],
+  "generated_at": "2026-11-10T09:00:00Z"
+}

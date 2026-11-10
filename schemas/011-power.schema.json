@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://contracts.moyemisto.example/schemas/011-power.schema.json",
+  "title": "011 — світло",
+  "$defs": {
+    "queue": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["code", "title"],
+      "properties": {
+        "code": { "type": "string", "minLength": 1 },
+        "title": { "type": "string", "minLength": 1 }
+      }
+    },
+    "interval": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["from", "to", "starts_at", "ends_at", "type"],
+      "properties": {
+        "from": { "$ref": "common.schema.json#/$defs/local_time" },
+        "to": { "$ref": "common.schema.json#/$defs/local_time" },
+        "starts_at": { "$ref": "common.schema.json#/$defs/timestamp" },
+        "ends_at": { "$ref": "common.schema.json#/$defs/timestamp" },
+        "type": { "enum": ["off", "maybe_off"] }
+      }
+    },
+    "day": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["date", "status", "intervals"],
+      "properties": {
+        "date": { "$ref": "common.schema.json#/$defs/local_date" },
+        "status": { "enum": ["published", "not_published"] },
+        "intervals": { "type": "array", "items": { "$ref": "#/$defs/interval" } }
+      }
+    },
+    "get_power": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["city_id", "mode", "queues", "queue", "days", "schedule_updated_at", "note", "source", "generated_at"],
+      "properties": {
+        "city_id": { "$ref": "common.schema.json#/$defs/uuid" },
+        "mode": { "enum": ["normal", "scheduled", "emergency", "unknown"] },
+        "queues": { "type": "array", "items": { "$ref": "#/$defs/queue" } },
+        "queue": { "type": ["string", "null"] },
+        "days": { "type": "array", "maxItems": 2, "items": { "$ref": "#/$defs/day" } },
+        "schedule_updated_at": { "anyOf": [{ "$ref": "common.schema.json#/$defs/timestamp" }, { "type": "null" }] },
+        "note": { "type": ["string", "null"] },
+        "source": { "$ref": "common.schema.json#/$defs/source" },
+        "generated_at": { "$ref": "common.schema.json#/$defs/timestamp" }
+      }
+    }
+  }
+}

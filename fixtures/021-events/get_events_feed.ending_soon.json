@@ -1,0 +1,35 @@
+{
+  "feed": "ending_soon",
+  "items": [
+    {
+      "id": "e0000000-0000-4000-8000-000000000004",
+      "title": "Чернігів у фотографіях ХХ століття",
+      "image": {
+        "url": "https://cdn.moyemisto.example/events/e0000000-0000-4000-8000-000000000004/cover.jpg",
+        "thumb_url": "https://cdn.moyemisto.example/events/e0000000-0000-4000-8000-000000000004/cover_thumb.jpg",
+        "width": 1200,
+        "height": 800,
+        "blurhash": null
+      },
+      "categories": ["exhibitions"],
+      "venue": {
+        "place_id": "a0000000-0000-4000-8000-000000000006",
+        "title": "Історичний музей ім. В. В. Тарновського",
+        "address": "вул. Музейна, 4",
+        "location": { "lat": 51.4893, "lng": 31.3083 }
+      },
+      "starts_at": "2026-10-01T07:00:00Z",
+      "ends_at": "2026-11-15T16:00:00Z",
+      "next_session_at": null,
+      "sessions_count": 0,
+      "price": { "from": 80, "to": 80, "is_free": false, "currency": "UAH" },
+      "age_limit": null,
+      "status": "scheduled",
+      "badges": [],
+      "is_promoted": false,
+      "ending_soon": true,
+      "distance_m": null
+    }
+  ],
+  "generated_at": "2026-11-10T09:00:00Z"
+}

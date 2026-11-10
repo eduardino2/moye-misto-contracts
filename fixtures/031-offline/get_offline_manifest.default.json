@@ -1,0 +1,23 @@
+{
+  "city_id": "7c1f0c5e-6a54-4c0f-9a59-1d6f3a2b0001",
+  "safety_snapshot": {
+    "version": 31,
+    "url": "https://cdn.moyemisto.example/offline/chernihiv/safety-v31.json",
+    "size_bytes": 412380,
+    "sha256": "3f1c9a7b2d4e5f60718293a4b5c6d7e8f9012a3b4c5d6e7f8091a2b3c4d5e6f7",
+    "updated_at": "2026-11-08T04:00:00Z",
+    "items_count": 1251
+  },
+  "map_pack": {
+    "version": 4,
+    "url": "https://cdn.moyemisto.example/offline/chernihiv/map-v4.zip",
+    "size_bytes": 47185920,
+    "sha256": "a1b2c3d4e5f60718293a4b5c6d7e8f90123456789abcdef0fedcba9876543210",
+    "updated_at": "2026-11-01T03:00:00Z",
+    "format": "zip_pmtiles",
+    "min_zoom": 10,
+    "max_zoom": 16,
+    "bounds": { "south": 51.43, "west": 31.17, "north": 51.56, "east": 31.42 }
+  },
+  "generated_at": "2026-11-10T09:00:00Z"
+}

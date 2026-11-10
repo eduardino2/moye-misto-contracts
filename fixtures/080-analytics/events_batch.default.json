@@ -1,0 +1,26 @@
+[
+  {
+    "id": "0d4f8a6e-1b2c-4d3e-8f90-a1b2c3d4e501",
+    "name": "screen_view",
+    "occurred_at": "2026-11-10T09:00:02Z",
+    "props": { "screen": "home" }
+  },
+  {
+    "id": "0d4f8a6e-1b2c-4d3e-8f90-a1b2c3d4e502",
+    "name": "filter_apply",
+    "occurred_at": "2026-11-10T09:00:41Z",
+    "props": { "category": "theatre", "filters": ["genre", "for_kids"] }
+  },
+  {
+    "id": "0d4f8a6e-1b2c-4d3e-8f90-a1b2c3d4e503",
+    "name": "item_view",
+    "occurred_at": "2026-11-10T09:01:05Z",
+    "props": { "kind": "event", "id": "e0000000-0000-4000-8000-000000000001", "from": "list" }
+  },
+  {
+    "id": "0d4f8a6e-1b2c-4d3e-8f90-a1b2c3d4e504",
+    "name": "ticket_click",
+    "occurred_at": "2026-11-10T09:01:30Z",
+    "props": { "event_id": "e0000000-0000-4000-8000-000000000001", "session_id": "5e550000-0000-4000-8000-000000000001" }
+  }
+]

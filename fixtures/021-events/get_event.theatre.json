@@ -1,0 +1,86 @@
+{
+  "card": {
+    "id": "e0000000-0000-4000-8000-000000000001",
+    "title": "Кайдашева сім'я",
+    "image": {
+      "url": "https://cdn.moyemisto.example/events/e0000000-0000-4000-8000-000000000001/cover.jpg",
+      "thumb_url": "https://cdn.moyemisto.example/events/e0000000-0000-4000-8000-000000000001/cover_thumb.jpg",
+      "width": 1200,
+      "height": 800,
+      "blurhash": "LEHV6nWB2yk8pyo0adR*.7kCMdnj"
+    },
+    "categories": ["theatre"],
+    "venue": {
+      "place_id": "a0000000-0000-4000-8000-000000000001",
+      "title": "Драмтеатр ім. Т. Г. Шевченка",
+      "address": "просп. Миру, 23",
+      "location": { "lat": 51.4939, "lng": 31.2947 }
+    },
+    "starts_at": "2026-11-10T16:00:00Z",
+    "ends_at": "2026-11-21T18:30:00Z",
+    "next_session_at": "2026-11-10T16:00:00Z",
+    "sessions_count": 2,
+    "price": { "from": 150, "to": 400, "is_free": false, "currency": "UAH" },
+    "age_limit": 12,
+    "status": "scheduled",
+    "badges": [],
+    "is_promoted": false,
+    "ending_soon": false,
+    "distance_m": null
+  },
+  "description": "Комедія на дві дії за повістю Івана Нечуя-Левицького.\nТривалість 2 години 30 хвилин з антрактом.",
+  "images": [
+    {
+      "url": "https://cdn.moyemisto.example/events/e0000000-0000-4000-8000-000000000001/cover.jpg",
+      "thumb_url": "https://cdn.moyemisto.example/events/e0000000-0000-4000-8000-000000000001/cover_thumb.jpg",
+      "width": 1200,
+      "height": 800,
+      "blurhash": "LEHV6nWB2yk8pyo0adR*.7kCMdnj"
+    },
+    {
+      "url": "https://cdn.moyemisto.example/events/e0000000-0000-4000-8000-000000000001/2.jpg",
+      "thumb_url": "https://cdn.moyemisto.example/events/e0000000-0000-4000-8000-000000000001/2_thumb.jpg",
+      "width": 1200,
+      "height": 800,
+      "blurhash": null
+    }
+  ],
+  "sessions": [
+    {
+      "id": "5e550000-0000-4000-8000-000000000001",
+      "starts_at": "2026-11-10T16:00:00Z",
+      "ends_at": "2026-11-10T18:30:00Z",
+      "venue": null,
+      "hall": "Велика сцена",
+      "price": { "from": 150, "to": 400, "is_free": false, "currency": "UAH" },
+      "ticket_url": "https://tickets.example/kaidasheva-simia/2026-11-10?ref=moyemisto",
+      "status": "scheduled",
+      "attributes": []
+    },
+    {
+      "id": "5e550000-0000-4000-8000-000000000002",
+      "starts_at": "2026-11-21T16:00:00Z",
+      "ends_at": "2026-11-21T18:30:00Z",
+      "venue": null,
+      "hall": "Велика сцена",
+      "price": { "from": 150, "to": 400, "is_free": false, "currency": "UAH" },
+      "ticket_url": "https://tickets.example/kaidasheva-simia/2026-11-21?ref=moyemisto",
+      "status": "scheduled",
+      "attributes": []
+    }
+  ],
+  "sessions_truncated": false,
+  "ticket_url": "https://tickets.example/kaidasheva-simia?ref=moyemisto",
+  "status_note": null,
+  "attributes": [
+    { "key": "genre", "title": "Жанр", "value": "Комедія" },
+    { "key": "duration", "title": "Тривалість", "value": "2 год 30 хв" }
+  ],
+  "source": {
+    "name": "Сайт театру",
+    "url": "https://teatr.example/afisha"
+  },
+  "share_url": "https://moyemisto.example/e/e0000000-0000-4000-8000-000000000001",
+  "updated_at": "2026-11-08T12:10:00Z",
+  "generated_at": "2026-11-10T09:00:00Z"
+}

@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://contracts.moyemisto.example/schemas/040-push.schema.json",
+  "title": "040 — push-сповіщення",
+  "$defs": {
+    "push_prefs": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["alert_start", "alert_end"],
+      "properties": {
+        "alert_start": { "type": "boolean" },
+        "alert_end": { "type": "boolean" }
+      }
+    },
+    "register_device": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["installation_id", "push_enabled", "prefs", "community", "registered_at"],
+      "properties": {
+        "installation_id": { "$ref": "common.schema.json#/$defs/uuid" },
+        "push_enabled": { "type": "boolean" },
+        "prefs": { "$ref": "#/$defs/push_prefs" },
+        "community": { "$ref": "common.schema.json#/$defs/community" },
+        "registered_at": { "$ref": "common.schema.json#/$defs/timestamp" }
+      }
+    },
+    "unregister_device": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["ok"],
+      "properties": {
+        "ok": { "const": true }
+      }
+    },
+    "push_message": {
+      "description": "Що отримує пристрій. Усі значення в data — рядки: так вимагає Firebase Cloud Messaging.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["notification", "data"],
+      "properties": {
+        "notification": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["title", "body"],
+          "properties": {
+            "title": { "type": "string", "minLength": 1 },
+            "body": { "type": "string", "minLength": 1 }
+          }
+        },
+        "data": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["type", "city_id", "community_id", "level", "state_version", "sent_at", "deeplink"],
+          "properties": {
+            "type": { "enum": ["alert_start", "alert_end"] },
+            "city_id": { "$ref": "common.schema.json#/$defs/uuid" },
+            "community_id": { "$ref": "common.schema.json#/$defs/uuid" },
+            "level": { "enum": ["green", "yellow", "red"] },
+            "state_version": { "type": "string", "pattern": "^\\d+$" },
+            "sent_at": { "$ref": "common.schema.json#/$defs/timestamp" },
+            "deeplink": { "$ref": "common.schema.json#/$defs/deeplink" }
+          }
+        }
+      }
+    }
+  }
+}

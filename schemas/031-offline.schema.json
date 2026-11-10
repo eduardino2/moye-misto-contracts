@@ -1,0 +1,87 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://contracts.moyemisto.example/schemas/031-offline.schema.json",
+  "title": "031 — офлайн-список і офлайн-карта",
+  "$defs": {
+    "sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "snapshot_ref": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["version", "url", "size_bytes", "sha256", "updated_at", "items_count"],
+      "properties": {
+        "version": { "type": "integer", "minimum": 1 },
+        "url": { "$ref": "common.schema.json#/$defs/url" },
+        "size_bytes": { "type": "integer", "minimum": 0 },
+        "sha256": { "$ref": "#/$defs/sha256" },
+        "updated_at": { "$ref": "common.schema.json#/$defs/timestamp" },
+        "items_count": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "map_pack_ref": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["version", "url", "size_bytes", "sha256", "updated_at", "format", "min_zoom", "max_zoom", "bounds"],
+      "properties": {
+        "version": { "type": "integer", "minimum": 1 },
+        "url": { "$ref": "common.schema.json#/$defs/url" },
+        "size_bytes": { "type": "integer", "minimum": 0 },
+        "sha256": { "$ref": "#/$defs/sha256" },
+        "updated_at": { "$ref": "common.schema.json#/$defs/timestamp" },
+        "format": { "enum": ["zip_pmtiles"] },
+        "min_zoom": { "type": "number", "minimum": 0, "maximum": 22 },
+        "max_zoom": { "type": "number", "minimum": 0, "maximum": 22 },
+        "bounds": { "$ref": "common.schema.json#/$defs/bounds" }
+      }
+    },
+    "get_offline_manifest": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["city_id", "safety_snapshot", "map_pack", "generated_at"],
+      "properties": {
+        "city_id": { "$ref": "common.schema.json#/$defs/uuid" },
+        "safety_snapshot": { "$ref": "#/$defs/snapshot_ref" },
+        "map_pack": { "anyOf": [{ "$ref": "#/$defs/map_pack_ref" }, { "type": "null" }] },
+        "generated_at": { "$ref": "common.schema.json#/$defs/timestamp" }
+      }
+    },
+    "safety_item": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id", "category", "title", "kind_title", "address", "location", "always_open", "hours_text",
+        "capacity", "accessible", "badges", "note", "valid_until", "verified_at"
+      ],
+      "properties": {
+        "id": { "$ref": "common.schema.json#/$defs/uuid" },
+        "category": { "enum": ["shelters", "invincibility_points"] },
+        "title": { "type": "string", "minLength": 1 },
+        "kind_title": { "type": ["string", "null"] },
+        "address": { "type": ["string", "null"] },
+        "location": { "$ref": "common.schema.json#/$defs/geo_point" },
+        "always_open": { "type": "boolean" },
+        "hours_text": { "type": ["string", "null"] },
+        "capacity": { "type": ["integer", "null"], "minimum": 0 },
+        "accessible": { "type": ["boolean", "null"] },
+        "badges": { "type": "array", "items": { "$ref": "common.schema.json#/$defs/badge" } },
+        "note": { "type": ["string", "null"] },
+        "valid_until": { "anyOf": [{ "$ref": "common.schema.json#/$defs/timestamp" }, { "type": "null" }] },
+        "verified_at": { "anyOf": [{ "$ref": "common.schema.json#/$defs/local_date" }, { "type": "null" }] }
+      }
+    },
+    "safety_snapshot": {
+      "description": "Вміст файлу за адресою safety_snapshot.url.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["city_id", "version", "generated_at", "items"],
+      "properties": {
+        "city_id": { "$ref": "common.schema.json#/$defs/uuid" },
+        "version": { "type": "integer", "minimum": 1 },
+        "generated_at": { "$ref": "common.schema.json#/$defs/timestamp" },
+        "items": { "type": "array", "items": { "$ref": "#/$defs/safety_item" } }
+      }
+    }
+  }
+}

@@ -1,0 +1,146 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://contracts.moyemisto.example/schemas/002-home-layout.schema.json",
+  "title": "002 — макет головної",
+  "$defs": {
+    "tile": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "title", "icon", "deeplink"],
+      "properties": {
+        "id": { "$ref": "common.schema.json#/$defs/slug" },
+        "title": { "type": "string", "minLength": 1 },
+        "icon": { "$ref": "common.schema.json#/$defs/icon" },
+        "deeplink": { "$ref": "common.schema.json#/$defs/deeplink" }
+      }
+    },
+    "header_action": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type", "deeplink"],
+      "properties": {
+        "type": { "$ref": "common.schema.json#/$defs/slug" },
+        "deeplink": { "$ref": "common.schema.json#/$defs/deeplink" }
+      }
+    },
+    "feed_config": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["title", "limit"],
+      "properties": {
+        "title": { "type": "string", "minLength": 1 },
+        "limit": { "type": "integer", "minimum": 1, "maximum": 20 }
+      }
+    },
+    "widget_alert": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "type", "config", "data"],
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "type": { "const": "alert" },
+        "config": { "type": "object" },
+        "data": { "anyOf": [{ "$ref": "010-alerts.schema.json#/$defs/get_alert_state" }, { "type": "null" }] }
+      }
+    },
+    "widget_power": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "type", "config", "data"],
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "type": { "const": "power" },
+        "config": { "type": "object" },
+        "data": { "anyOf": [{ "$ref": "011-power.schema.json#/$defs/get_power" }, { "type": "null" }] }
+      }
+    },
+    "widget_category_grid": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "type", "config", "data"],
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "type": { "const": "category_grid" },
+        "config": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["columns", "tiles"],
+          "properties": {
+            "columns": { "type": "integer", "minimum": 1, "maximum": 4 },
+            "tiles": { "type": "array", "items": { "$ref": "#/$defs/tile" } }
+          }
+        },
+        "data": { "type": "null" }
+      }
+    },
+    "widget_events_today": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "type", "config", "data"],
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "type": { "const": "events_today" },
+        "config": { "$ref": "#/$defs/feed_config" },
+        "data": { "anyOf": [{ "$ref": "021-events.schema.json#/$defs/get_events_feed" }, { "type": "null" }] }
+      }
+    },
+    "widget_ending_soon": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "type", "config", "data"],
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "type": { "const": "ending_soon" },
+        "config": { "$ref": "#/$defs/feed_config" },
+        "data": { "anyOf": [{ "$ref": "021-events.schema.json#/$defs/get_events_feed" }, { "type": "null" }] }
+      }
+    },
+    "widget_other": {
+      "description": "Тип віджета, якого ще немає в цій версії контракту. Додаток його пропускає.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "type", "config", "data"],
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "type": {
+          "type": "string",
+          "not": { "enum": ["alert", "power", "category_grid", "events_today", "ending_soon"] }
+        },
+        "config": { "type": "object" },
+        "data": true
+      }
+    },
+    "get_home": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["city_id", "layout_version", "header", "widgets", "generated_at"],
+      "properties": {
+        "city_id": { "$ref": "common.schema.json#/$defs/uuid" },
+        "layout_version": { "type": "integer", "minimum": 1 },
+        "header": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["title", "actions"],
+          "properties": {
+            "title": { "type": "string", "minLength": 1 },
+            "actions": { "type": "array", "items": { "$ref": "#/$defs/header_action" } }
+          }
+        },
+        "widgets": {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              { "$ref": "#/$defs/widget_alert" },
+              { "$ref": "#/$defs/widget_power" },
+              { "$ref": "#/$defs/widget_category_grid" },
+              { "$ref": "#/$defs/widget_events_today" },
+              { "$ref": "#/$defs/widget_ending_soon" },
+              { "$ref": "#/$defs/widget_other" }
+            ]
+          }
+        },
+        "generated_at": { "$ref": "common.schema.json#/$defs/timestamp" }
+      }
+    }
+  }
+}

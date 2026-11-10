@@ -1,0 +1,16 @@
+{
+  "community": {
+    "id": "0b8f6f1e-2f0a-4d1b-8a53-5f2c9d7e0101",
+    "name": "Чернігівська громада"
+  },
+  "level": "unknown",
+  "is_active": null,
+  "threat": null,
+  "started_at": null,
+  "ended_at": null,
+  "source_updated_at": "2026-11-10T12:01:10Z",
+  "stale_after_seconds": 90,
+  "poll_interval_seconds": 30,
+  "state_version": 48216,
+  "generated_at": "2026-11-10T12:06:00Z"
+}

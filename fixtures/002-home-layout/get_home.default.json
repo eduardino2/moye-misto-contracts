@@ -1,0 +1,204 @@
+{
+  "city_id": "7c1f0c5e-6a54-4c0f-9a59-1d6f3a2b0001",
+  "layout_version": 3,
+  "header": {
+    "title": "Моє Місто",
+    "actions": []
+  },
+  "widgets": [
+    {
+      "id": "alert",
+      "type": "alert",
+      "config": {},
+      "data": {
+        "community": {
+          "id": "0b8f6f1e-2f0a-4d1b-8a53-5f2c9d7e0101",
+          "name": "Чернігівська громада"
+        },
+        "level": "green",
+        "is_active": false,
+        "threat": null,
+        "started_at": null,
+        "ended_at": "2026-11-10T07:42:10Z",
+        "source_updated_at": "2026-11-10T08:59:55Z",
+        "stale_after_seconds": 90,
+        "poll_interval_seconds": 30,
+        "state_version": 48212,
+        "generated_at": "2026-11-10T09:00:00Z"
+      }
+    },
+    {
+      "id": "power",
+      "type": "power",
+      "config": {},
+      "data": {
+        "city_id": "7c1f0c5e-6a54-4c0f-9a59-1d6f3a2b0001",
+        "mode": "scheduled",
+        "queues": [
+          { "code": "1.1", "title": "Черга 1.1" },
+          { "code": "1.2", "title": "Черга 1.2" },
+          { "code": "2.1", "title": "Черга 2.1" },
+          { "code": "2.2", "title": "Черга 2.2" },
+          { "code": "3.1", "title": "Черга 3.1" },
+          { "code": "3.2", "title": "Черга 3.2" },
+          { "code": "4.1", "title": "Черга 4.1" },
+          { "code": "4.2", "title": "Черга 4.2" },
+          { "code": "5.1", "title": "Черга 5.1" },
+          { "code": "5.2", "title": "Черга 5.2" },
+          { "code": "6.1", "title": "Черга 6.1" },
+          { "code": "6.2", "title": "Черга 6.2" }
+        ],
+        "queue": "3.1",
+        "days": [
+          {
+            "date": "2026-11-10",
+            "status": "published",
+            "intervals": [
+              { "from": "08:00", "to": "12:00", "starts_at": "2026-11-10T06:00:00Z", "ends_at": "2026-11-10T10:00:00Z", "type": "off" },
+              { "from": "18:00", "to": "21:00", "starts_at": "2026-11-10T16:00:00Z", "ends_at": "2026-11-10T19:00:00Z", "type": "off" },
+              { "from": "21:00", "to": "22:00", "starts_at": "2026-11-10T19:00:00Z", "ends_at": "2026-11-10T20:00:00Z", "type": "maybe_off" }
+            ]
+          },
+          {
+            "date": "2026-11-11",
+            "status": "not_published",
+            "intervals": []
+          }
+        ],
+        "schedule_updated_at": "2026-11-09T18:40:00Z",
+        "note": null,
+        "source": {
+          "name": "Чернігівобленерго",
+          "url": "https://chernihivoblenergo.example/schedule"
+        },
+        "generated_at": "2026-11-10T09:00:00Z"
+      }
+    },
+    {
+      "id": "categories",
+      "type": "category_grid",
+      "config": {
+        "columns": 2,
+        "tiles": [
+          { "id": "shelters", "title": "Карта укриттів", "icon": { "key": "shelter", "url": null }, "deeplink": "moyemisto://map?layers=shelters" },
+          { "id": "invincibility_points", "title": "Пункти незламності", "icon": { "key": "invincibility_point", "url": null }, "deeplink": "moyemisto://map?layers=invincibility_points" },
+          { "id": "food", "title": "Поїсти", "icon": { "key": "food", "url": null }, "deeplink": "moyemisto://category/food" },
+          { "id": "events", "title": "Події", "icon": { "key": "events", "url": null }, "deeplink": "moyemisto://entertainment/events" },
+          { "id": "places", "title": "Місця", "icon": { "key": "places", "url": null }, "deeplink": "moyemisto://entertainment/places" },
+          { "id": "services", "title": "Сервіси", "icon": { "key": "services", "url": null }, "deeplink": "moyemisto://section/services" }
+        ]
+      },
+      "data": null
+    },
+    {
+      "id": "events_today",
+      "type": "events_today",
+      "config": { "title": "Сьогодні в місті", "limit": 10 },
+      "data": {
+        "feed": "today",
+        "items": [
+          {
+            "id": "e0000000-0000-4000-8000-000000000003",
+            "title": "Довга дорога додому",
+            "image": {
+              "url": "https://cdn.moyemisto.example/events/e0000000-0000-4000-8000-000000000003/cover.jpg",
+              "thumb_url": "https://cdn.moyemisto.example/events/e0000000-0000-4000-8000-000000000003/cover_thumb.jpg",
+              "width": 800,
+              "height": 1200,
+              "blurhash": "L6PZfSi_.AyE_3t7t7R**0o#DgR4"
+            },
+            "categories": ["cinema"],
+            "venue": {
+              "place_id": "a0000000-0000-4000-8000-000000000005",
+              "title": "Кінотеатр «Десна»",
+              "address": "вул. Шевченка, 50",
+              "location": { "lat": 51.4925, "lng": 31.3105 }
+            },
+            "starts_at": "2026-11-05T08:00:00Z",
+            "ends_at": "2026-11-19T21:00:00Z",
+            "next_session_at": "2026-11-10T12:30:00Z",
+            "sessions_count": 14,
+            "price": { "from": 130, "to": 220, "is_free": false, "currency": "UAH" },
+            "age_limit": 16,
+            "status": "scheduled",
+            "badges": [],
+            "is_promoted": false,
+            "ending_soon": false,
+            "distance_m": null
+          },
+          {
+            "id": "e0000000-0000-4000-8000-000000000001",
+            "title": "Кайдашева сім'я",
+            "image": {
+              "url": "https://cdn.moyemisto.example/events/e0000000-0000-4000-8000-000000000001/cover.jpg",
+              "thumb_url": "https://cdn.moyemisto.example/events/e0000000-0000-4000-8000-000000000001/cover_thumb.jpg",
+              "width": 1200,
+              "height": 800,
+              "blurhash": "LEHV6nWB2yk8pyo0adR*.7kCMdnj"
+            },
+            "categories": ["theatre"],
+            "venue": {
+              "place_id": "a0000000-0000-4000-8000-000000000001",
+              "title": "Драмтеатр ім. Т. Г. Шевченка",
+              "address": "просп. Миру, 23",
+              "location": { "lat": 51.4939, "lng": 31.2947 }
+            },
+            "starts_at": "2026-11-10T16:00:00Z",
+            "ends_at": "2026-11-21T18:30:00Z",
+            "next_session_at": "2026-11-10T16:00:00Z",
+            "sessions_count": 2,
+            "price": { "from": 150, "to": 400, "is_free": false, "currency": "UAH" },
+            "age_limit": 12,
+            "status": "scheduled",
+            "badges": [],
+            "is_promoted": false,
+            "ending_soon": false,
+            "distance_m": null
+          }
+        ],
+        "generated_at": "2026-11-10T09:00:00Z"
+      }
+    },
+    {
+      "id": "ending_soon",
+      "type": "ending_soon",
+      "config": { "title": "Скоро закінчується", "limit": 10 },
+      "data": {
+        "feed": "ending_soon",
+        "items": [
+          {
+            "id": "e0000000-0000-4000-8000-000000000004",
+            "title": "Чернігів у фотографіях ХХ століття",
+            "image": {
+              "url": "https://cdn.moyemisto.example/events/e0000000-0000-4000-8000-000000000004/cover.jpg",
+              "thumb_url": "https://cdn.moyemisto.example/events/e0000000-0000-4000-8000-000000000004/cover_thumb.jpg",
+              "width": 1200,
+              "height": 800,
+              "blurhash": null
+            },
+            "categories": ["exhibitions"],
+            "venue": {
+              "place_id": "a0000000-0000-4000-8000-000000000006",
+              "title": "Історичний музей ім. В. В. Тарновського",
+              "address": "вул. Музейна, 4",
+              "location": { "lat": 51.4893, "lng": 31.3083 }
+            },
+            "starts_at": "2026-10-01T07:00:00Z",
+            "ends_at": "2026-11-15T16:00:00Z",
+            "next_session_at": null,
+            "sessions_count": 0,
+            "price": { "from": 80, "to": 80, "is_free": false, "currency": "UAH" },
+            "age_limit": null,
+            "status": "scheduled",
+            "badges": [],
+            "is_promoted": false,
+            "ending_soon": true,
+            "distance_m": null
+          }
+        ],
+        "generated_at": "2026-11-10T09:00:00Z"
+      }
+    }
+  ],
+  "generated_at": "2026-11-10T09:00:00Z"
+}

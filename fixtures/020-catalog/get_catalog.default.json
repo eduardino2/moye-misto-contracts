@@ -1,0 +1,630 @@
+{
+  "city_id": "7c1f0c5e-6a54-4c0f-9a59-1d6f3a2b0001",
+  "version": 7,
+  "not_modified": false,
+  "sections": [
+    {
+      "slug": "events",
+      "title": "Події",
+      "item_kind": "event",
+      "categories": [
+        {
+          "id": "ca7e0000-0000-4000-8000-000000000001",
+          "slug": "theatre",
+          "title": "Театр",
+          "icon": { "key": "theatre", "url": null },
+          "item_kind": "event",
+          "sort_options": ["date", "distance", "popular"],
+          "default_sort": "date",
+          "supports_map_view": true,
+          "filters": [
+            { "key": "venue", "title": "Театр", "type": "multi_select", "quick": true, "range": null, "options": [
+              { "value": "a0000000-0000-4000-8000-000000000001", "title": "Драмтеатр ім. Т. Г. Шевченка" },
+              { "value": "a0000000-0000-4000-8000-000000000002", "title": "Молодіжний театр" },
+              { "value": "a0000000-0000-4000-8000-000000000003", "title": "Театр ляльок" }
+            ] },
+            { "key": "genre", "title": "Жанр", "type": "multi_select", "quick": false, "range": null, "options": [
+              { "value": "drama", "title": "Драма" },
+              { "value": "comedy", "title": "Комедія" },
+              { "value": "musical", "title": "Мюзикл" },
+              { "value": "puppet", "title": "Лялькова вистава" }
+            ] },
+            { "key": "price", "title": "Ціна", "type": "range", "quick": false, "options": null, "range": { "min": 0, "max": 1000, "step": 50, "unit": "грн" } },
+            { "key": "for_kids", "title": "Для дітей", "type": "toggle", "quick": true, "options": null, "range": null },
+            { "key": "premiere", "title": "Прем'єра", "type": "toggle", "quick": true, "options": null, "range": null }
+          ]
+        },
+        {
+          "id": "ca7e0000-0000-4000-8000-000000000002",
+          "slug": "cinema",
+          "title": "Кіно",
+          "icon": { "key": "cinema", "url": null },
+          "item_kind": "event",
+          "sort_options": ["date", "distance", "popular"],
+          "default_sort": "popular",
+          "supports_map_view": true,
+          "filters": [
+            { "key": "venue", "title": "Кінотеатр", "type": "multi_select", "quick": true, "range": null, "options": [
+              { "value": "a0000000-0000-4000-8000-000000000005", "title": "Кінотеатр «Десна»" }
+            ] },
+            { "key": "genre", "title": "Жанр", "type": "multi_select", "quick": false, "range": null, "options": [
+              { "value": "action", "title": "Бойовик" },
+              { "value": "comedy", "title": "Комедія" },
+              { "value": "drama", "title": "Драма" },
+              { "value": "animation", "title": "Мультфільм" },
+              { "value": "horror", "title": "Жахи" },
+              { "value": "documentary", "title": "Документальний" }
+            ] },
+            { "key": "session_time", "title": "Час сеансу", "type": "single_select", "quick": false, "range": null, "options": [
+              { "value": "morning", "title": "До 12:00" },
+              { "value": "day", "title": "12:00–18:00" },
+              { "value": "evening", "title": "Після 18:00" }
+            ] },
+            { "key": "format", "title": "Формат", "type": "multi_select", "quick": true, "range": null, "options": [
+              { "value": "2d", "title": "2D" },
+              { "value": "3d", "title": "3D" }
+            ] },
+            { "key": "language", "title": "Мова", "type": "single_select", "quick": false, "range": null, "options": [
+              { "value": "uk", "title": "Українською" },
+              { "value": "original", "title": "Мовою оригіналу" }
+            ] },
+            { "key": "age_limit", "title": "Вік", "type": "single_select", "quick": false, "range": null, "options": [
+              { "value": "0", "title": "0+" },
+              { "value": "6", "title": "6+" },
+              { "value": "12", "title": "12+" },
+              { "value": "16", "title": "16+" },
+              { "value": "18", "title": "18+" }
+            ] }
+          ]
+        },
+        {
+          "id": "ca7e0000-0000-4000-8000-000000000003",
+          "slug": "concerts",
+          "title": "Концерти",
+          "icon": { "key": "concert", "url": null },
+          "item_kind": "event",
+          "sort_options": ["date", "distance", "popular"],
+          "default_sort": "date",
+          "supports_map_view": true,
+          "filters": [
+            { "key": "genre", "title": "Жанр", "type": "multi_select", "quick": true, "range": null, "options": [
+              { "value": "rock", "title": "Рок" },
+              { "value": "pop", "title": "Поп" },
+              { "value": "classical", "title": "Класика" },
+              { "value": "jazz", "title": "Джаз" },
+              { "value": "folk", "title": "Народна музика" },
+              { "value": "electronic", "title": "Електронна" }
+            ] },
+            { "key": "venue", "title": "Майданчик", "type": "multi_select", "quick": false, "range": null, "options": [
+              { "value": "a0000000-0000-4000-8000-000000000004", "title": "Філармонійний центр" },
+              { "value": "a0000000-0000-4000-8000-000000000001", "title": "Драмтеатр ім. Т. Г. Шевченка" }
+            ] },
+            { "key": "price", "title": "Ціна", "type": "range", "quick": false, "options": null, "range": { "min": 0, "max": 3000, "step": 100, "unit": "грн" } }
+          ]
+        },
+        {
+          "id": "ca7e0000-0000-4000-8000-000000000004",
+          "slug": "exhibitions",
+          "title": "Виставки",
+          "icon": { "key": "exhibition", "url": null },
+          "item_kind": "event",
+          "sort_options": ["date", "distance", "popular"],
+          "default_sort": "date",
+          "supports_map_view": true,
+          "filters": [
+            { "key": "venue", "title": "Музей або галерея", "type": "multi_select", "quick": true, "range": null, "options": [
+              { "value": "a0000000-0000-4000-8000-000000000006", "title": "Історичний музей ім. В. В. Тарновського" },
+              { "value": "a0000000-0000-4000-8000-000000000007", "title": "Художній музей ім. Г. Галагана" }
+            ] },
+            { "key": "theme", "title": "Тема", "type": "multi_select", "quick": false, "range": null, "options": [
+              { "value": "art", "title": "Мистецтво" },
+              { "value": "history", "title": "Історія" },
+              { "value": "photo", "title": "Фотографія" },
+              { "value": "science", "title": "Наука" },
+              { "value": "local_lore", "title": "Краєзнавство" }
+            ] },
+            { "key": "price", "title": "Ціна", "type": "range", "quick": false, "options": null, "range": { "min": 0, "max": 500, "step": 50, "unit": "грн" } },
+            { "key": "for_kids", "title": "Для дітей", "type": "toggle", "quick": true, "options": null, "range": null }
+          ]
+        },
+        {
+          "id": "ca7e0000-0000-4000-8000-000000000005",
+          "slug": "parties",
+          "title": "Вечірки",
+          "icon": { "key": "party", "url": null },
+          "item_kind": "event",
+          "sort_options": ["date", "distance", "popular"],
+          "default_sort": "date",
+          "supports_map_view": true,
+          "filters": [
+            { "key": "venue", "title": "Клуб", "type": "multi_select", "quick": true, "range": null, "options": [
+              { "value": "a0000000-0000-4000-8000-000000000008", "title": "Клуб «Синій кіт»" }
+            ] },
+            { "key": "music", "title": "Музика", "type": "multi_select", "quick": false, "range": null, "options": [
+              { "value": "electronic", "title": "Електронна" },
+              { "value": "pop", "title": "Поп" },
+              { "value": "rock", "title": "Рок" },
+              { "value": "hiphop", "title": "Хіп-хоп" },
+              { "value": "retro", "title": "Ретро" }
+            ] },
+            { "key": "entry", "title": "Вхід", "type": "single_select", "quick": true, "range": null, "options": [
+              { "value": "free", "title": "Вільний" },
+              { "value": "paid", "title": "Платний" }
+            ] },
+            { "key": "adults_only", "title": "18+", "type": "toggle", "quick": false, "options": null, "range": null }
+          ]
+        },
+        {
+          "id": "ca7e0000-0000-4000-8000-000000000006",
+          "slug": "kids",
+          "title": "Дітям",
+          "icon": { "key": "kids", "url": null },
+          "item_kind": "event",
+          "sort_options": ["date", "distance", "popular"],
+          "default_sort": "date",
+          "supports_map_view": true,
+          "filters": [
+            { "key": "age_group", "title": "Вік", "type": "single_select", "quick": true, "range": null, "options": [
+              { "value": "0_3", "title": "0–3 роки" },
+              { "value": "4_6", "title": "4–6 років" },
+              { "value": "7_10", "title": "7–10 років" },
+              { "value": "11_14", "title": "11–14 років" }
+            ] },
+            { "key": "kind", "title": "Тип", "type": "multi_select", "quick": false, "range": null, "options": [
+              { "value": "performance", "title": "Вистава" },
+              { "value": "celebration", "title": "Свято" },
+              { "value": "workshop", "title": "Майстер-клас" }
+            ] },
+            { "key": "price", "title": "Ціна", "type": "range", "quick": false, "options": null, "range": { "min": 0, "max": 1000, "step": 50, "unit": "грн" } }
+          ]
+        },
+        {
+          "id": "ca7e0000-0000-4000-8000-000000000007",
+          "slug": "sport",
+          "title": "Спорт",
+          "icon": { "key": "sport", "url": null },
+          "item_kind": "event",
+          "sort_options": ["date", "distance", "popular"],
+          "default_sort": "date",
+          "supports_map_view": true,
+          "filters": [
+            { "key": "sport", "title": "Вид спорту", "type": "multi_select", "quick": true, "range": null, "options": [
+              { "value": "football", "title": "Футбол" },
+              { "value": "basketball", "title": "Баскетбол" },
+              { "value": "volleyball", "title": "Волейбол" },
+              { "value": "running", "title": "Біг" },
+              { "value": "martial_arts", "title": "Єдиноборства" },
+              { "value": "other", "title": "Інше" }
+            ] },
+            { "key": "kind", "title": "Тип", "type": "multi_select", "quick": false, "range": null, "options": [
+              { "value": "match", "title": "Матч" },
+              { "value": "run", "title": "Забіг" },
+              { "value": "tournament", "title": "Турнір" }
+            ] },
+            { "key": "price", "title": "Ціна", "type": "range", "quick": false, "options": null, "range": { "min": 0, "max": 1000, "step": 50, "unit": "грн" } }
+          ]
+        },
+        {
+          "id": "ca7e0000-0000-4000-8000-000000000008",
+          "slug": "other_events",
+          "title": "Інші події",
+          "icon": { "key": "festival", "url": null },
+          "item_kind": "event",
+          "sort_options": ["date", "distance", "popular"],
+          "default_sort": "date",
+          "supports_map_view": true,
+          "filters": [
+            { "key": "kind", "title": "Тип", "type": "multi_select", "quick": true, "range": null, "options": [
+              { "value": "festival", "title": "Фестиваль" },
+              { "value": "fair", "title": "Ярмарок" },
+              { "value": "workshop", "title": "Майстер-клас" },
+              { "value": "seasonal", "title": "Сезонний майданчик" }
+            ] },
+            { "key": "price", "title": "Ціна", "type": "range", "quick": false, "options": null, "range": { "min": 0, "max": 1000, "step": 50, "unit": "грн" } },
+            { "key": "for_kids", "title": "Для дітей", "type": "toggle", "quick": true, "options": null, "range": null }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "places",
+      "title": "Місця",
+      "item_kind": "place",
+      "categories": [
+        {
+          "id": "ca7e0000-0000-4000-8000-000000000011",
+          "slug": "museums",
+          "title": "Музеї",
+          "icon": { "key": "museum", "url": null },
+          "item_kind": "place",
+          "sort_options": ["popular", "distance", "title"],
+          "default_sort": "popular",
+          "supports_map_view": true,
+          "filters": [
+            { "key": "museum_type", "title": "Тип музею", "type": "multi_select", "quick": true, "range": null, "options": [
+              { "value": "history", "title": "Історичний" },
+              { "value": "art", "title": "Художній" },
+              { "value": "local_lore", "title": "Краєзнавчий" },
+              { "value": "military", "title": "Військово-історичний" },
+              { "value": "memorial", "title": "Меморіальний" }
+            ] },
+            { "key": "free_entry", "title": "Безкоштовно", "type": "toggle", "quick": true, "options": null, "range": null },
+            { "key": "for_kids", "title": "Для дітей", "type": "toggle", "quick": true, "options": null, "range": null }
+          ]
+        },
+        {
+          "id": "ca7e0000-0000-4000-8000-000000000012",
+          "slug": "quests",
+          "title": "Квести",
+          "icon": { "key": "quest", "url": null },
+          "item_kind": "place",
+          "sort_options": ["popular", "distance", "title"],
+          "default_sort": "popular",
+          "supports_map_view": true,
+          "filters": [
+            { "key": "genre", "title": "Жанр", "type": "multi_select", "quick": true, "range": null, "options": [
+              { "value": "horror", "title": "Хорор" },
+              { "value": "detective", "title": "Детектив" },
+              { "value": "adventure", "title": "Пригоди" },
+              { "value": "family", "title": "Сімейний" }
+            ] },
+            { "key": "players", "title": "Кількість гравців", "type": "single_select", "quick": false, "range": null, "options": [
+              { "value": "2", "title": "2" },
+              { "value": "3_4", "title": "3–4" },
+              { "value": "5_6", "title": "5–6" },
+              { "value": "7_plus", "title": "7 і більше" }
+            ] },
+            { "key": "difficulty", "title": "Складність", "type": "single_select", "quick": false, "range": null, "options": [
+              { "value": "easy", "title": "Легкий" },
+              { "value": "medium", "title": "Середній" },
+              { "value": "hard", "title": "Складний" }
+            ] },
+            { "key": "age_limit", "title": "Вік", "type": "single_select", "quick": false, "range": null, "options": [
+              { "value": "6", "title": "6+" },
+              { "value": "12", "title": "12+" },
+              { "value": "16", "title": "16+" },
+              { "value": "18", "title": "18+" }
+            ] },
+            { "key": "price", "title": "Ціна за гру", "type": "range", "quick": false, "options": null, "range": { "min": 0, "max": 3000, "step": 100, "unit": "грн" } }
+          ]
+        },
+        {
+          "id": "ca7e0000-0000-4000-8000-000000000013",
+          "slug": "clubs",
+          "title": "Клуби",
+          "icon": { "key": "club", "url": null },
+          "item_kind": "place",
+          "sort_options": ["popular", "distance", "title"],
+          "default_sort": "popular",
+          "supports_map_view": true,
+          "filters": [
+            { "key": "club_type", "title": "Тип", "type": "multi_select", "quick": true, "range": null, "options": [
+              { "value": "night_club", "title": "Нічний клуб" },
+              { "value": "karaoke", "title": "Караоке" },
+              { "value": "lounge", "title": "Лаунж" },
+              { "value": "live_music", "title": "Жива музика" }
+            ] },
+            { "key": "music", "title": "Музика", "type": "multi_select", "quick": false, "range": null, "options": [
+              { "value": "electronic", "title": "Електронна" },
+              { "value": "pop", "title": "Поп" },
+              { "value": "rock", "title": "Рок" },
+              { "value": "hiphop", "title": "Хіп-хоп" },
+              { "value": "retro", "title": "Ретро" }
+            ] },
+            { "key": "entry", "title": "Вхід", "type": "single_select", "quick": false, "range": null, "options": [
+              { "value": "free", "title": "Вільний" },
+              { "value": "paid", "title": "Платний" }
+            ] },
+            { "key": "adults_only", "title": "18+", "type": "toggle", "quick": false, "options": null, "range": null }
+          ]
+        },
+        {
+          "id": "ca7e0000-0000-4000-8000-000000000014",
+          "slug": "bowling",
+          "title": "Боулінг",
+          "icon": { "key": "bowling", "url": null },
+          "item_kind": "place",
+          "sort_options": ["popular", "distance", "title"],
+          "default_sort": "popular",
+          "supports_map_view": true,
+          "filters": [
+            { "key": "price", "title": "Ціна за годину", "type": "range", "quick": false, "options": null, "range": { "min": 0, "max": 1500, "step": 50, "unit": "грн" } },
+            { "key": "lanes", "title": "Кількість доріжок", "type": "range", "quick": false, "options": null, "range": { "min": 2, "max": 16, "step": 1, "unit": null } },
+            { "key": "has_kitchen", "title": "Є кухня", "type": "toggle", "quick": true, "options": null, "range": null }
+          ]
+        },
+        {
+          "id": "ca7e0000-0000-4000-8000-000000000015",
+          "slug": "parks",
+          "title": "Парки",
+          "icon": { "key": "park", "url": null },
+          "item_kind": "place",
+          "sort_options": ["distance", "popular", "title"],
+          "default_sort": "distance",
+          "supports_map_view": true,
+          "filters": [
+            { "key": "park_type", "title": "Тип", "type": "multi_select", "quick": true, "range": null, "options": [
+              { "value": "park", "title": "Парк" },
+              { "value": "square", "title": "Сквер" },
+              { "value": "beach", "title": "Пляж" }
+            ] },
+            { "key": "playground", "title": "Дитячий майданчик", "type": "toggle", "quick": true, "options": null, "range": null },
+            { "key": "sport_area", "title": "Спортивний майданчик", "type": "toggle", "quick": false, "options": null, "range": null },
+            { "key": "pets_allowed", "title": "Можна з тваринами", "type": "toggle", "quick": false, "options": null, "range": null }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "venues",
+      "title": "Майданчики",
+      "item_kind": "place",
+      "categories": [
+        {
+          "id": "ca7e0000-0000-4000-8000-000000000016",
+          "slug": "theatres",
+          "title": "Театри",
+          "icon": { "key": "theatre", "url": null },
+          "item_kind": "place",
+          "sort_options": ["distance", "title"],
+          "default_sort": "title",
+          "supports_map_view": true,
+          "filters": []
+        },
+        {
+          "id": "ca7e0000-0000-4000-8000-000000000017",
+          "slug": "cinemas",
+          "title": "Кінотеатри",
+          "icon": { "key": "cinema", "url": null },
+          "item_kind": "place",
+          "sort_options": ["distance", "title"],
+          "default_sort": "title",
+          "supports_map_view": true,
+          "filters": []
+        },
+        {
+          "id": "ca7e0000-0000-4000-8000-000000000018",
+          "slug": "concert_halls",
+          "title": "Концертні зали",
+          "icon": { "key": "concert", "url": null },
+          "item_kind": "place",
+          "sort_options": ["distance", "title"],
+          "default_sort": "title",
+          "supports_map_view": true,
+          "filters": []
+        }
+      ]
+    },
+    {
+      "slug": "food",
+      "title": "Поїсти",
+      "item_kind": "place",
+      "categories": [
+        {
+          "id": "ca7e0000-0000-4000-8000-000000000021",
+          "slug": "food",
+          "title": "Поїсти",
+          "icon": { "key": "food", "url": null },
+          "item_kind": "place",
+          "sort_options": ["popular", "distance", "title"],
+          "default_sort": "popular",
+          "supports_map_view": true,
+          "filters": [
+            { "key": "venue_type", "title": "Тип закладу", "type": "multi_select", "quick": true, "range": null, "options": [
+              { "value": "restaurant", "title": "Ресторан" },
+              { "value": "cafe", "title": "Кафе" },
+              { "value": "coffee_shop", "title": "Кав'ярня" },
+              { "value": "pizzeria", "title": "Піцерія" },
+              { "value": "fast_food", "title": "Фастфуд" },
+              { "value": "bar", "title": "Бар" },
+              { "value": "bakery", "title": "Пекарня" }
+            ] },
+            { "key": "cuisine", "title": "Кухня", "type": "multi_select", "quick": false, "range": null, "options": [
+              { "value": "ukrainian", "title": "Українська" },
+              { "value": "european", "title": "Європейська" },
+              { "value": "italian", "title": "Італійська" },
+              { "value": "georgian", "title": "Грузинська" },
+              { "value": "asian", "title": "Азійська" },
+              { "value": "american", "title": "Американська" }
+            ] },
+            { "key": "avg_check", "title": "Середній чек", "type": "range", "quick": false, "options": null, "range": { "min": 100, "max": 1500, "step": 50, "unit": "грн" } },
+            { "key": "terrace", "title": "Тераса", "type": "toggle", "quick": false, "options": null, "range": null },
+            { "key": "delivery", "title": "Доставка", "type": "toggle", "quick": false, "options": null, "range": null },
+            { "key": "works_without_power", "title": "Працює без світла", "type": "toggle", "quick": true, "options": null, "range": null },
+            { "key": "shelter_nearby", "title": "Укриття поруч", "type": "toggle", "quick": true, "options": null, "range": null }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "services",
+      "title": "Сервіси",
+      "item_kind": "place",
+      "categories": [
+        {
+          "id": "ca7e0000-0000-4000-8000-000000000031",
+          "slug": "car_washes",
+          "title": "Автомийки",
+          "icon": { "key": "car_wash", "url": null },
+          "item_kind": "place",
+          "sort_options": ["distance", "popular", "title"],
+          "default_sort": "distance",
+          "supports_map_view": true,
+          "filters": [
+            { "key": "wash_type", "title": "Тип", "type": "multi_select", "quick": true, "range": null, "options": [
+              { "value": "self_service", "title": "Самообслуговування" },
+              { "value": "manual", "title": "Ручна" },
+              { "value": "automatic", "title": "Автоматична" }
+            ] },
+            { "key": "always_open", "title": "Цілодобово", "type": "toggle", "quick": true, "options": null, "range": null },
+            { "key": "interior_cleaning", "title": "Хімчистка салону", "type": "toggle", "quick": false, "options": null, "range": null },
+            { "key": "works_without_power", "title": "Працює без світла", "type": "toggle", "quick": true, "options": null, "range": null }
+          ]
+        },
+        {
+          "id": "ca7e0000-0000-4000-8000-000000000032",
+          "slug": "tire_and_auto_service",
+          "title": "Шиномонтаж і СТО",
+          "icon": { "key": "auto_service", "url": null },
+          "item_kind": "place",
+          "sort_options": ["distance", "popular", "title"],
+          "default_sort": "distance",
+          "supports_map_view": true,
+          "filters": [
+            { "key": "services", "title": "Послуги", "type": "multi_select", "quick": true, "range": null, "options": [
+              { "value": "tire_fitting", "title": "Шиномонтаж" },
+              { "value": "repair", "title": "Ремонт" },
+              { "value": "diagnostics", "title": "Діагностика" }
+            ] },
+            { "key": "car_brands", "title": "Марки авто", "type": "multi_select", "quick": false, "range": null, "options": [
+              { "value": "all", "title": "Усі марки" },
+              { "value": "european", "title": "Європейські" },
+              { "value": "japanese_korean", "title": "Японські та корейські" },
+              { "value": "american", "title": "Американські" },
+              { "value": "chinese", "title": "Китайські" }
+            ] },
+            { "key": "works_without_power", "title": "Працює без світла", "type": "toggle", "quick": true, "options": null, "range": null }
+          ]
+        },
+        {
+          "id": "ca7e0000-0000-4000-8000-000000000033",
+          "slug": "hair_salons",
+          "title": "Перукарні та барбершопи",
+          "icon": { "key": "hair_salon", "url": null },
+          "item_kind": "place",
+          "sort_options": ["popular", "distance", "title"],
+          "default_sort": "popular",
+          "supports_map_view": true,
+          "filters": [
+            { "key": "audience", "title": "Для кого", "type": "multi_select", "quick": true, "range": null, "options": [
+              { "value": "men", "title": "Чоловіча" },
+              { "value": "women", "title": "Жіноча" },
+              { "value": "kids", "title": "Дитяча" }
+            ] },
+            { "key": "price", "title": "Ціна стрижки", "type": "range", "quick": false, "options": null, "range": { "min": 0, "max": 2000, "step": 50, "unit": "грн" } }
+          ]
+        },
+        {
+          "id": "ca7e0000-0000-4000-8000-000000000034",
+          "slug": "beauty_salons",
+          "title": "Салони краси",
+          "icon": { "key": "beauty_salon", "url": null },
+          "item_kind": "place",
+          "sort_options": ["popular", "distance", "title"],
+          "default_sort": "popular",
+          "supports_map_view": true,
+          "filters": [
+            { "key": "services", "title": "Послуги", "type": "multi_select", "quick": true, "range": null, "options": [
+              { "value": "manicure", "title": "Манікюр" },
+              { "value": "pedicure", "title": "Педикюр" },
+              { "value": "cosmetology", "title": "Косметолог" },
+              { "value": "brows", "title": "Брови" },
+              { "value": "lashes", "title": "Вії" },
+              { "value": "massage", "title": "Масаж" }
+            ] },
+            { "key": "price", "title": "Ціна", "type": "range", "quick": false, "options": null, "range": { "min": 0, "max": 3000, "step": 100, "unit": "грн" } }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "safety",
+      "title": "Безпека",
+      "item_kind": "place",
+      "categories": [
+        {
+          "id": "ca7e0000-0000-4000-8000-000000000041",
+          "slug": "shelters",
+          "title": "Укриття",
+          "icon": { "key": "shelter", "url": null },
+          "item_kind": "place",
+          "sort_options": ["distance", "title"],
+          "default_sort": "distance",
+          "supports_map_view": true,
+          "filters": [
+            { "key": "shelter_type", "title": "Тип", "type": "multi_select", "quick": false, "range": null, "options": [
+              { "value": "storage", "title": "Сховище" },
+              { "value": "radiation", "title": "Протирадіаційне укриття" },
+              { "value": "simple", "title": "Найпростіше укриття" }
+            ] },
+            { "key": "always_open", "title": "Цілодобове", "type": "toggle", "quick": true, "options": null, "range": null },
+            { "key": "accessible", "title": "Доступне для маломобільних", "type": "toggle", "quick": true, "options": null, "range": null },
+            { "key": "capacity", "title": "Місткість", "type": "range", "quick": false, "options": null, "range": { "min": 10, "max": 1000, "step": 10, "unit": "осіб" } }
+          ]
+        },
+        {
+          "id": "ca7e0000-0000-4000-8000-000000000042",
+          "slug": "invincibility_points",
+          "title": "Пункти незламності",
+          "icon": { "key": "invincibility_point", "url": null },
+          "item_kind": "place",
+          "sort_options": ["distance", "title"],
+          "default_sort": "distance",
+          "supports_map_view": true,
+          "filters": [
+            { "key": "always_open", "title": "Цілодобовий", "type": "toggle", "quick": true, "options": null, "range": null },
+            { "key": "heating", "title": "Обігрів", "type": "toggle", "quick": true, "options": null, "range": null },
+            { "key": "connectivity", "title": "Зв'язок", "type": "toggle", "quick": false, "options": null, "range": null },
+            { "key": "charging", "title": "Зарядка", "type": "toggle", "quick": false, "options": null, "range": null },
+            { "key": "point_type", "title": "Тип", "type": "single_select", "quick": false, "range": null, "options": [
+              { "value": "stationary", "title": "Стаціонарний" },
+              { "value": "mobile", "title": "Мобільний" }
+            ] }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "essentials",
+      "title": "Корисне",
+      "item_kind": "place",
+      "categories": [
+        {
+          "id": "ca7e0000-0000-4000-8000-000000000051",
+          "slug": "vet_clinics",
+          "title": "Ветеринарні клініки",
+          "icon": { "key": "vet_clinic", "url": null },
+          "item_kind": "place",
+          "sort_options": ["distance", "popular", "title"],
+          "default_sort": "distance",
+          "supports_map_view": true,
+          "filters": [
+            { "key": "always_open", "title": "Цілодобова", "type": "toggle", "quick": true, "options": null, "range": null },
+            { "key": "emergency", "title": "Екстрена допомога", "type": "toggle", "quick": true, "options": null, "range": null },
+            { "key": "home_visit", "title": "Виїзд додому", "type": "toggle", "quick": false, "options": null, "range": null },
+            { "key": "animals", "title": "Види тварин", "type": "multi_select", "quick": false, "range": null, "options": [
+              { "value": "dogs", "title": "Собаки" },
+              { "value": "cats", "title": "Коти" },
+              { "value": "birds", "title": "Птахи" },
+              { "value": "rodents", "title": "Гризуни" },
+              { "value": "exotic", "title": "Екзотичні" }
+            ] },
+            { "key": "pharmacy", "title": "Аптека", "type": "toggle", "quick": false, "options": null, "range": null }
+          ]
+        },
+        {
+          "id": "ca7e0000-0000-4000-8000-000000000052",
+          "slug": "gas_stations",
+          "title": "АЗС",
+          "icon": { "key": "gas_station", "url": null },
+          "item_kind": "place",
+          "sort_options": ["distance", "title"],
+          "default_sort": "distance",
+          "supports_map_view": true,
+          "filters": [
+            { "key": "fuel", "title": "Вид пального", "type": "multi_select", "quick": true, "range": null, "options": [
+              { "value": "a95", "title": "А-95" },
+              { "value": "diesel", "title": "Дизель" },
+              { "value": "lpg", "title": "Газ" }
+            ] },
+            { "key": "always_open", "title": "Цілодобова", "type": "toggle", "quick": true, "options": null, "range": null },
+            { "key": "shop", "title": "Магазин або кафе", "type": "toggle", "quick": false, "options": null, "range": null },
+            { "key": "ev_charging", "title": "Зарядка електромобілів", "type": "toggle", "quick": false, "options": null, "range": null },
+            { "key": "works_without_power", "title": "Працює без світла", "type": "toggle", "quick": true, "options": null, "range": null }
+          ]
+        }
+      ]
+    }
+  ],
+  "generated_at": "2026-11-10T09:00:00Z"
+}

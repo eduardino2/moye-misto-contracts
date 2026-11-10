@@ -1,0 +1,6 @@
+{
+  "code": "PT429",
+  "message": "rate_limited",
+  "details": "Забагато запитів. Спробуйте за хвилину.",
+  "hint": null
+}

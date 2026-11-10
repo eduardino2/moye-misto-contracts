@@ -1,0 +1,141 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://contracts.moyemisto.example/schemas/common.schema.json",
+  "title": "Спільні типи контракту «Моє Місто»",
+  "$defs": {
+    "uuid": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+    },
+    "timestamp": {
+      "description": "Момент часу в UTC, ISO 8601, із суфіксом Z або +00:00.",
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d{1,6})?(Z|\\+00:00)$"
+    },
+    "local_date": {
+      "description": "Календарна дата в часовому поясі міста.",
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+    },
+    "local_time": {
+      "description": "Час доби в часовому поясі міста. 24:00 дозволено лише як кінець проміжку.",
+      "type": "string",
+      "pattern": "^(([01]\\d|2[0-3]):[0-5]\\d|24:00)$"
+    },
+    "slug": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9_]*$"
+    },
+    "url": {
+      "type": "string",
+      "pattern": "^https://"
+    },
+    "deeplink": {
+      "type": "string",
+      "pattern": "^moyemisto://"
+    },
+    "geo_point": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["lat", "lng"],
+      "properties": {
+        "lat": { "type": "number", "minimum": -90, "maximum": 90 },
+        "lng": { "type": "number", "minimum": -180, "maximum": 180 }
+      }
+    },
+    "bounds": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["south", "west", "north", "east"],
+      "properties": {
+        "south": { "type": "number" },
+        "west": { "type": "number" },
+        "north": { "type": "number" },
+        "east": { "type": "number" }
+      }
+    },
+    "image": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["url", "thumb_url", "width", "height", "blurhash"],
+      "properties": {
+        "url": { "$ref": "#/$defs/url" },
+        "thumb_url": { "$ref": "#/$defs/url" },
+        "width": { "type": ["integer", "null"] },
+        "height": { "type": ["integer", "null"] },
+        "blurhash": { "type": ["string", "null"] }
+      }
+    },
+    "icon": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["key", "url"],
+      "properties": {
+        "key": { "$ref": "#/$defs/slug" },
+        "url": { "anyOf": [{ "$ref": "#/$defs/url" }, { "type": "null" }] }
+      }
+    },
+    "price": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["from", "to", "is_free", "currency"],
+      "properties": {
+        "from": { "type": ["integer", "null"], "minimum": 0 },
+        "to": { "type": ["integer", "null"], "minimum": 0 },
+        "is_free": { "type": "boolean" },
+        "currency": { "const": "UAH" }
+      }
+    },
+    "badge": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["key", "title"],
+      "properties": {
+        "key": { "$ref": "#/$defs/slug" },
+        "title": { "type": "string", "minLength": 1 }
+      }
+    },
+    "attribute": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["key", "title", "value"],
+      "properties": {
+        "key": { "$ref": "#/$defs/slug" },
+        "title": { "type": "string", "minLength": 1 },
+        "value": { "type": "string" }
+      }
+    },
+    "community": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "name"],
+      "properties": {
+        "id": { "$ref": "#/$defs/uuid" },
+        "name": { "type": "string", "minLength": 1 }
+      }
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "url"],
+      "properties": {
+        "name": { "type": "string", "minLength": 1 },
+        "url": { "anyOf": [{ "$ref": "#/$defs/url" }, { "type": "null" }] }
+      }
+    },
+    "map_point": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "kind", "category", "title", "subtitle", "location", "approximate"],
+      "properties": {
+        "id": { "$ref": "#/$defs/uuid" },
+        "kind": { "enum": ["place", "event"] },
+        "category": { "$ref": "#/$defs/slug" },
+        "title": { "type": "string", "minLength": 1 },
+        "subtitle": { "type": ["string", "null"] },
+        "location": { "$ref": "#/$defs/geo_point" },
+        "approximate": { "type": "boolean" }
+      }
+    }
+  }
+}

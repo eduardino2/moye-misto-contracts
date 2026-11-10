@@ -1,0 +1,24 @@
+{
+  "points": [
+    {
+      "id": "a0000000-0000-4000-8000-000000000010",
+      "kind": "place",
+      "category": "food",
+      "title": "Кав'ярня «Вал»",
+      "subtitle": "вул. Преображенська, 12",
+      "location": { "lat": 51.4911, "lng": 31.3042 },
+      "approximate": false
+    },
+    {
+      "id": "a0000000-0000-4000-8000-000000000011",
+      "kind": "place",
+      "category": "food",
+      "title": "Ресторан «Сіверський»",
+      "subtitle": "просп. Миру, 40",
+      "location": { "lat": 51.4978, "lng": 31.2921 },
+      "approximate": false
+    }
+  ],
+  "truncated": false,
+  "generated_at": "2026-11-10T09:00:00Z"
+}

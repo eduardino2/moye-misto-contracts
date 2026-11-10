@@ -1,0 +1,68 @@
+{
+  "card": {
+    "id": "a0000000-0000-4000-8000-000000000010",
+    "title": "Кав'ярня «Вал»",
+    "image": {
+      "url": "https://cdn.moyemisto.example/places/a0000000-0000-4000-8000-000000000010/cover.jpg",
+      "thumb_url": "https://cdn.moyemisto.example/places/a0000000-0000-4000-8000-000000000010/cover_thumb.jpg",
+      "width": 1200,
+      "height": 800,
+      "blurhash": "LKO2?U%2Tw=w]~RBVZRi};RPxuwH"
+    },
+    "categories": ["food"],
+    "address": "вул. Преображенська, 12",
+    "district": "Центр",
+    "location": { "lat": 51.4911, "lng": 31.3042 },
+    "location_approximate": false,
+    "open_status": { "state": "open", "changes_at": "2026-11-10T19:00:00Z" },
+    "price_text": "Середній чек 180 грн",
+    "contacts": [
+      { "type": "phone", "title": "Подзвонити", "url": "tel:+380462000001" },
+      { "type": "instagram", "title": "Instagram", "url": "https://instagram.example/kaviarnia_val" }
+    ],
+    "badges": [
+      { "key": "works_without_power", "title": "Працює без світла" },
+      { "key": "shelter_nearby", "title": "Укриття поруч" }
+    ],
+    "is_promoted": false,
+    "distance_m": null,
+    "verified_at": "2026-10-20"
+  },
+  "description": "Невелика кав'ярня біля Валу. Кава, десерти, сніданки до 12:00.",
+  "images": [
+    {
+      "url": "https://cdn.moyemisto.example/places/a0000000-0000-4000-8000-000000000010/cover.jpg",
+      "thumb_url": "https://cdn.moyemisto.example/places/a0000000-0000-4000-8000-000000000010/cover_thumb.jpg",
+      "width": 1200,
+      "height": 800,
+      "blurhash": "LKO2?U%2Tw=w]~RBVZRi};RPxuwH"
+    }
+  ],
+  "opening_hours": {
+    "always_open": false,
+    "weekly": [
+      { "day": 1, "intervals": [{ "from": "08:00", "to": "21:00" }] },
+      { "day": 2, "intervals": [{ "from": "08:00", "to": "21:00" }] },
+      { "day": 3, "intervals": [{ "from": "08:00", "to": "21:00" }] },
+      { "day": 4, "intervals": [{ "from": "08:00", "to": "21:00" }] },
+      { "day": 5, "intervals": [{ "from": "08:00", "to": "22:00" }] },
+      { "day": 6, "intervals": [{ "from": "09:00", "to": "22:00" }] },
+      { "day": 7, "intervals": [{ "from": "09:00", "to": "20:00" }] }
+    ],
+    "exceptions": [
+      { "date": "2026-12-25", "closed": true, "intervals": [], "note": "Вихідний" }
+    ],
+    "note": "Під час тривоги заклад не обслуговує."
+  },
+  "attributes": [
+    { "key": "venue_type", "title": "Тип закладу", "value": "Кав'ярня" },
+    { "key": "cuisine", "title": "Кухня", "value": "Європейська" },
+    { "key": "avg_check", "title": "Середній чек", "value": "180 грн" }
+  ],
+  "upcoming_events": [],
+  "fuel_prices": [],
+  "source": null,
+  "share_url": "https://moyemisto.example/p/a0000000-0000-4000-8000-000000000010",
+  "updated_at": "2026-10-20T10:00:00Z",
+  "generated_at": "2026-11-10T09:00:00Z"
+}

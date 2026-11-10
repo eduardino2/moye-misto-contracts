@@ -1,0 +1,35 @@
+{
+  "slug": "shelters",
+  "version": 31,
+  "not_modified": false,
+  "points": [
+    {
+      "id": "a0000000-0000-4000-8000-000000000020",
+      "kind": "place",
+      "category": "shelters",
+      "title": "Укриття в школі № 1",
+      "subtitle": "вул. Гетьмана Полуботка, 14",
+      "location": { "lat": 51.4928, "lng": 31.3015 },
+      "approximate": false
+    },
+    {
+      "id": "a0000000-0000-4000-8000-000000000021",
+      "kind": "place",
+      "category": "shelters",
+      "title": "Підземний перехід на проспекті Миру",
+      "subtitle": "просп. Миру, 33",
+      "location": { "lat": 51.4962, "lng": 31.2934 },
+      "approximate": false
+    },
+    {
+      "id": "a0000000-0000-4000-8000-000000000022",
+      "kind": "place",
+      "category": "shelters",
+      "title": "Сховище лікарні № 2",
+      "subtitle": "вул. 1 Травня, 168",
+      "location": { "lat": 51.5158, "lng": 31.3087 },
+      "approximate": false
+    }
+  ],
+  "generated_at": "2026-11-10T09:00:00Z"
+}

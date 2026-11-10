@@ -1,0 +1,96 @@
+{
+  "city_id": "7c1f0c5e-6a54-4c0f-9a59-1d6f3a2b0001",
+  "version": 31,
+  "generated_at": "2026-11-08T04:00:00Z",
+  "items": [
+    {
+      "id": "a0000000-0000-4000-8000-000000000020",
+      "category": "shelters",
+      "title": "Укриття в школі № 1",
+      "kind_title": "Найпростіше укриття",
+      "address": "вул. Гетьмана Полуботка, 14",
+      "location": { "lat": 51.4928, "lng": 31.3015 },
+      "always_open": true,
+      "hours_text": "Цілодобово",
+      "capacity": 150,
+      "accessible": true,
+      "badges": [
+        { "key": "accessible", "title": "Доступне для маломобільних" }
+      ],
+      "note": "Вхід із двору, праворуч від центрального входу.",
+      "valid_until": null,
+      "verified_at": "2026-10-28"
+    },
+    {
+      "id": "a0000000-0000-4000-8000-000000000021",
+      "category": "shelters",
+      "title": "Підземний перехід на проспекті Миру",
+      "kind_title": "Найпростіше укриття",
+      "address": "просп. Миру, 33",
+      "location": { "lat": 51.4962, "lng": 31.2934 },
+      "always_open": true,
+      "hours_text": "Цілодобово",
+      "capacity": null,
+      "accessible": false,
+      "badges": [],
+      "note": null,
+      "valid_until": null,
+      "verified_at": null
+    },
+    {
+      "id": "a0000000-0000-4000-8000-000000000022",
+      "category": "shelters",
+      "title": "Сховище лікарні № 2",
+      "kind_title": "Сховище",
+      "address": "вул. 1 Травня, 168",
+      "location": { "lat": 51.5158, "lng": 31.3087 },
+      "always_open": false,
+      "hours_text": "Відчиняється під час тривоги",
+      "capacity": 300,
+      "accessible": null,
+      "badges": [],
+      "note": null,
+      "valid_until": null,
+      "verified_at": "2026-09-15"
+    },
+    {
+      "id": "a0000000-0000-4000-8000-000000000030",
+      "category": "invincibility_points",
+      "title": "Пункт незламності в ЦНАП",
+      "kind_title": "Стаціонарний",
+      "address": "вул. Рокоссовського, 20А",
+      "location": { "lat": 51.5231, "lng": 31.3152 },
+      "always_open": true,
+      "hours_text": "Цілодобово",
+      "capacity": 40,
+      "accessible": true,
+      "badges": [
+        { "key": "heating", "title": "Обігрів" },
+        { "key": "charging", "title": "Зарядка" },
+        { "key": "connectivity", "title": "Зв'язок" }
+      ],
+      "note": null,
+      "valid_until": null,
+      "verified_at": "2026-11-02"
+    },
+    {
+      "id": "a0000000-0000-4000-8000-000000000031",
+      "category": "invincibility_points",
+      "title": "Мобільний пункт незламності на Красній площі",
+      "kind_title": "Мобільний",
+      "address": "Красна площа",
+      "location": { "lat": 51.4935, "lng": 31.299 },
+      "always_open": false,
+      "hours_text": "Щодня 08:00–20:00",
+      "capacity": 20,
+      "accessible": null,
+      "badges": [
+        { "key": "heating", "title": "Обігрів" },
+        { "key": "charging", "title": "Зарядка" }
+      ],
+      "note": "Розгорнуто на час відключень.",
+      "valid_until": "2026-11-30T18:00:00Z",
+      "verified_at": "2026-11-05"
+    }
+  ]
+}

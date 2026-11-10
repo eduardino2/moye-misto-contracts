@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://contracts.moyemisto.example/schemas/060-reports.schema.json",
+  "title": "060 — повідомлення про проблему",
+  "$defs": {
+    "submit_report": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["report_id", "status", "created_at"],
+      "properties": {
+        "report_id": { "$ref": "common.schema.json#/$defs/uuid" },
+        "status": { "enum": ["received", "duplicate"] },
+        "created_at": { "$ref": "common.schema.json#/$defs/timestamp" }
+      }
+    }
+  }
+}

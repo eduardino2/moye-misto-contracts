@@ -1,0 +1,77 @@
+{
+  "items": [
+    {
+      "id": "a0000000-0000-4000-8000-000000000040",
+      "title": "Автомийка «Чиста хвиля»",
+      "image": null,
+      "categories": ["car_washes"],
+      "address": "вул. Івана Мазепи, 60",
+      "district": "Масани",
+      "location": { "lat": 51.5204, "lng": 31.2688 },
+      "location_approximate": false,
+      "open_status": { "state": "always_open", "changes_at": null },
+      "price_text": "від 150 грн",
+      "contacts": [
+        { "type": "phone", "title": "Подзвонити", "url": "tel:+380462000040" },
+        { "type": "telegram", "title": "Telegram", "url": "https://t.example/chysta_khvylia" }
+      ],
+      "badges": [
+        { "key": "always_open", "title": "Цілодобово" },
+        { "key": "self_service", "title": "Самообслуговування" }
+      ],
+      "is_promoted": false,
+      "distance_m": 2140,
+      "verified_at": "2026-11-01"
+    },
+    {
+      "id": "a0000000-0000-4000-8000-000000000041",
+      "title": "Барбершоп «Борода»",
+      "image": {
+        "url": "https://cdn.moyemisto.example/places/a0000000-0000-4000-8000-000000000041/cover.jpg",
+        "thumb_url": "https://cdn.moyemisto.example/places/a0000000-0000-4000-8000-000000000041/cover_thumb.jpg",
+        "width": 1200,
+        "height": 800,
+        "blurhash": null
+      },
+      "categories": ["hair_salons"],
+      "address": "вул. Київська, 9",
+      "district": "Центр",
+      "location": { "lat": 51.4958, "lng": 31.2876 },
+      "location_approximate": false,
+      "open_status": { "state": "open", "changes_at": "2026-11-10T18:00:00Z" },
+      "price_text": "від 300 грн",
+      "contacts": [
+        { "type": "phone", "title": "Подзвонити", "url": "tel:+380462000041" },
+        { "type": "viber", "title": "Viber", "url": "viber://chat?number=%2B380462000041" },
+        { "type": "instagram", "title": "Instagram", "url": "https://instagram.example/boroda_cn" }
+      ],
+      "badges": [],
+      "is_promoted": false,
+      "distance_m": 760,
+      "verified_at": null
+    },
+    {
+      "id": "a0000000-0000-4000-8000-000000000042",
+      "title": "Майстриня манікюру Олена",
+      "image": null,
+      "categories": ["private_masters"],
+      "address": null,
+      "district": "Шерстянка",
+      "location": { "lat": 51.512, "lng": 31.335 },
+      "location_approximate": true,
+      "open_status": { "state": "unknown", "changes_at": null },
+      "price_text": "від 400 грн",
+      "contacts": [
+        { "type": "telegram", "title": "Telegram", "url": "https://t.example/olena_nails" }
+      ],
+      "badges": [
+        { "key": "home_visit", "title": "Виїзд до клієнта" }
+      ],
+      "is_promoted": false,
+      "distance_m": null,
+      "verified_at": null
+    }
+  ],
+  "next_cursor": "b2Zmc2V0OjIw",
+  "generated_at": "2026-11-10T09:00:00Z"
+}

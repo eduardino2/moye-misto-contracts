@@ -1,0 +1,45 @@
+{
+  "card": {
+    "id": "a0000000-0000-4000-8000-000000000051",
+    "title": "АЗС на Київському шосе",
+    "image": null,
+    "categories": ["gas_stations"],
+    "address": "Київське шосе, 3",
+    "district": null,
+    "location": { "lat": 51.4712, "lng": 31.2504 },
+    "location_approximate": false,
+    "open_status": { "state": "always_open", "changes_at": null },
+    "price_text": null,
+    "contacts": [],
+    "badges": [
+      { "key": "always_open", "title": "Цілодобова" },
+      { "key": "works_without_power", "title": "Працює без світла" }
+    ],
+    "is_promoted": false,
+    "distance_m": null,
+    "verified_at": "2026-09-30"
+  },
+  "description": null,
+  "images": [],
+  "opening_hours": {
+    "always_open": true,
+    "weekly": [],
+    "exceptions": [],
+    "note": null
+  },
+  "attributes": [
+    { "key": "fuel", "title": "Пальне", "value": "А-95, дизель, газ" }
+  ],
+  "upcoming_events": [],
+  "fuel_prices": [
+    { "fuel": "a95", "title": "А-95", "price": 58.99, "updated_at": "2026-11-10T06:00:00Z" },
+    { "fuel": "diesel", "title": "Дизель", "price": 56.49, "updated_at": "2026-11-10T06:00:00Z" }
+  ],
+  "source": {
+    "name": "OpenStreetMap",
+    "url": "https://www.openstreetmap.org"
+  },
+  "share_url": "https://moyemisto.example/p/a0000000-0000-4000-8000-000000000051",
+  "updated_at": "2026-11-10T06:00:00Z",
+  "generated_at": "2026-11-10T09:00:00Z"
+}

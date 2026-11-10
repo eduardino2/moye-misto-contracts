@@ -1,0 +1,77 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://contracts.moyemisto.example/schemas/030-map.schema.json",
+  "title": "030 — карта",
+  "$defs": {
+    "layer_group": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["slug", "title"],
+      "properties": {
+        "slug": { "$ref": "common.schema.json#/$defs/slug" },
+        "title": { "type": "string", "minLength": 1 }
+      }
+    },
+    "layer": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["slug", "title", "icon", "color", "group", "default_on", "version", "points_count"],
+      "properties": {
+        "slug": { "$ref": "common.schema.json#/$defs/slug" },
+        "title": { "type": "string", "minLength": 1 },
+        "icon": { "$ref": "common.schema.json#/$defs/icon" },
+        "color": { "type": "string", "pattern": "^#[0-9A-Fa-f]{6}$" },
+        "group": { "$ref": "common.schema.json#/$defs/slug" },
+        "default_on": { "type": "boolean" },
+        "version": { "type": "integer", "minimum": 1 },
+        "points_count": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "get_map_config": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "city_id", "style_url", "style_url_dark", "attribution", "initial", "bounds", "min_zoom", "max_zoom",
+        "layer_groups", "layers", "generated_at"
+      ],
+      "properties": {
+        "city_id": { "$ref": "common.schema.json#/$defs/uuid" },
+        "style_url": { "$ref": "common.schema.json#/$defs/url" },
+        "style_url_dark": { "anyOf": [{ "$ref": "common.schema.json#/$defs/url" }, { "type": "null" }] },
+        "attribution": { "type": "string", "minLength": 1 },
+        "initial": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["center", "zoom"],
+          "properties": {
+            "center": { "$ref": "common.schema.json#/$defs/geo_point" },
+            "zoom": { "type": "number", "minimum": 0, "maximum": 22 }
+          }
+        },
+        "bounds": { "$ref": "common.schema.json#/$defs/bounds" },
+        "min_zoom": { "type": "number", "minimum": 0, "maximum": 22 },
+        "max_zoom": { "type": "number", "minimum": 0, "maximum": 22 },
+        "layer_groups": { "type": "array", "items": { "$ref": "#/$defs/layer_group" } },
+        "layers": { "type": "array", "items": { "$ref": "#/$defs/layer" } },
+        "generated_at": { "$ref": "common.schema.json#/$defs/timestamp" }
+      }
+    },
+    "get_map_layer": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["slug", "version", "not_modified", "points", "generated_at"],
+      "properties": {
+        "slug": { "$ref": "common.schema.json#/$defs/slug" },
+        "version": { "type": "integer", "minimum": 1 },
+        "not_modified": { "type": "boolean" },
+        "points": {
+          "anyOf": [
+            { "type": "array", "items": { "$ref": "common.schema.json#/$defs/map_point" } },
+            { "type": "null" }
+          ]
+        },
+        "generated_at": { "$ref": "common.schema.json#/$defs/timestamp" }
+      }
+    }
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "card": {
+    "id": "a0000000-0000-4000-8000-000000000006",
+    "title": "Історичний музей ім. В. В. Тарновського",
+    "image": {
+      "url": "https://cdn.moyemisto.example/places/a0000000-0000-4000-8000-000000000006/cover.jpg",
+      "thumb_url": "https://cdn.moyemisto.example/places/a0000000-0000-4000-8000-000000000006/cover_thumb.jpg",
+      "width": 1200,
+      "height": 800,
+      "blurhash": null
+    },
+    "categories": ["museums"],
+    "address": "вул. Музейна, 4",
+    "district": "Центр",
+    "location": { "lat": 51.4893, "lng": 31.3083 },
+    "location_approximate": false,
+    "open_status": { "state": "open", "changes_at": "2026-11-10T15:00:00Z" },
+    "price_text": "Вхід від 60 грн",
+    "contacts": [
+      { "type": "phone", "title": "Подзвонити", "url": "tel:+380462000006" },
+      { "type": "website", "title": "Сайт", "url": "https://museum.example" }
+    ],
+    "badges": [
+      { "key": "for_kids", "title": "Для дітей" }
+    ],
+    "is_promoted": false,
+    "distance_m": null,
+    "verified_at": null
+  },
+  "description": "Постійна експозиція з історії Чернігівщини.",
+  "images": [],
+  "opening_hours": {
+    "always_open": false,
+    "weekly": [
+      { "day": 1, "intervals": [] },
+      { "day": 2, "intervals": [{ "from": "09:00", "to": "17:00" }] },
+      { "day": 3, "intervals": [{ "from": "09:00", "to": "17:00" }] },
+      { "day": 4, "intervals": [{ "from": "09:00", "to": "17:00" }] },
+      { "day": 5, "intervals": [{ "from": "09:00", "to": "17:00" }] },
+      { "day": 6, "intervals": [{ "from": "10:00", "to": "18:00" }] },
+      { "day": 7, "intervals": [{ "from": "10:00", "to": "18:00" }] }
+    ],
+    "exceptions": [],
+    "note": null
+  },
+  "attributes": [
+    { "key": "museum_type", "title": "Тип музею", "value": "Історичний" }
+  ],
+  "upcoming_events": [
+    {
+      "id": "e0000000-0000-4000-8000-000000000004",
+      "title": "Чернігів у фотографіях ХХ століття",
+      "image": {
+        "url": "https://cdn.moyemisto.example/events/e0000000-0000-4000-8000-000000000004/cover.jpg",
+        "thumb_url": "https://cdn.moyemisto.example/events/e0000000-0000-4000-8000-000000000004/cover_thumb.jpg",
+        "width": 1200,
+        "height": 800,
+        "blurhash": null
+      },
+      "categories": ["exhibitions"],
+      "venue": {
+        "place_id": "a0000000-0000-4000-8000-000000000006",
+        "title": "Історичний музей ім. В. В. Тарновського",
+        "address": "вул. Музейна, 4",
+        "location": { "lat": 51.4893, "lng": 31.3083 }
+      },
+      "starts_at": "2026-10-01T07:00:00Z",
+      "ends_at": "2026-11-15T16:00:00Z",
+      "next_session_at": null,
+      "sessions_count": 0,
+      "price": { "from": 80, "to": 80, "is_free": false, "currency": "UAH" },
+      "age_limit": null,
+      "status": "scheduled",
+      "badges": [],
+      "is_promoted": false,
+      "ending_soon": true,
+      "distance_m": null
+    }
+  ],
+  "fuel_prices": [],
+  "source": null,
+  "share_url": "https://moyemisto.example/p/a0000000-0000-4000-8000-000000000006",
+  "updated_at": "2026-10-15T08:00:00Z",
+  "generated_at": "2026-11-10T09:00:00Z"
+}

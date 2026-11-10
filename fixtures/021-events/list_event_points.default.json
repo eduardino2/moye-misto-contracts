@@ -1,0 +1,24 @@
+{
+  "points": [
+    {
+      "id": "e0000000-0000-4000-8000-000000000001",
+      "kind": "event",
+      "category": "theatre",
+      "title": "Кайдашева сім'я",
+      "subtitle": "Драмтеатр ім. Т. Г. Шевченка · сьогодні о 18:00",
+      "location": { "lat": 51.4939, "lng": 31.2947 },
+      "approximate": false
+    },
+    {
+      "id": "e0000000-0000-4000-8000-000000000002",
+      "kind": "event",
+      "category": "theatre",
+      "title": "Котигорошко",
+      "subtitle": "Театр ляльок · 14 листопада об 11:00",
+      "location": { "lat": 51.5052, "lng": 31.326 },
+      "approximate": false
+    }
+  ],
+  "truncated": false,
+  "generated_at": "2026-11-10T09:00:00Z"
+}

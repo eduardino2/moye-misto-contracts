@@ -1,0 +1,48 @@
+{
+  "card": {
+    "id": "e0000000-0000-4000-8000-000000000006",
+    "title": "Вечір джазу",
+    "image": null,
+    "categories": ["concerts"],
+    "venue": {
+      "place_id": "a0000000-0000-4000-8000-000000000004",
+      "title": "Філармонійний центр",
+      "address": "просп. Миру, 15",
+      "location": { "lat": 51.4925, "lng": 31.2953 }
+    },
+    "starts_at": "2026-11-20T17:00:00Z",
+    "ends_at": "2026-11-20T19:00:00Z",
+    "next_session_at": "2026-11-20T17:00:00Z",
+    "sessions_count": 1,
+    "price": { "from": 300, "to": 600, "is_free": false, "currency": "UAH" },
+    "age_limit": null,
+    "status": "rescheduled",
+    "badges": [],
+    "is_promoted": false,
+    "ending_soon": false,
+    "distance_m": null
+  },
+  "description": null,
+  "images": [],
+  "sessions": [
+    {
+      "id": "5e550000-0000-4000-8000-000000000021",
+      "starts_at": "2026-11-20T17:00:00Z",
+      "ends_at": "2026-11-20T19:00:00Z",
+      "venue": null,
+      "hall": null,
+      "price": { "from": 300, "to": 600, "is_free": false, "currency": "UAH" },
+      "ticket_url": "https://tickets.example/jazz-evening?ref=moyemisto",
+      "status": "rescheduled",
+      "attributes": []
+    }
+  ],
+  "sessions_truncated": false,
+  "ticket_url": "https://tickets.example/jazz-evening?ref=moyemisto",
+  "status_note": "Перенесено з 12 на 20 листопада. Придбані квитки дійсні.",
+  "attributes": [],
+  "source": null,
+  "share_url": "https://moyemisto.example/e/e0000000-0000-4000-8000-000000000006",
+  "updated_at": "2026-11-09T15:30:00Z",
+  "generated_at": "2026-11-10T09:00:00Z"
+}

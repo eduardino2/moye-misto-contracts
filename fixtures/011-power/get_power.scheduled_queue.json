@@ -1,0 +1,60 @@
+{
+  "city_id": "7c1f0c5e-6a54-4c0f-9a59-1d6f3a2b0001",
+  "mode": "scheduled",
+  "queues": [
+    { "code": "1.1", "title": "Черга 1.1" },
+    { "code": "1.2", "title": "Черга 1.2" },
+    { "code": "2.1", "title": "Черга 2.1" },
+    { "code": "2.2", "title": "Черга 2.2" },
+    { "code": "3.1", "title": "Черга 3.1" },
+    { "code": "3.2", "title": "Черга 3.2" },
+    { "code": "4.1", "title": "Черга 4.1" },
+    { "code": "4.2", "title": "Черга 4.2" },
+    { "code": "5.1", "title": "Черга 5.1" },
+    { "code": "5.2", "title": "Черга 5.2" },
+    { "code": "6.1", "title": "Черга 6.1" },
+    { "code": "6.2", "title": "Черга 6.2" }
+  ],
+  "queue": "3.1",
+  "days": [
+    {
+      "date": "2026-11-10",
+      "status": "published",
+      "intervals": [
+        {
+          "from": "08:00",
+          "to": "12:00",
+          "starts_at": "2026-11-10T06:00:00Z",
+          "ends_at": "2026-11-10T10:00:00Z",
+          "type": "off"
+        },
+        {
+          "from": "18:00",
+          "to": "21:00",
+          "starts_at": "2026-11-10T16:00:00Z",
+          "ends_at": "2026-11-10T19:00:00Z",
+          "type": "off"
+        },
+        {
+          "from": "21:00",
+          "to": "22:00",
+          "starts_at": "2026-11-10T19:00:00Z",
+          "ends_at": "2026-11-10T20:00:00Z",
+          "type": "maybe_off"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-11",
+      "status": "not_published",
+      "intervals": []
+    }
+  ],
+  "schedule_updated_at": "2026-11-09T18:40:00Z",
+  "note": null,
+  "source": {
+    "name": "Чернігівобленерго",
+    "url": "https://chernihivoblenergo.example/schedule"
+  },
+  "generated_at": "2026-11-10T09:00:00Z"
+}
