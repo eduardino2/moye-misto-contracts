@@ -150,6 +150,7 @@
 - `get_place.museum.json` — музей із блоком «Події тут» і вихідним понеділком.
 - `get_place.shelter.json` — цілодобове укриття з датою перевірки.
 - `get_place.gas_station.json` — АЗС із цінами на пальне.
+- `get_place.private_master.json` — приватний майстер із прихованою адресою: `address: null`, район, зміщена точка з `location_approximate: true`.
 
 Назви закладів, телефони й адреси в прикладах вигадані.
 

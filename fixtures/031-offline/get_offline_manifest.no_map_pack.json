@@ -3,10 +3,10 @@
   "safety_snapshot": {
     "version": 31,
     "url": "https://cdn.moyemisto.example/offline/chernihiv/safety-v31.json",
-    "size_bytes": 412380,
-    "sha256": "3f1c9a7b2d4e5f60718293a4b5c6d7e8f9012a3b4c5d6e7f8091a2b3c4d5e6f7",
+    "size_bytes": 3471,
+    "sha256": "418ae0d3be9159809fc0cf195bbfd63ad17ec7d2657a7e823cb029187e527b49",
     "updated_at": "2026-11-08T04:00:00Z",
-    "items_count": 1251
+    "items_count": 5
   },
   "map_pack": null,
   "generated_at": "2026-11-10T09:00:00Z"

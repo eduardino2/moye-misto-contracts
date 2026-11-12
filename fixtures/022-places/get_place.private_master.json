@@ -1,0 +1,59 @@
+{
+  "card": {
+    "id": "a0000000-0000-4000-8000-000000000042",
+    "title": "Майстриня манікюру Олена",
+    "image": null,
+    "categories": [
+      "private_masters"
+    ],
+    "address": null,
+    "district": "Шерстянка",
+    "location": {
+      "lat": 51.512,
+      "lng": 31.335
+    },
+    "location_approximate": true,
+    "open_status": {
+      "state": "unknown",
+      "changes_at": null
+    },
+    "price_text": "від 400 грн",
+    "contacts": [
+      {
+        "type": "telegram",
+        "title": "Telegram",
+        "url": "https://t.example/olena_nails"
+      }
+    ],
+    "badges": [
+      {
+        "key": "home_visit",
+        "title": "Виїзд до клієнта"
+      }
+    ],
+    "is_promoted": false,
+    "distance_m": null,
+    "verified_at": null
+  },
+  "description": "Манікюр і педикюр, покриття гель-лаком. Працюю вдома в районі Шерстянки або з виїздом до клієнта; точну адресу повідомляю під час запису.",
+  "images": [],
+  "opening_hours": {
+    "always_open": false,
+    "weekly": [],
+    "exceptions": [],
+    "note": "За попереднім записом."
+  },
+  "attributes": [
+    {
+      "key": "service_type",
+      "title": "Послуги",
+      "value": "Манікюр, педикюр"
+    }
+  ],
+  "upcoming_events": [],
+  "fuel_prices": [],
+  "source": null,
+  "share_url": "https://moyemisto.example/p/a0000000-0000-4000-8000-000000000042",
+  "updated_at": "2026-11-02T12:00:00Z",
+  "generated_at": "2026-11-10T09:00:00Z"
+}

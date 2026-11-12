@@ -1,0 +1,3 @@
+# Файл списку укриттів у прикладах має контрольну суму в get_offline_manifest.*.json;
+# git не повинен змінювати в ньому закінчення рядків на жодній системі.
+fixtures/031-offline/safety_snapshot.default.json -text
