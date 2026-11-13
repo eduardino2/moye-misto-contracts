@@ -6,38 +6,214 @@
     "threat": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["type", "label"],
+      "required": [
+        "type",
+        "label"
+      ],
       "properties": {
         "type": {
-          "enum": ["air_raid", "recon_uav", "artillery", "urban_fights", "chemical", "nuclear", "unknown"]
+          "enum": [
+            "air_raid",
+            "recon_uav",
+            "artillery",
+            "urban_fights",
+            "chemical",
+            "nuclear",
+            "unknown"
+          ]
         },
-        "label": { "type": "string", "minLength": 1 }
+        "label": {
+          "type": "string",
+          "minLength": 1
+        }
       }
     },
     "get_alert_state": {
       "type": "object",
       "additionalProperties": false,
       "required": [
-        "community", "level", "is_active", "threat", "started_at", "ended_at",
-        "source_updated_at", "stale_after_seconds", "poll_interval_seconds", "state_version", "generated_at"
+        "community",
+        "level",
+        "is_active",
+        "threat",
+        "started_at",
+        "ended_at",
+        "source_updated_at",
+        "stale_after_seconds",
+        "poll_interval_seconds",
+        "state_version",
+        "generated_at"
       ],
       "properties": {
-        "community": { "$ref": "common.schema.json#/$defs/community" },
-        "level": { "enum": ["green", "yellow", "red", "unknown"] },
-        "is_active": { "type": ["boolean", "null"] },
-        "threat": { "anyOf": [{ "$ref": "#/$defs/threat" }, { "type": "null" }] },
-        "started_at": { "anyOf": [{ "$ref": "common.schema.json#/$defs/timestamp" }, { "type": "null" }] },
-        "ended_at": { "anyOf": [{ "$ref": "common.schema.json#/$defs/timestamp" }, { "type": "null" }] },
-        "source_updated_at": { "anyOf": [{ "$ref": "common.schema.json#/$defs/timestamp" }, { "type": "null" }] },
-        "stale_after_seconds": { "type": "integer", "minimum": 30 },
-        "poll_interval_seconds": { "type": "integer", "minimum": 10 },
-        "state_version": { "type": "integer", "minimum": 0 },
-        "generated_at": { "$ref": "common.schema.json#/$defs/timestamp" }
+        "community": {
+          "$ref": "common.schema.json#/$defs/community"
+        },
+        "level": {
+          "enum": [
+            "green",
+            "yellow",
+            "red",
+            "unknown"
+          ]
+        },
+        "is_active": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "threat": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/threat"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "started_at": {
+          "anyOf": [
+            {
+              "$ref": "common.schema.json#/$defs/timestamp"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "ended_at": {
+          "anyOf": [
+            {
+              "$ref": "common.schema.json#/$defs/timestamp"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "source_updated_at": {
+          "anyOf": [
+            {
+              "$ref": "common.schema.json#/$defs/timestamp"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "stale_after_seconds": {
+          "type": "integer",
+          "minimum": 30
+        },
+        "poll_interval_seconds": {
+          "type": "integer",
+          "minimum": 10
+        },
+        "state_version": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "generated_at": {
+          "$ref": "common.schema.json#/$defs/timestamp"
+        }
       }
     },
     "realtime_state": {
-      "description": "Повідомлення каналу реального часу. Та сама форма, що й відповідь get_alert_state.",
-      "$ref": "#/$defs/get_alert_state"
+      "description": "Повідомлення каналу реального часу. Та сама форма, що й відповідь get_alert_state; Realtime додає службовий id, який додаток ігнорує.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "community",
+        "level",
+        "is_active",
+        "threat",
+        "started_at",
+        "ended_at",
+        "source_updated_at",
+        "stale_after_seconds",
+        "poll_interval_seconds",
+        "state_version",
+        "generated_at"
+      ],
+      "properties": {
+        "community": {
+          "$ref": "common.schema.json#/$defs/community"
+        },
+        "level": {
+          "enum": [
+            "green",
+            "yellow",
+            "red",
+            "unknown"
+          ]
+        },
+        "is_active": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "threat": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/threat"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "started_at": {
+          "anyOf": [
+            {
+              "$ref": "common.schema.json#/$defs/timestamp"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "ended_at": {
+          "anyOf": [
+            {
+              "$ref": "common.schema.json#/$defs/timestamp"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "source_updated_at": {
+          "anyOf": [
+            {
+              "$ref": "common.schema.json#/$defs/timestamp"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "stale_after_seconds": {
+          "type": "integer",
+          "minimum": 30
+        },
+        "poll_interval_seconds": {
+          "type": "integer",
+          "minimum": 10
+        },
+        "state_version": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "generated_at": {
+          "$ref": "common.schema.json#/$defs/timestamp"
+        },
+        "id": {
+          "description": "Службовий ідентифікатор повідомлення, який додає Realtime",
+          "type": "string"
+        }
+      }
     }
   }
 }
