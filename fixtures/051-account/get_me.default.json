@@ -1,0 +1,14 @@
+{
+  "user": {
+    "id": "c0000000-0000-4000-8000-000000000001",
+    "display_name": "Олена",
+    "email": "olena@example.com",
+    "phone": "+380501112233",
+    "phone_verified": true,
+    "providers": ["google", "phone"],
+    "created_at": "2026-12-01T10:00:00Z"
+  },
+  "deletion": null,
+  "has_address": true,
+  "generated_at": "2026-12-10T09:00:00Z"
+}

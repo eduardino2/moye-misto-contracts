@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://contracts.moyemisto.example/schemas/069-families.schema.json",
+  "title": "069 — фемілі",
+  "$defs": {
+    "family_ref": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "title", "display", "places_count", "open_count"],
+      "properties": {
+        "id": { "$ref": "common.schema.json#/$defs/uuid" },
+        "title": { "type": "string", "minLength": 1 },
+        "display": { "enum": ["single", "separate"] },
+        "places_count": { "type": "integer", "minimum": 1 },
+        "open_count": { "type": ["integer", "null"], "minimum": 0 }
+      }
+    },
+    "get_family": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["family", "description", "image", "places", "share_url", "generated_at"],
+      "properties": {
+        "family": { "$ref": "#/$defs/family_ref" },
+        "description": { "type": ["string", "null"] },
+        "image": { "anyOf": [{ "$ref": "common.schema.json#/$defs/image" }, { "type": "null" }] },
+        "places": { "type": "array", "items": { "$ref": "022-places.schema.json#/$defs/place_card" }, "minItems": 1 },
+        "share_url": { "$ref": "common.schema.json#/$defs/url" },
+        "generated_at": { "$ref": "common.schema.json#/$defs/timestamp" }
+      }
+    }
+  }
+}

@@ -1,0 +1,177 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://contracts.moyemisto.example/schemas/088-referrals.schema.json",
+  "title": "088 — запрошення друга й ачівки",
+  "$defs": {
+    "get_referral": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "code",
+        "share_url",
+        "share_text",
+        "bonus_points",
+        "monthly_limit",
+        "used_this_month",
+        "invited",
+        "can_apply_code",
+        "generated_at"
+      ],
+      "properties": {
+        "code": {
+          "type": "string",
+          "minLength": 1
+        },
+        "share_url": {
+          "$ref": "common.schema.json#/$defs/url"
+        },
+        "share_text": {
+          "type": "string",
+          "minLength": 1
+        },
+        "bonus_points": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "monthly_limit": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "used_this_month": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "invited": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "name",
+              "status",
+              "updated_at"
+            ],
+            "properties": {
+              "name": {
+                "type": "string",
+                "minLength": 1
+              },
+              "status": {
+                "enum": [
+                  "registered",
+                  "phone_verified",
+                  "rewarded"
+                ]
+              },
+              "updated_at": {
+                "$ref": "common.schema.json#/$defs/timestamp"
+              }
+            }
+          }
+        },
+        "can_apply_code": {
+          "type": "boolean"
+        },
+        "generated_at": {
+          "$ref": "common.schema.json#/$defs/timestamp"
+        }
+      }
+    },
+    "apply_referral_code": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "ok",
+        "inviter_name"
+      ],
+      "properties": {
+        "ok": {
+          "const": true
+        },
+        "inviter_name": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "list_achievements": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "items",
+        "generated_at"
+      ],
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "key",
+              "title",
+              "description",
+              "icon",
+              "earned_at",
+              "progress"
+            ],
+            "properties": {
+              "key": {
+                "$ref": "common.schema.json#/$defs/slug"
+              },
+              "title": {
+                "type": "string",
+                "minLength": 1
+              },
+              "description": {
+                "type": "string",
+                "minLength": 1
+              },
+              "icon": {
+                "$ref": "common.schema.json#/$defs/icon"
+              },
+              "earned_at": {
+                "anyOf": [
+                  {
+                    "$ref": "common.schema.json#/$defs/timestamp"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "progress": {
+                "anyOf": [
+                  {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                      "current",
+                      "target"
+                    ],
+                    "properties": {
+                      "current": {
+                        "type": "integer",
+                        "minimum": 0
+                      },
+                      "target": {
+                        "type": "integer",
+                        "minimum": 1
+                      }
+                    }
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "generated_at": {
+          "$ref": "common.schema.json#/$defs/timestamp"
+        }
+      }
+    }
+  }
+}

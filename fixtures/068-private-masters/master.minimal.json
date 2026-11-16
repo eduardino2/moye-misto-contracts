@@ -1,0 +1,14 @@
+{
+  "verified": true,
+  "verified_at": null,
+  "works_at_home": false,
+  "home_visit": true,
+  "services": [
+    {
+      "title": "Корекція брів",
+      "price_from": null,
+      "duration_min": null
+    }
+  ],
+  "profile_updated_at": "2027-01-05T10:00:00Z"
+}

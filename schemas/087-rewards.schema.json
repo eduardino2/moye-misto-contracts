@@ -1,0 +1,308 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://contracts.moyemisto.example/schemas/087-rewards.schema.json",
+  "title": "087 — сертифікати й прикраси профілю",
+  "$defs": {
+    "reward_card": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "kind",
+        "title",
+        "image",
+        "partner",
+        "price_points",
+        "valid_days",
+        "stock_left",
+        "per_user_limit"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "common.schema.json#/$defs/uuid"
+        },
+        "kind": {
+          "enum": [
+            "certificate",
+            "cosmetic"
+          ]
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "image": {
+          "anyOf": [
+            {
+              "$ref": "common.schema.json#/$defs/image"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "partner": {
+          "anyOf": [
+            {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "kind",
+                "id",
+                "title"
+              ],
+              "properties": {
+                "kind": {
+                  "enum": [
+                    "place",
+                    "family"
+                  ]
+                },
+                "id": {
+                  "$ref": "common.schema.json#/$defs/uuid"
+                },
+                "title": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              }
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "price_points": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "valid_days": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 1
+        },
+        "stock_left": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "per_user_limit": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 1
+        }
+      }
+    },
+    "list_rewards": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "items",
+        "next_cursor",
+        "generated_at"
+      ],
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/reward_card"
+          }
+        },
+        "next_cursor": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "generated_at": {
+          "$ref": "common.schema.json#/$defs/timestamp"
+        }
+      }
+    },
+    "my_reward": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "reward",
+        "status",
+        "code_payload",
+        "code_text",
+        "purchased_at",
+        "valid_until",
+        "refundable_until",
+        "redeemed_at",
+        "redeemed_place_title",
+        "is_applied",
+        "generated_at"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "common.schema.json#/$defs/uuid"
+        },
+        "reward": {
+          "$ref": "#/$defs/reward_card"
+        },
+        "status": {
+          "enum": [
+            "active",
+            "redeemed",
+            "refunded",
+            "expired"
+          ]
+        },
+        "code_payload": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "code_text": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "purchased_at": {
+          "$ref": "common.schema.json#/$defs/timestamp"
+        },
+        "valid_until": {
+          "anyOf": [
+            {
+              "$ref": "common.schema.json#/$defs/timestamp"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "refundable_until": {
+          "anyOf": [
+            {
+              "$ref": "common.schema.json#/$defs/timestamp"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "redeemed_at": {
+          "anyOf": [
+            {
+              "$ref": "common.schema.json#/$defs/timestamp"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "redeemed_place_title": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "is_applied": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "generated_at": {
+          "$ref": "common.schema.json#/$defs/timestamp"
+        }
+      }
+    },
+    "buy_reward": {
+      "$ref": "#/$defs/my_reward"
+    },
+    "get_my_reward": {
+      "$ref": "#/$defs/my_reward"
+    },
+    "refund_reward": {
+      "$ref": "#/$defs/my_reward"
+    },
+    "apply_cosmetic": {
+      "$ref": "#/$defs/my_reward"
+    },
+    "my_reward_item": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "reward",
+        "status",
+        "purchased_at",
+        "valid_until",
+        "is_applied"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "common.schema.json#/$defs/uuid"
+        },
+        "reward": {
+          "$ref": "#/$defs/reward_card"
+        },
+        "status": {
+          "enum": [
+            "active",
+            "redeemed",
+            "refunded",
+            "expired"
+          ]
+        },
+        "purchased_at": {
+          "$ref": "common.schema.json#/$defs/timestamp"
+        },
+        "valid_until": {
+          "anyOf": [
+            {
+              "$ref": "common.schema.json#/$defs/timestamp"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "is_applied": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        }
+      }
+    },
+    "list_my_rewards": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "items",
+        "next_cursor",
+        "generated_at"
+      ],
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/my_reward_item"
+          }
+        },
+        "next_cursor": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "generated_at": {
+          "$ref": "common.schema.json#/$defs/timestamp"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,136 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://contracts.moyemisto.example/schemas/081-loyalty.schema.json",
+  "title": "081 — програма лояльності: участь і зведення",
+  "$defs": {
+    "tier": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["level", "title", "earned_total", "next_level_at"],
+      "properties": {
+        "level": { "type": "integer", "minimum": 1, "maximum": 10 },
+        "title": { "type": "string", "minLength": 1 },
+        "earned_total": { "type": "integer", "minimum": 0 },
+        "next_level_at": { "type": ["integer", "null"], "minimum": 1 }
+      }
+    },
+    "streak": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["weeks", "this_week_done", "freeze_available", "week_ends_at"],
+      "properties": {
+        "weeks": { "type": "integer", "minimum": 0 },
+        "this_week_done": { "type": "boolean" },
+        "freeze_available": { "type": "boolean" },
+        "week_ends_at": { "$ref": "common.schema.json#/$defs/timestamp" }
+      }
+    },
+    "get_loyalty": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["member", "rules", "can_join", "join_blocker", "balance", "expiring", "tier", "streak", "counters", "generated_at"],
+      "properties": {
+        "member": {
+          "anyOf": [
+            {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["joined_at"],
+              "properties": { "joined_at": { "$ref": "common.schema.json#/$defs/timestamp" } }
+            },
+            { "type": "null" }
+          ]
+        },
+        "rules": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["version", "url"],
+          "properties": {
+            "version": { "type": "string", "minLength": 1 },
+            "url": { "$ref": "common.schema.json#/$defs/url" }
+          }
+        },
+        "can_join": { "type": "boolean" },
+        "join_blocker": { "type": ["string", "null"] },
+        "balance": { "type": "integer", "minimum": 0 },
+        "expiring": {
+          "anyOf": [
+            {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["points", "at"],
+              "properties": {
+                "points": { "type": "integer", "minimum": 1 },
+                "at": { "$ref": "common.schema.json#/$defs/timestamp" }
+              }
+            },
+            { "type": "null" }
+          ]
+        },
+        "tier": { "anyOf": [{ "$ref": "#/$defs/tier" }, { "type": "null" }] },
+        "streak": { "anyOf": [{ "$ref": "#/$defs/streak" }, { "type": "null" }] },
+        "counters": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["active_certificates", "labels"],
+          "properties": {
+            "active_certificates": { "type": "integer", "minimum": 0 },
+            "labels": { "type": "integer", "minimum": 0 }
+          }
+        },
+        "generated_at": { "$ref": "common.schema.json#/$defs/timestamp" }
+      }
+    },
+    "join_loyalty": { "$ref": "#/$defs/get_loyalty" },
+    "leave_loyalty": { "$ref": "#/$defs/get_loyalty" },
+    "get_tiers": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["tiers", "generated_at"],
+      "properties": {
+        "tiers": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["level", "title", "threshold", "perks"],
+            "properties": {
+              "level": { "type": "integer", "minimum": 1 },
+              "title": { "type": "string", "minLength": 1 },
+              "threshold": { "type": "integer", "minimum": 0 },
+              "perks": { "type": "array", "items": { "type": "string" } }
+            }
+          }
+        },
+        "generated_at": { "$ref": "common.schema.json#/$defs/timestamp" }
+      }
+    },
+    "push_message_loyalty": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["notification", "data"],
+      "properties": {
+        "notification": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["title", "body"],
+          "properties": {
+            "title": { "type": "string", "minLength": 1 },
+            "body": { "type": "string", "minLength": 1 }
+          }
+        },
+        "data": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["type", "sent_at", "deeplink"],
+          "properties": {
+            "type": { "enum": ["points_accrued", "points_expiring", "loyalty_reminders"] },
+            "sent_at": { "$ref": "common.schema.json#/$defs/timestamp" },
+            "deeplink": { "$ref": "common.schema.json#/$defs/deeplink" }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://contracts.moyemisto.example/schemas/054-notification-prefs.schema.json",
+  "title": "054 — налаштування сповіщень в акаунті",
+  "$defs": {
+    "prefs": {
+      "description": "Код типу → увімкнено. Нові типи додаються новими ключами.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["alert_start", "alert_end", "event_reminder"],
+      "properties": {
+        "alert_start": { "type": "boolean" },
+        "alert_end": { "type": "boolean" },
+        "event_reminder": { "type": "boolean" }
+      }
+    },
+    "get_notification_prefs": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["prefs", "alert_community", "devices_count", "devices_with_push", "generated_at"],
+      "properties": {
+        "prefs": { "$ref": "#/$defs/prefs" },
+        "alert_community": { "$ref": "common.schema.json#/$defs/community" },
+        "devices_count": { "type": "integer", "minimum": 0 },
+        "devices_with_push": { "type": "integer", "minimum": 0 },
+        "generated_at": { "$ref": "common.schema.json#/$defs/timestamp" }
+      }
+    },
+    "set_notification_prefs": { "$ref": "#/$defs/get_notification_prefs" },
+    "push_message_reminder": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["notification", "data"],
+      "properties": {
+        "notification": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["title", "body"],
+          "properties": {
+            "title": { "type": "string", "minLength": 1 },
+            "body": { "type": "string", "minLength": 1 }
+          }
+        },
+        "data": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["type", "event_id", "reason", "sent_at", "deeplink"],
+          "properties": {
+            "type": { "const": "event_reminder" },
+            "event_id": { "$ref": "common.schema.json#/$defs/uuid" },
+            "reason": { "enum": ["upcoming", "ending", "cancelled"] },
+            "sent_at": { "$ref": "common.schema.json#/$defs/timestamp" },
+            "deeplink": { "$ref": "common.schema.json#/$defs/deeplink" }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "member": {
+    "joined_at": "2027-09-10T09:00:00Z"
+  },
+  "rules": {
+    "version": "2027-09",
+    "url": "https://moyemisto.example/loyalty-rules"
+  },
+  "can_join": false,
+  "join_blocker": null,
+  "balance": 0,
+  "expiring": null,
+  "tier": {
+    "level": 1,
+    "title": "Гість міста",
+    "earned_total": 0,
+    "next_level_at": 500
+  },
+  "streak": {
+    "weeks": 0,
+    "this_week_done": false,
+    "freeze_available": true,
+    "week_ends_at": "2027-09-12T21:00:00Z"
+  },
+  "counters": {
+    "active_certificates": 0,
+    "labels": 0
+  },
+  "generated_at": "2027-09-10T09:00:00Z"
+}

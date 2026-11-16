@@ -1,0 +1,71 @@
+{
+  "id": "news_main",
+  "type": "news",
+  "config": {
+    "title": "Новини міста",
+    "limit": 3
+  },
+  "data": {
+    "items": [
+      {
+        "id": "77000000-0000-4000-8000-000000000001",
+        "title": "11 травня на вул. Шевченка не буде води з 9:00 до 17:00",
+        "summary": "Ремонт водогону на перетині з вул. Київською.",
+        "image": null,
+        "source": {
+          "slug": "vodokanal",
+          "title": "Водоканал"
+        },
+        "published_at": "2027-05-10T07:10:00Z",
+        "is_important": true,
+        "url": "https://news.example/vodokanal/1"
+      },
+      {
+        "id": "77000000-0000-4000-8000-000000000002",
+        "title": "У місті відкрили оновлений сквер",
+        "summary": "Роботи тривали два місяці.",
+        "image": null,
+        "source": {
+          "slug": "city_council",
+          "title": "Міська рада"
+        },
+        "published_at": "2027-05-09T14:00:00Z",
+        "is_important": false,
+        "url": "https://news.example/city_council/2"
+      },
+      {
+        "id": "77000000-0000-4000-8000-000000000003",
+        "title": "Графік прийому громадян у травні",
+        "summary": null,
+        "image": null,
+        "source": {
+          "slug": "city_council",
+          "title": "Міська рада"
+        },
+        "published_at": "2027-05-08T09:00:00Z",
+        "is_important": false,
+        "url": "https://news.example/city_council/3"
+      }
+    ],
+    "next_cursor": null,
+    "sources": [
+      {
+        "slug": "city_council",
+        "title": "Міська рада",
+        "icon": {
+          "key": "council",
+          "url": null
+        }
+      },
+      {
+        "slug": "vodokanal",
+        "title": "Водоканал",
+        "icon": {
+          "key": "water",
+          "url": null
+        }
+      }
+    ],
+    "generated_at": "2027-05-10T09:00:00Z"
+  }
+}

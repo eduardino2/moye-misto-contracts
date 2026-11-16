@@ -1,0 +1,107 @@
+{
+  "family": {
+    "id": "fa000000-0000-4000-8000-000000000001",
+    "title": "Кав’ярні «Вал»",
+    "display": "single",
+    "places_count": 2,
+    "open_count": 1
+  },
+  "description": "Дві кав’ярні в центрі міста з власною обсмажкою.",
+  "image": null,
+  "places": [
+    {
+      "id": "a0000000-0000-4000-8000-000000000010",
+      "title": "Кав'ярня «Вал»",
+      "image": {
+        "url": "https://cdn.moyemisto.example/places/a0000000-0000-4000-8000-000000000010/cover.jpg",
+        "thumb_url": "https://cdn.moyemisto.example/places/a0000000-0000-4000-8000-000000000010/cover_thumb.jpg",
+        "width": 1200,
+        "height": 800,
+        "blurhash": "LKO2?U%2Tw=w]~RBVZRi};RPxuwH"
+      },
+      "categories": [
+        "food"
+      ],
+      "address": "вул. Преображенська, 12",
+      "district": "Центр",
+      "location": {
+        "lat": 51.4911,
+        "lng": 31.3042
+      },
+      "location_approximate": false,
+      "open_status": {
+        "state": "open",
+        "changes_at": "2026-11-10T19:00:00Z"
+      },
+      "price_text": "Середній чек 180 грн",
+      "contacts": [
+        {
+          "type": "phone",
+          "title": "Подзвонити",
+          "url": "tel:+380462000001"
+        },
+        {
+          "type": "instagram",
+          "title": "Instagram",
+          "url": "https://instagram.example/kaviarnia_val"
+        }
+      ],
+      "badges": [
+        {
+          "key": "works_without_power",
+          "title": "Працює без світла"
+        },
+        {
+          "key": "shelter_nearby",
+          "title": "Укриття поруч"
+        }
+      ],
+      "is_promoted": false,
+      "distance_m": 350,
+      "verified_at": "2026-10-20"
+    },
+    {
+      "id": "a0000000-0000-4000-8000-000000000011",
+      "title": "Ресторан «Сіверський»",
+      "image": null,
+      "categories": [
+        "food"
+      ],
+      "address": "просп. Миру, 40",
+      "district": "Центр",
+      "location": {
+        "lat": 51.4978,
+        "lng": 31.2921
+      },
+      "location_approximate": false,
+      "open_status": {
+        "state": "closed",
+        "changes_at": "2026-11-10T10:00:00Z"
+      },
+      "price_text": "Середній чек 650 грн",
+      "contacts": [
+        {
+          "type": "phone",
+          "title": "Подзвонити",
+          "url": "tel:+380462000002"
+        },
+        {
+          "type": "website",
+          "title": "Сайт",
+          "url": "https://siverskyi.example"
+        }
+      ],
+      "badges": [
+        {
+          "key": "terrace",
+          "title": "Тераса"
+        }
+      ],
+      "is_promoted": false,
+      "distance_m": 920,
+      "verified_at": null
+    }
+  ],
+  "share_url": "https://moyemisto.example/f/fa000000-0000-4000-8000-000000000001",
+  "generated_at": "2027-03-01T09:00:00Z"
+}

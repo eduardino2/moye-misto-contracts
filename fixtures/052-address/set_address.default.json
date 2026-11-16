@@ -1,0 +1,12 @@
+{
+  "address": {
+    "title": "вул. Шевченка, 44, Чернігів",
+    "location": { "lat": 51.5021, "lng": 31.3187 },
+    "city_id": "7c1f0c5e-6a54-4c0f-9a59-1d6f3a2b0001",
+    "community": { "id": "0b8f6f1e-2f0a-4d1b-8a53-5f2c9d7e0101", "name": "Чернігівська громада" },
+    "power_queue": "3.1",
+    "suggested_power_queue": null,
+    "updated_at": "2026-12-05T12:00:00Z"
+  },
+  "generated_at": "2026-12-10T09:00:00Z"
+}

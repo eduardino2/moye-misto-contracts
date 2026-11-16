@@ -1,0 +1,44 @@
+{
+  "items": [
+    {
+      "key": "visits_10",
+      "title": "Десять візитів",
+      "description": "Зробіть 10 покупок у партнерів.",
+      "icon": {
+        "key": "visits_10",
+        "url": null
+      },
+      "earned_at": "2027-08-28T15:00:00Z",
+      "progress": null
+    },
+    {
+      "key": "categories_5",
+      "title": "Дослідник",
+      "description": "Побувайте в закладах п’яти різних категорій.",
+      "icon": {
+        "key": "categories_5",
+        "url": null
+      },
+      "earned_at": null,
+      "progress": {
+        "current": 3,
+        "target": 5
+      }
+    },
+    {
+      "key": "streak_8",
+      "title": "Вогник на два місяці",
+      "description": "Тримайте вогник 8 тижнів підряд.",
+      "icon": {
+        "key": "streak_8",
+        "url": null
+      },
+      "earned_at": null,
+      "progress": {
+        "current": 5,
+        "target": 8
+      }
+    }
+  ],
+  "generated_at": "2027-09-10T09:00:00Z"
+}

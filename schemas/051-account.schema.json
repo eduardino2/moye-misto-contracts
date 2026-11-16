@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://contracts.moyemisto.example/schemas/051-account.schema.json",
+  "title": "051 — акаунт",
+  "$defs": {
+    "user": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "display_name", "email", "phone", "phone_verified", "providers", "created_at"],
+      "properties": {
+        "id": { "$ref": "common.schema.json#/$defs/uuid" },
+        "display_name": { "type": "string", "maxLength": 40 },
+        "email": { "type": ["string", "null"] },
+        "phone": { "type": ["string", "null"], "pattern": "^\\+380\\d{9}$" },
+        "phone_verified": { "type": "boolean" },
+        "providers": {
+          "type": "array",
+          "items": { "type": "string" },
+          "minItems": 1
+        },
+        "created_at": { "$ref": "common.schema.json#/$defs/timestamp" }
+      }
+    },
+    "deletion": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["requested_at", "scheduled_for"],
+      "properties": {
+        "requested_at": { "$ref": "common.schema.json#/$defs/timestamp" },
+        "scheduled_for": { "$ref": "common.schema.json#/$defs/timestamp" }
+      }
+    },
+    "get_me": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["user", "deletion", "has_address", "generated_at"],
+      "properties": {
+        "user": { "$ref": "#/$defs/user" },
+        "deletion": { "anyOf": [{ "$ref": "#/$defs/deletion" }, { "type": "null" }] },
+        "has_address": { "type": "boolean" },
+        "generated_at": { "$ref": "common.schema.json#/$defs/timestamp" }
+      }
+    },
+    "update_profile": { "$ref": "#/$defs/get_me" },
+    "request_account_deletion": { "$ref": "#/$defs/get_me" },
+    "cancel_account_deletion": { "$ref": "#/$defs/get_me" },
+    "ok": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["ok"],
+      "properties": { "ok": { "const": true } }
+    },
+    "link_device": { "$ref": "#/$defs/ok" },
+    "unlink_device": { "$ref": "#/$defs/ok" }
+  }
+}

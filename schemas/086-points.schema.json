@@ -1,0 +1,119 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://contracts.moyemisto.example/schemas/086-points.schema.json",
+  "title": "086 — історія балів",
+  "$defs": {
+    "transaction": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "kind",
+        "points",
+        "title",
+        "place_id",
+        "occurred_at",
+        "expires_at"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "common.schema.json#/$defs/uuid"
+        },
+        "kind": {
+          "type": "string",
+          "minLength": 1
+        },
+        "points": {
+          "type": "integer"
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "place_id": {
+          "anyOf": [
+            {
+              "$ref": "common.schema.json#/$defs/uuid"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "occurred_at": {
+          "$ref": "common.schema.json#/$defs/timestamp"
+        },
+        "expires_at": {
+          "anyOf": [
+            {
+              "$ref": "common.schema.json#/$defs/timestamp"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      }
+    },
+    "list_point_transactions": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "items",
+        "next_cursor",
+        "generated_at"
+      ],
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/transaction"
+          }
+        },
+        "next_cursor": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "generated_at": {
+          "$ref": "common.schema.json#/$defs/timestamp"
+        }
+      }
+    },
+    "list_expiring_points": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "items",
+        "generated_at"
+      ],
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "points",
+              "at"
+            ],
+            "properties": {
+              "points": {
+                "type": "integer",
+                "minimum": 1
+              },
+              "at": {
+                "$ref": "common.schema.json#/$defs/timestamp"
+              }
+            }
+          },
+          "maxItems": 12
+        },
+        "generated_at": {
+          "$ref": "common.schema.json#/$defs/timestamp"
+        }
+      }
+    }
+  }
+}

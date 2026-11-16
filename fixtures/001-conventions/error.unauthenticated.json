@@ -1,0 +1,6 @@
+{
+  "code": "PT401",
+  "message": "unauthenticated",
+  "details": "Потрібен вхід.",
+  "hint": null
+}

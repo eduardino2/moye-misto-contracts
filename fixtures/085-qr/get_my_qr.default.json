@@ -1,0 +1,8 @@
+{
+  "payload": "MM1.7Q2K9F4XJ8ZP3W6T",
+  "valid_until": "2027-09-10T10:15:00Z",
+  "refresh_at": "2027-09-10T10:00:00Z",
+  "fallback_hint": "Немає QR? Назвіть номер телефону +380 50 ••• •• 33",
+  "header_action": true,
+  "generated_at": "2027-09-10T09:00:00Z"
+}

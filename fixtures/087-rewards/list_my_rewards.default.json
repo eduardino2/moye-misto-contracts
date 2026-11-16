@@ -1,0 +1,28 @@
+{
+  "items": [
+    {
+      "id": "d8000000-0000-4000-8000-000000000001",
+      "reward": {
+        "id": "d7000000-0000-4000-8000-000000000001",
+        "kind": "certificate",
+        "title": "Капучино",
+        "image": null,
+        "partner": {
+          "kind": "family",
+          "id": "fa000000-0000-4000-8000-000000000001",
+          "title": "Кав’ярні «Вал»"
+        },
+        "price_points": 700,
+        "valid_days": 30,
+        "stock_left": 42,
+        "per_user_limit": 2
+      },
+      "status": "active",
+      "purchased_at": "2027-09-05T17:00:00Z",
+      "valid_until": "2027-10-05T17:00:00Z",
+      "is_applied": null
+    }
+  ],
+  "next_cursor": null,
+  "generated_at": "2027-09-10T09:00:00Z"
+}

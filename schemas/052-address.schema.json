@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://contracts.moyemisto.example/schemas/052-address.schema.json",
+  "title": "052 — адреса",
+  "$defs": {
+    "address": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["title", "location", "city_id", "community", "power_queue", "suggested_power_queue", "updated_at"],
+      "properties": {
+        "title": { "type": "string", "minLength": 3, "maxLength": 200 },
+        "location": { "$ref": "common.schema.json#/$defs/geo_point" },
+        "city_id": { "anyOf": [{ "$ref": "common.schema.json#/$defs/uuid" }, { "type": "null" }] },
+        "community": { "anyOf": [{ "$ref": "common.schema.json#/$defs/community" }, { "type": "null" }] },
+        "power_queue": { "type": ["string", "null"] },
+        "suggested_power_queue": { "type": ["string", "null"] },
+        "updated_at": { "$ref": "common.schema.json#/$defs/timestamp" }
+      }
+    },
+    "get_address": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["address", "generated_at"],
+      "properties": {
+        "address": { "anyOf": [{ "$ref": "#/$defs/address" }, { "type": "null" }] },
+        "generated_at": { "$ref": "common.schema.json#/$defs/timestamp" }
+      }
+    },
+    "set_address": { "$ref": "#/$defs/get_address" },
+    "set_power_queue": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["power_queue"],
+      "properties": { "power_queue": { "type": ["string", "null"] } }
+    },
+    "delete_address": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["ok"],
+      "properties": { "ok": { "const": true } }
+    },
+    "suggestion": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["title", "subtitle", "location"],
+      "properties": {
+        "title": { "type": "string", "minLength": 1 },
+        "subtitle": { "type": "string" },
+        "location": { "$ref": "common.schema.json#/$defs/geo_point" }
+      }
+    },
+    "search_address": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["items", "generated_at"],
+      "properties": {
+        "items": { "type": "array", "items": { "$ref": "#/$defs/suggestion" }, "maxItems": 8 },
+        "generated_at": { "$ref": "common.schema.json#/$defs/timestamp" }
+      }
+    }
+  }
+}

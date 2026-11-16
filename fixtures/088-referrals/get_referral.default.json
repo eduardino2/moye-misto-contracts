@@ -1,0 +1,22 @@
+{
+  "code": "OLENA7K",
+  "share_url": "https://moyemisto.example/i/OLENA7K",
+  "share_text": "Приєднуйся до «Мого Міста»: отримаємо по 200 балів після твоєї першої покупки.",
+  "bonus_points": 200,
+  "monthly_limit": 10,
+  "used_this_month": 1,
+  "invited": [
+    {
+      "name": "Андрій",
+      "status": "rewarded",
+      "updated_at": "2027-08-30T12:00:00Z"
+    },
+    {
+      "name": "Друг",
+      "status": "registered",
+      "updated_at": "2027-09-08T19:00:00Z"
+    }
+  ],
+  "can_apply_code": false,
+  "generated_at": "2027-09-10T09:00:00Z"
+}

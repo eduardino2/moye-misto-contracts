@@ -1,0 +1,111 @@
+{
+  "id": "promo_main",
+  "type": "promo",
+  "config": {
+    "title": "Радимо завітати",
+    "limit": 6
+  },
+  "data": {
+    "items": [
+      {
+        "kind": "event",
+        "event": {
+          "id": "e0000000-0000-4000-8000-000000000003",
+          "title": "Довга дорога додому",
+          "image": {
+            "url": "https://cdn.moyemisto.example/events/e0000000-0000-4000-8000-000000000003/cover.jpg",
+            "thumb_url": "https://cdn.moyemisto.example/events/e0000000-0000-4000-8000-000000000003/cover_thumb.jpg",
+            "width": 800,
+            "height": 1200,
+            "blurhash": "L6PZfSi_.AyE_3t7t7R**0o#DgR4"
+          },
+          "categories": [
+            "cinema"
+          ],
+          "venue": {
+            "place_id": "a0000000-0000-4000-8000-000000000005",
+            "title": "Кінотеатр «Десна»",
+            "address": "вул. Шевченка, 50",
+            "location": {
+              "lat": 51.4925,
+              "lng": 31.3105
+            }
+          },
+          "starts_at": "2026-11-05T08:00:00Z",
+          "ends_at": "2026-11-19T21:00:00Z",
+          "next_session_at": "2026-11-10T12:30:00Z",
+          "sessions_count": 14,
+          "price": {
+            "from": 130,
+            "to": 220,
+            "is_free": false,
+            "currency": "UAH"
+          },
+          "age_limit": 16,
+          "status": "scheduled",
+          "badges": [],
+          "is_promoted": true,
+          "ending_soon": false,
+          "distance_m": 1240
+        },
+        "place": null
+      },
+      {
+        "kind": "place",
+        "event": null,
+        "place": {
+          "id": "a0000000-0000-4000-8000-000000000010",
+          "title": "Кав'ярня «Вал»",
+          "image": {
+            "url": "https://cdn.moyemisto.example/places/a0000000-0000-4000-8000-000000000010/cover.jpg",
+            "thumb_url": "https://cdn.moyemisto.example/places/a0000000-0000-4000-8000-000000000010/cover_thumb.jpg",
+            "width": 1200,
+            "height": 800,
+            "blurhash": "LKO2?U%2Tw=w]~RBVZRi};RPxuwH"
+          },
+          "categories": [
+            "food"
+          ],
+          "address": "вул. Преображенська, 12",
+          "district": "Центр",
+          "location": {
+            "lat": 51.4911,
+            "lng": 31.3042
+          },
+          "location_approximate": false,
+          "open_status": {
+            "state": "open",
+            "changes_at": "2026-11-10T19:00:00Z"
+          },
+          "price_text": "Середній чек 180 грн",
+          "contacts": [
+            {
+              "type": "phone",
+              "title": "Подзвонити",
+              "url": "tel:+380462000001"
+            },
+            {
+              "type": "instagram",
+              "title": "Instagram",
+              "url": "https://instagram.example/kaviarnia_val"
+            }
+          ],
+          "badges": [
+            {
+              "key": "works_without_power",
+              "title": "Працює без світла"
+            },
+            {
+              "key": "shelter_nearby",
+              "title": "Укриття поруч"
+            }
+          ],
+          "is_promoted": true,
+          "distance_m": 350,
+          "verified_at": "2026-10-20"
+        }
+      }
+    ],
+    "generated_at": "2027-03-01T09:00:00Z"
+  }
+}

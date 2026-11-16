@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://contracts.moyemisto.example/schemas/053-favorites.schema.json",
+  "title": "053 — збережене й нагадування",
+  "$defs": {
+    "reminder": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["offset", "session_id"],
+      "properties": {
+        "offset": { "enum": ["day", "3h", "1h", "end_3d"] },
+        "session_id": { "anyOf": [{ "$ref": "common.schema.json#/$defs/uuid" }, { "type": "null" }] }
+      }
+    },
+    "reminder_or_null": { "anyOf": [{ "$ref": "#/$defs/reminder" }, { "type": "null" }] },
+    "set_favorite": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "id", "saved", "reminder", "saved_at"],
+      "properties": {
+        "kind": { "enum": ["event", "place"] },
+        "id": { "$ref": "common.schema.json#/$defs/uuid" },
+        "saved": { "type": "boolean" },
+        "reminder": { "$ref": "#/$defs/reminder_or_null" },
+        "saved_at": { "anyOf": [{ "$ref": "common.schema.json#/$defs/timestamp" }, { "type": "null" }] }
+      }
+    },
+    "get_favorite_ids": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["events", "places", "version", "generated_at"],
+      "properties": {
+        "events": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["id", "reminder"],
+            "properties": {
+              "id": { "$ref": "common.schema.json#/$defs/uuid" },
+              "reminder": { "$ref": "#/$defs/reminder_or_null" }
+            }
+          }
+        },
+        "places": { "type": "array", "items": { "$ref": "common.schema.json#/$defs/uuid" } },
+        "version": { "type": "integer", "minimum": 0 },
+        "generated_at": { "$ref": "common.schema.json#/$defs/timestamp" }
+      }
+    },
+    "favorite_item": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "saved_at", "reminder", "is_past", "event", "place"],
+      "properties": {
+        "kind": { "enum": ["event", "place"] },
+        "saved_at": { "$ref": "common.schema.json#/$defs/timestamp" },
+        "reminder": { "$ref": "#/$defs/reminder_or_null" },
+        "is_past": { "type": "boolean" },
+        "event": { "anyOf": [{ "$ref": "021-events.schema.json#/$defs/event_card" }, { "type": "null" }] },
+        "place": { "anyOf": [{ "$ref": "022-places.schema.json#/$defs/place_card" }, { "type": "null" }] }
+      }
+    },
+    "list_favorites": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["items", "next_cursor", "generated_at"],
+      "properties": {
+        "items": { "type": "array", "items": { "$ref": "#/$defs/favorite_item" } },
+        "next_cursor": { "type": ["string", "null"] },
+        "generated_at": { "$ref": "common.schema.json#/$defs/timestamp" }
+      }
+    }
+  }
+}

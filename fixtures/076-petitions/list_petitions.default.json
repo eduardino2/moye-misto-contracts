@@ -1,0 +1,47 @@
+{
+  "items": [
+    {
+      "id": "e7000000-0000-4000-8000-000000000001",
+      "number": "№ 1201",
+      "title": "Облаштувати пішохідний перехід біля школи № 19",
+      "status": "collecting",
+      "status_title": "Збір підписів",
+      "signatures": 187,
+      "signatures_goal": 250,
+      "ends_at": "2027-07-11",
+      "published_at": "2027-04-11",
+      "url": "https://petition.example/p/1201"
+    },
+    {
+      "id": "e7000000-0000-4000-8000-000000000002",
+      "number": "№ 1202",
+      "title": "Відновити освітлення в сквері на вул. Миру",
+      "status": "under_review",
+      "status_title": "На розгляді",
+      "signatures": 264,
+      "signatures_goal": 250,
+      "ends_at": null,
+      "published_at": "2027-04-12",
+      "url": "https://petition.example/p/1202"
+    },
+    {
+      "id": "e7000000-0000-4000-8000-000000000003",
+      "number": "№ 1203",
+      "title": "Встановити зупинку громадського транспорту",
+      "status": "answered",
+      "status_title": "Є відповідь",
+      "signatures": 301,
+      "signatures_goal": 250,
+      "ends_at": null,
+      "published_at": "2027-04-13",
+      "url": "https://petition.example/p/1203"
+    }
+  ],
+  "next_cursor": null,
+  "source": {
+    "title": "Електронні петиції Чернігівської міської ради",
+    "url": "https://petition.example"
+  },
+  "synced_at": "2027-05-10T08:30:00Z",
+  "generated_at": "2027-05-10T09:00:00Z"
+}

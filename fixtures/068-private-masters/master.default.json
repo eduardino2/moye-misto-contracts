@@ -1,0 +1,29 @@
+{
+  "verified": true,
+  "verified_at": "2027-02-10",
+  "works_at_home": true,
+  "home_visit": true,
+  "services": [
+    {
+      "title": "Манікюр класичний",
+      "price_from": 400,
+      "duration_min": 60
+    },
+    {
+      "title": "Покриття гель-лаком",
+      "price_from": 550,
+      "duration_min": 90
+    },
+    {
+      "title": "Педикюр",
+      "price_from": 600,
+      "duration_min": 90
+    },
+    {
+      "title": "Зняття покриття",
+      "price_from": 100,
+      "duration_min": 20
+    }
+  ],
+  "profile_updated_at": "2027-02-20T15:00:00Z"
+}

@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://contracts.moyemisto.example/schemas/068-private-masters.schema.json",
+  "title": "068 — приватні майстри",
+  "$defs": {
+    "service": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["title", "price_from", "duration_min"],
+      "properties": {
+        "title": { "type": "string", "minLength": 1 },
+        "price_from": { "type": ["integer", "null"], "minimum": 0 },
+        "duration_min": { "type": ["integer", "null"], "minimum": 1 }
+      }
+    },
+    "master": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["verified", "verified_at", "works_at_home", "home_visit", "services", "profile_updated_at"],
+      "properties": {
+        "verified": { "type": "boolean" },
+        "verified_at": { "anyOf": [{ "$ref": "common.schema.json#/$defs/local_date" }, { "type": "null" }] },
+        "works_at_home": { "type": "boolean" },
+        "home_visit": { "type": "boolean" },
+        "services": { "type": "array", "items": { "$ref": "#/$defs/service" }, "maxItems": 30 },
+        "profile_updated_at": { "$ref": "common.schema.json#/$defs/timestamp" }
+      }
+    }
+  }
+}

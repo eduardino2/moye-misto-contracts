@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://contracts.moyemisto.example/schemas/066-promotions.schema.json",
+  "title": "066 — платне просування",
+  "$defs": {
+    "promo_item": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "event", "place"],
+      "properties": {
+        "kind": { "enum": ["event", "place"] },
+        "event": { "anyOf": [{ "$ref": "021-events.schema.json#/$defs/event_card" }, { "type": "null" }] },
+        "place": { "anyOf": [{ "$ref": "022-places.schema.json#/$defs/place_card" }, { "type": "null" }] }
+      }
+    },
+    "get_promo_feed": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["items", "generated_at"],
+      "properties": {
+        "items": { "type": "array", "items": { "$ref": "#/$defs/promo_item" }, "maxItems": 10 },
+        "generated_at": { "$ref": "common.schema.json#/$defs/timestamp" }
+      }
+    },
+    "widget_promo": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "type", "config", "data"],
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "type": { "const": "promo" },
+        "config": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["title", "limit"],
+          "properties": {
+            "title": { "type": "string", "minLength": 1 },
+            "limit": { "type": "integer", "minimum": 1, "maximum": 10 }
+          }
+        },
+        "data": { "anyOf": [{ "$ref": "#/$defs/get_promo_feed" }, { "type": "null" }] }
+      }
+    }
+  }
+}

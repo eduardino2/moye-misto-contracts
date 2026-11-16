@@ -1,0 +1,11 @@
+{
+  "notification": {
+    "title": "Нараховано 120 балів",
+    "body": "Кав’ярня «Вал». Баланс: 1 240 балів."
+  },
+  "data": {
+    "type": "points_accrued",
+    "sent_at": "2027-09-10T09:00:00Z",
+    "deeplink": "moyemisto://loyalty"
+  }
+}

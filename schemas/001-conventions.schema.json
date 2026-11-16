@@ -11,7 +11,7 @@
       "properties": {
         "code": { "type": "string" },
         "message": {
-          "enum": ["invalid_argument", "not_found", "city_not_found", "rate_limited", "update_required", "internal"]
+          "enum": ["invalid_argument", "not_found", "city_not_found", "rate_limited", "update_required", "internal", "unauthenticated", "forbidden", "conflict"]
         },
         "details": { "type": ["string", "null"] },
         "hint": { "type": ["string", "null"] }

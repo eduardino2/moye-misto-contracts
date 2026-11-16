@@ -1,0 +1,24 @@
+{
+  "card": {
+    "id": "f0000000-0000-4000-8000-000000000001",
+    "title": "Автомобіль для евакуації поранених",
+    "image": null,
+    "organizer": {
+      "name": "Благодійний фонд «Північ»",
+      "verified_at": "2027-04-20"
+    },
+    "goal_text": "Пікап для медичної роти чернігівської бригади.",
+    "amount_goal": 900000,
+    "amount_collected": 412500,
+    "progress_updated_at": "2027-05-09T18:00:00Z",
+    "ends_at": "2027-05-31",
+    "status": "active",
+    "donate_url": "https://bank.example/jar/abc123"
+  },
+  "description": "Збираємо на пікап для евакуації поранених. Звіт про закупівлю опублікуємо на сторінці фонду.",
+  "organizer_url": "https://fond-pivnich.example",
+  "report_url": null,
+  "share_url": "https://moyemisto.example/c/f/f0000000-0000-4000-8000-000000000001",
+  "updated_at": "2027-05-09T18:00:00Z",
+  "generated_at": "2027-05-10T09:00:00Z"
+}

@@ -1,0 +1,36 @@
+{
+  "items": [
+    {
+      "id": "d7000000-0000-4000-8000-000000000001",
+      "kind": "certificate",
+      "title": "Капучино",
+      "image": null,
+      "partner": {
+        "kind": "family",
+        "id": "fa000000-0000-4000-8000-000000000001",
+        "title": "Кав’ярні «Вал»"
+      },
+      "price_points": 700,
+      "valid_days": 30,
+      "stock_left": 42,
+      "per_user_limit": 2
+    },
+    {
+      "id": "d7000000-0000-4000-8000-000000000002",
+      "kind": "certificate",
+      "title": "Стрижка машинкою",
+      "image": null,
+      "partner": {
+        "kind": "place",
+        "id": "a0000000-0000-4000-8000-000000000041",
+        "title": "Барбершоп «Борода»"
+      },
+      "price_points": 2500,
+      "valid_days": 30,
+      "stock_left": 0,
+      "per_user_limit": 1
+    }
+  ],
+  "next_cursor": null,
+  "generated_at": "2027-09-10T09:00:00Z"
+}

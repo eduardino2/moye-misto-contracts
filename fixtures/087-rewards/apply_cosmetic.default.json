@@ -1,0 +1,24 @@
+{
+  "id": "d8000000-0000-4000-8000-000000000002",
+  "reward": {
+    "id": "d7000000-0000-4000-8000-000000000101",
+    "kind": "cosmetic",
+    "title": "Рамка «Вал»",
+    "image": null,
+    "partner": null,
+    "price_points": 300,
+    "valid_days": null,
+    "stock_left": null,
+    "per_user_limit": 1
+  },
+  "status": "active",
+  "code_payload": null,
+  "code_text": null,
+  "purchased_at": "2027-08-15T10:00:00Z",
+  "valid_until": null,
+  "refundable_until": null,
+  "redeemed_at": null,
+  "redeemed_place_title": null,
+  "is_applied": true,
+  "generated_at": "2027-09-10T09:00:00Z"
+}

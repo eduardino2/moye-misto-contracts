@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://contracts.moyemisto.example/schemas/085-qr.schema.json",
+  "title": "085 — персональний QR",
+  "$defs": {
+    "get_my_qr": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "payload",
+        "valid_until",
+        "refresh_at",
+        "fallback_hint",
+        "header_action",
+        "generated_at"
+      ],
+      "properties": {
+        "payload": {
+          "type": "string",
+          "minLength": 1
+        },
+        "valid_until": {
+          "$ref": "common.schema.json#/$defs/timestamp"
+        },
+        "refresh_at": {
+          "$ref": "common.schema.json#/$defs/timestamp"
+        },
+        "fallback_hint": {
+          "type": "string",
+          "minLength": 1
+        },
+        "header_action": {
+          "type": "boolean"
+        },
+        "generated_at": {
+          "$ref": "common.schema.json#/$defs/timestamp"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "tiers": [
+    {
+      "level": 1,
+      "title": "Гість міста",
+      "threshold": 0,
+      "perks": []
+    },
+    {
+      "level": 2,
+      "title": "Відвідувач",
+      "threshold": 500,
+      "perks": []
+    },
+    {
+      "level": 3,
+      "title": "Мешканець",
+      "threshold": 1500,
+      "perks": [
+        "Рамка профілю"
+      ]
+    },
+    {
+      "level": 4,
+      "title": "Сусід",
+      "threshold": 4000,
+      "perks": []
+    },
+    {
+      "level": 5,
+      "title": "Черніговець",
+      "threshold": 8000,
+      "perks": []
+    },
+    {
+      "level": 6,
+      "title": "Знавець міста",
+      "threshold": 14000,
+      "perks": [
+        "Рамка профілю"
+      ]
+    },
+    {
+      "level": 7,
+      "title": "Амбасадор",
+      "threshold": 22000,
+      "perks": []
+    },
+    {
+      "level": 8,
+      "title": "Меценат",
+      "threshold": 32000,
+      "perks": []
+    },
+    {
+      "level": 9,
+      "title": "Легенда Чернігова",
+      "threshold": 45000,
+      "perks": []
+    },
+    {
+      "level": 10,
+      "title": "Хранитель Чернігова",
+      "threshold": 60000,
+      "perks": [
+        "Рамка профілю"
+      ]
+    }
+  ],
+  "generated_at": "2027-09-10T09:00:00Z"
+}

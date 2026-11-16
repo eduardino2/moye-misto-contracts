@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://contracts.moyemisto.example/schemas/076-petitions.schema.json",
+  "title": "076 — петиції",
+  "$defs": {
+    "petition_card": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "number", "title", "status", "status_title", "signatures", "signatures_goal", "ends_at", "published_at", "url"],
+      "properties": {
+        "id": { "$ref": "common.schema.json#/$defs/uuid" },
+        "number": { "type": ["string", "null"] },
+        "title": { "type": "string", "minLength": 1 },
+        "status": { "type": "string", "minLength": 1 },
+        "status_title": { "type": "string", "minLength": 1 },
+        "signatures": { "type": "integer", "minimum": 0 },
+        "signatures_goal": { "type": ["integer", "null"], "minimum": 1 },
+        "ends_at": { "anyOf": [{ "$ref": "common.schema.json#/$defs/local_date" }, { "type": "null" }] },
+        "published_at": { "$ref": "common.schema.json#/$defs/local_date" },
+        "url": { "$ref": "common.schema.json#/$defs/url" }
+      }
+    },
+    "list_petitions": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["items", "next_cursor", "source", "synced_at", "generated_at"],
+      "properties": {
+        "items": { "type": "array", "items": { "$ref": "#/$defs/petition_card" } },
+        "next_cursor": { "type": ["string", "null"] },
+        "source": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["title", "url"],
+          "properties": {
+            "title": { "type": "string", "minLength": 1 },
+            "url": { "$ref": "common.schema.json#/$defs/url" }
+          }
+        },
+        "synced_at": { "anyOf": [{ "$ref": "common.schema.json#/$defs/timestamp" }, { "type": "null" }] },
+        "generated_at": { "$ref": "common.schema.json#/$defs/timestamp" }
+      }
+    }
+  }
+}

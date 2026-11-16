@@ -37,6 +37,27 @@
 | [060-reports](contract/060-reports.md) | «Повідомити про проблему» |
 | [080-analytics](contract/080-analytics.md) | Події аналітики |
 
+
+## Контракти версії 0.2.0 (чернетка, фаза 2)
+
+| Файл | Про що |
+|---|---|
+| [051-account](contract/051-account.md) | Вхід, профіль, прив'язка пристрою, видалення акаунта |
+| [052-address](contract/052-address.md) | Домашня адреса: громада для тривоги, черга світла |
+| [053-favorites](contract/053-favorites.md) | Збережене й нагадування про події |
+| [054-notification-prefs](contract/054-notification-prefs.md) | Налаштування сповіщень в акаунті |
+
+
+## Контракти наступних версій (чернетки)
+
+| Версія | Файли | Про що |
+|---|---|---|
+| `0.3.0`, фаза 3 | [066-promotions](contract/066-promotions.md), [068-private-masters](contract/068-private-masters.md), [069-families](contract/069-families.md) | Платне просування, приватні майстри, фемілі |
+| `0.4.0`, фаза 4 | [075-fundraisers](contract/075-fundraisers.md), [076-petitions](contract/076-petitions.md), [077-news](contract/077-news.md) | Вкладка «Громада»: збори, петиції, новини |
+| `0.5.0`, етап 5а | [081-loyalty](contract/081-loyalty.md), [083-labels](contract/083-labels.md), [085-qr](contract/085-qr.md), [086-points](contract/086-points.md), [087-rewards](contract/087-rewards.md), [088-referrals](contract/088-referrals.md) | Програма лояльності |
+
+Чернетки написано разом із мобільними спеками; серверний розробник їх ще не переглядав.
+
 ## Як пов'язані опис, схема і приклад
 
 - Опис у `contract/` пояснює зміст і правила поведінки.

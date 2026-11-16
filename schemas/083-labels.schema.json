@@ -1,0 +1,81 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://contracts.moyemisto.example/schemas/083-labels.schema.json",
+  "title": "083 — лейбли постійного клієнта",
+  "$defs": {
+    "label": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "owner",
+        "place_ids",
+        "title",
+        "benefit",
+        "granted_at"
+      ],
+      "properties": {
+        "owner": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "kind",
+            "id",
+            "title"
+          ],
+          "properties": {
+            "kind": {
+              "enum": [
+                "place",
+                "family"
+              ]
+            },
+            "id": {
+              "$ref": "common.schema.json#/$defs/uuid"
+            },
+            "title": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        },
+        "place_ids": {
+          "type": "array",
+          "items": {
+            "$ref": "common.schema.json#/$defs/uuid"
+          },
+          "minItems": 1
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "benefit": {
+          "type": "string",
+          "maxLength": 120
+        },
+        "granted_at": {
+          "$ref": "common.schema.json#/$defs/timestamp"
+        }
+      }
+    },
+    "list_my_labels": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "items",
+        "generated_at"
+      ],
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/label"
+          }
+        },
+        "generated_at": {
+          "$ref": "common.schema.json#/$defs/timestamp"
+        }
+      }
+    }
+  }
+}

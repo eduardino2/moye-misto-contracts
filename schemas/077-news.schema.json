@@ -1,0 +1,73 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://contracts.moyemisto.example/schemas/077-news.schema.json",
+  "title": "077 — новини",
+  "$defs": {
+    "news_source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["slug", "title"],
+      "properties": {
+        "slug": { "$ref": "common.schema.json#/$defs/slug" },
+        "title": { "type": "string", "minLength": 1 }
+      }
+    },
+    "news_card": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "title", "summary", "image", "source", "published_at", "is_important", "url"],
+      "properties": {
+        "id": { "$ref": "common.schema.json#/$defs/uuid" },
+        "title": { "type": "string", "minLength": 1 },
+        "summary": { "type": ["string", "null"], "maxLength": 300 },
+        "image": { "anyOf": [{ "$ref": "common.schema.json#/$defs/image" }, { "type": "null" }] },
+        "source": { "$ref": "#/$defs/news_source" },
+        "published_at": { "$ref": "common.schema.json#/$defs/timestamp" },
+        "is_important": { "type": "boolean" },
+        "url": { "$ref": "common.schema.json#/$defs/url" }
+      }
+    },
+    "list_news": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["items", "next_cursor", "sources", "generated_at"],
+      "properties": {
+        "items": { "type": "array", "items": { "$ref": "#/$defs/news_card" } },
+        "next_cursor": { "type": ["string", "null"] },
+        "sources": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["slug", "title", "icon"],
+            "properties": {
+              "slug": { "$ref": "common.schema.json#/$defs/slug" },
+              "title": { "type": "string", "minLength": 1 },
+              "icon": { "$ref": "common.schema.json#/$defs/icon" }
+            }
+          }
+        },
+        "generated_at": { "$ref": "common.schema.json#/$defs/timestamp" }
+      }
+    },
+    "widget_news": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "type", "config", "data"],
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "type": { "const": "news" },
+        "config": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["title", "limit"],
+          "properties": {
+            "title": { "type": "string", "minLength": 1 },
+            "limit": { "type": "integer", "minimum": 1, "maximum": 5 }
+          }
+        },
+        "data": { "anyOf": [{ "$ref": "#/$defs/list_news" }, { "type": "null" }] }
+      }
+    }
+  }
+}

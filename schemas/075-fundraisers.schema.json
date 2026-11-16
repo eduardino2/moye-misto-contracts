@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://contracts.moyemisto.example/schemas/075-fundraisers.schema.json",
+  "title": "075 — збори",
+  "$defs": {
+    "fundraiser_card": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "title", "image", "organizer", "goal_text", "amount_goal", "amount_collected", "progress_updated_at", "ends_at", "status", "donate_url"],
+      "properties": {
+        "id": { "$ref": "common.schema.json#/$defs/uuid" },
+        "title": { "type": "string", "minLength": 1 },
+        "image": { "anyOf": [{ "$ref": "common.schema.json#/$defs/image" }, { "type": "null" }] },
+        "organizer": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["name", "verified_at"],
+          "properties": {
+            "name": { "type": "string", "minLength": 1 },
+            "verified_at": { "$ref": "common.schema.json#/$defs/local_date" }
+          }
+        },
+        "goal_text": { "type": "string", "minLength": 1 },
+        "amount_goal": { "type": ["integer", "null"], "minimum": 1 },
+        "amount_collected": { "type": ["integer", "null"], "minimum": 0 },
+        "progress_updated_at": { "anyOf": [{ "$ref": "common.schema.json#/$defs/timestamp" }, { "type": "null" }] },
+        "ends_at": { "anyOf": [{ "$ref": "common.schema.json#/$defs/local_date" }, { "type": "null" }] },
+        "status": { "enum": ["active", "completed"] },
+        "donate_url": { "$ref": "common.schema.json#/$defs/url" }
+      }
+    },
+    "list_fundraisers": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["items", "next_cursor", "generated_at"],
+      "properties": {
+        "items": { "type": "array", "items": { "$ref": "#/$defs/fundraiser_card" } },
+        "next_cursor": { "type": ["string", "null"] },
+        "generated_at": { "$ref": "common.schema.json#/$defs/timestamp" }
+      }
+    },
+    "get_fundraiser": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["card", "description", "organizer_url", "report_url", "share_url", "updated_at", "generated_at"],
+      "properties": {
+        "card": { "$ref": "#/$defs/fundraiser_card" },
+        "description": { "type": "string" },
+        "organizer_url": { "anyOf": [{ "$ref": "common.schema.json#/$defs/url" }, { "type": "null" }] },
+        "report_url": { "anyOf": [{ "$ref": "common.schema.json#/$defs/url" }, { "type": "null" }] },
+        "share_url": { "$ref": "common.schema.json#/$defs/url" },
+        "updated_at": { "$ref": "common.schema.json#/$defs/timestamp" },
+        "generated_at": { "$ref": "common.schema.json#/$defs/timestamp" }
+      }
+    }
+  }
+}
