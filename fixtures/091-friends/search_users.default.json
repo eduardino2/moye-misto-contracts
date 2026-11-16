@@ -1,0 +1,29 @@
+{
+  "items": [
+    {
+      "user": {
+        "id": "c0000000-0000-4000-8000-000000000002",
+        "display_name": "Олена",
+        "avatar": null
+      },
+      "status": "friends"
+    },
+    {
+      "user": {
+        "id": "c0000000-0000-4000-8000-000000000003",
+        "display_name": "Олексій",
+        "avatar": null
+      },
+      "status": "incoming"
+    },
+    {
+      "user": {
+        "id": "c0000000-0000-4000-8000-000000000004",
+        "display_name": "Марина",
+        "avatar": null
+      },
+      "status": "none"
+    }
+  ],
+  "generated_at": "2028-02-10T09:00:00Z"
+}

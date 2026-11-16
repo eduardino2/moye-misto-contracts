@@ -1,0 +1,128 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://contracts.moyemisto.example/schemas/092-stories.schema.json",
+  "title": "092 — сторіз",
+  "$defs": {
+    "user_ref": {
+      "description": "Автор або друг; та сама форма, що в 091-friends.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "display_name", "avatar"],
+      "properties": {
+        "id": { "$ref": "common.schema.json#/$defs/uuid" },
+        "display_name": { "type": "string", "minLength": 1 },
+        "avatar": { "oneOf": [{ "type": "null" }, { "$ref": "common.schema.json#/$defs/image" }] }
+      }
+    },
+    "story_owner": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "id", "title"],
+      "properties": {
+        "kind": { "enum": ["place", "event"] },
+        "id": { "$ref": "common.schema.json#/$defs/uuid" },
+        "title": { "type": "string", "minLength": 1 }
+      }
+    },
+    "story_item": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "author", "image", "owner", "published_at", "expires_at", "status", "is_seen"],
+      "properties": {
+        "id": { "$ref": "common.schema.json#/$defs/uuid" },
+        "author": { "$ref": "#/$defs/user_ref" },
+        "image": { "$ref": "common.schema.json#/$defs/image" },
+        "owner": { "$ref": "#/$defs/story_owner" },
+        "published_at": { "$ref": "common.schema.json#/$defs/timestamp" },
+        "expires_at": { "$ref": "common.schema.json#/$defs/timestamp" },
+        "status": { "enum": ["published", "pending", "paused", "rejected"] },
+        "is_seen": { "type": "boolean" }
+      }
+    },
+    "feed_card": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["user", "stories_count", "unseen_count", "latest_at"],
+      "properties": {
+        "user": { "$ref": "#/$defs/user_ref" },
+        "stories_count": { "type": "integer", "minimum": 1 },
+        "unseen_count": { "type": "integer", "minimum": 0 },
+        "latest_at": { "$ref": "common.schema.json#/$defs/timestamp" }
+      }
+    },
+    "get_stories_feed": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["items", "generated_at"],
+      "properties": {
+        "items": {
+          "type": "array",
+          "maxItems": 10,
+          "items": { "$ref": "#/$defs/feed_card" }
+        },
+        "generated_at": { "$ref": "common.schema.json#/$defs/timestamp" }
+      }
+    },
+    "get_friend_stories": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["items", "generated_at"],
+      "properties": {
+        "items": {
+          "type": "array",
+          "maxItems": 10,
+          "items": { "$ref": "#/$defs/story_item" }
+        },
+        "generated_at": { "$ref": "common.schema.json#/$defs/timestamp" }
+      }
+    },
+    "create_story": { "$ref": "#/$defs/story_item" },
+    "mark_story_seen": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["story_id", "seen_at"],
+      "properties": {
+        "story_id": { "$ref": "common.schema.json#/$defs/uuid" },
+        "seen_at": { "$ref": "common.schema.json#/$defs/timestamp" }
+      }
+    },
+    "delete_story": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["ok", "generated_at"],
+      "properties": {
+        "ok": { "const": true },
+        "generated_at": { "$ref": "common.schema.json#/$defs/timestamp" }
+      }
+    },
+    "report_story": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["report_id", "generated_at"],
+      "properties": {
+        "report_id": { "$ref": "common.schema.json#/$defs/uuid" },
+        "generated_at": { "$ref": "common.schema.json#/$defs/timestamp" }
+      }
+    },
+    "widget_stories": {
+      "type": "object",
+      "description": "Новий тип віджета у get_home (002-home-layout); старі версії додатку пропускають його як невідомий.",
+      "additionalProperties": false,
+      "required": ["id", "type", "config", "data"],
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "type": { "const": "stories" },
+        "config": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["title", "limit"],
+          "properties": {
+            "title": { "type": "string", "minLength": 1 },
+            "limit": { "type": "integer", "minimum": 1, "maximum": 10 }
+          }
+        },
+        "data": { "oneOf": [{ "type": "null" }, { "$ref": "#/$defs/get_stories_feed" }] }
+      }
+    }
+  }
+}

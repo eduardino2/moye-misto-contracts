@@ -1,0 +1,33 @@
+{
+  "id": "stories-1",
+  "type": "stories",
+  "config": {
+    "title": "Сторіз друзів",
+    "limit": 5
+  },
+  "data": {
+    "items": [
+      {
+        "user": {
+          "id": "c0000000-0000-4000-8000-000000000002",
+          "display_name": "Олена",
+          "avatar": null
+        },
+        "stories_count": 2,
+        "unseen_count": 2,
+        "latest_at": "2028-02-10T08:40:00Z"
+      },
+      {
+        "user": {
+          "id": "c0000000-0000-4000-8000-000000000005",
+          "display_name": "Андрій",
+          "avatar": null
+        },
+        "stories_count": 1,
+        "unseen_count": 0,
+        "latest_at": "2028-02-09T19:30:00Z"
+      }
+    ],
+    "generated_at": "2028-02-10T09:00:00Z"
+  }
+}

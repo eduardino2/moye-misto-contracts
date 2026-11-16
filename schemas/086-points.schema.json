@@ -43,6 +43,10 @@
         "occurred_at": {
           "$ref": "common.schema.json#/$defs/timestamp"
         },
+        "hidden": {
+          "description": "Лише для kind accrual: відвідування приховано від друзів (091-friends). У даних до версії 0.7.0 поля немає; тоді воно видиме.",
+          "type": "boolean"
+        },
         "expires_at": {
           "anyOf": [
             {

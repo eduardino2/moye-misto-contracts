@@ -1,0 +1,36 @@
+{
+  "campaign": {
+    "id": "9d000000-0000-4000-8000-000000000002",
+    "title": "Вихідні міста",
+    "summary": "Два візити за вихідні — приз із пулу учасників.",
+    "period_from": "2027-09-05",
+    "period_to": "2027-09-28",
+    "partners_count": 8,
+    "fund_left": null,
+    "status": "active"
+  },
+  "partners": [
+    {
+      "kind": "place",
+      "id": "a0000000-0000-4000-8000-000000000041",
+      "title": "Барбершоп «Борода»"
+    },
+    {
+      "kind": "family",
+      "id": "fa000000-0000-4000-8000-000000000001",
+      "title": "Кав’ярні «Вал»"
+    },
+    {
+      "kind": "place",
+      "id": "a0000000-0000-4000-8000-000000000007",
+      "title": "Кав’ярня «Шоколад»"
+    }
+  ],
+  "my_status": {
+    "progress_done": 1,
+    "progress_needed": 2,
+    "prize_granted": null,
+    "fund_exhausted": false
+  },
+  "generated_at": "2027-09-12T09:00:00Z"
+}

@@ -7,11 +7,13 @@
       "description": "Код типу → увімкнено. Нові типи додаються новими ключами.",
       "type": "object",
       "additionalProperties": false,
-      "required": ["alert_start", "alert_end", "event_reminder"],
+      "required": ["alert_start", "alert_end", "event_reminder", "marketing", "social"],
       "properties": {
         "alert_start": { "type": "boolean" },
         "alert_end": { "type": "boolean" },
-        "event_reminder": { "type": "boolean" }
+        "event_reminder": { "type": "boolean" },
+        "marketing": { "type": "boolean" },
+        "social": { "type": "boolean" }
       }
     },
     "get_notification_prefs": {

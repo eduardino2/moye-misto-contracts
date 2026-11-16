@@ -1,0 +1,175 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://contracts.moyemisto.example/schemas/091-friends.schema.json",
+  "title": "091 — друзі й приватність",
+  "$defs": {
+    "user_ref": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "display_name", "avatar"],
+      "properties": {
+        "id": { "$ref": "common.schema.json#/$defs/uuid" },
+        "display_name": { "type": "string", "minLength": 1 },
+        "avatar": { "oneOf": [{ "type": "null" }, { "$ref": "common.schema.json#/$defs/image" }] }
+      }
+    },
+    "user_match": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["user", "status"],
+      "properties": {
+        "user": { "$ref": "#/$defs/user_ref" },
+        "status": { "enum": ["none", "outgoing", "incoming", "friends"] }
+      }
+    },
+    "search_users": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["items", "generated_at"],
+      "properties": {
+        "items": {
+          "type": "array",
+          "maxItems": 10,
+          "items": { "$ref": "#/$defs/user_match" }
+        },
+        "generated_at": { "$ref": "common.schema.json#/$defs/timestamp" }
+      }
+    },
+    "friend_card": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["user", "friends_since"],
+      "properties": {
+        "user": { "$ref": "#/$defs/user_ref" },
+        "friends_since": { "$ref": "common.schema.json#/$defs/timestamp" }
+      }
+    },
+    "friend_request_card": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["user", "requested_at"],
+      "properties": {
+        "user": { "$ref": "#/$defs/user_ref" },
+        "requested_at": { "$ref": "common.schema.json#/$defs/timestamp" }
+      }
+    },
+    "blocked_card": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["user", "blocked_at"],
+      "properties": {
+        "user": { "$ref": "#/$defs/user_ref" },
+        "blocked_at": { "$ref": "common.schema.json#/$defs/timestamp" }
+      }
+    },
+    "get_friends": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["friends", "incoming", "outgoing", "blocked", "generated_at"],
+      "properties": {
+        "friends": { "type": "array", "items": { "$ref": "#/$defs/friend_card" } },
+        "incoming": { "type": "array", "items": { "$ref": "#/$defs/friend_request_card" } },
+        "outgoing": { "type": "array", "items": { "$ref": "#/$defs/friend_request_card" } },
+        "blocked": { "type": "array", "items": { "$ref": "#/$defs/blocked_card" } },
+        "generated_at": { "$ref": "common.schema.json#/$defs/timestamp" }
+      }
+    },
+    "friend_visit": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["visit_id", "place_id", "place_title", "occurred_at"],
+      "properties": {
+        "visit_id": { "$ref": "common.schema.json#/$defs/uuid" },
+        "place_id": { "$ref": "common.schema.json#/$defs/uuid" },
+        "place_title": { "type": "string", "minLength": 1 },
+        "occurred_at": { "$ref": "common.schema.json#/$defs/timestamp" }
+      }
+    },
+    "get_friend": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["user", "friends_since", "visits_shown", "visits", "stories_count", "generated_at"],
+      "properties": {
+        "user": { "$ref": "#/$defs/user_ref" },
+        "friends_since": { "$ref": "common.schema.json#/$defs/timestamp" },
+        "visits_shown": { "type": "boolean" },
+        "visits": { "type": "array", "items": { "$ref": "#/$defs/friend_visit" } },
+        "stories_count": { "type": "integer", "minimum": 0 },
+        "generated_at": { "$ref": "common.schema.json#/$defs/timestamp" }
+      }
+    },
+    "get_invite": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["code", "link", "deeplink", "generated_at"],
+      "properties": {
+        "code": { "type": "string", "pattern": "^[a-z0-9]{6,12}$" },
+        "link": { "$ref": "common.schema.json#/$defs/url" },
+        "deeplink": { "$ref": "common.schema.json#/$defs/deeplink" },
+        "generated_at": { "$ref": "common.schema.json#/$defs/timestamp" }
+      }
+    },
+    "send_friend_request": { "$ref": "#/$defs/friend_request_card" },
+    "apply_invite": { "$ref": "#/$defs/friend_request_card" },
+    "accept_friend_request": { "$ref": "#/$defs/friend_card" },
+    "ack": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["ok", "generated_at"],
+      "properties": {
+        "ok": { "const": true },
+        "generated_at": { "$ref": "common.schema.json#/$defs/timestamp" }
+      }
+    },
+    "remove_friend": { "$ref": "#/$defs/ack" },
+    "block_user": { "$ref": "#/$defs/ack" },
+    "unblock_user": { "$ref": "#/$defs/ack" },
+    "social_prefs": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["show_visits", "show_ratings", "generated_at"],
+      "properties": {
+        "show_visits": { "type": "boolean" },
+        "show_ratings": { "type": "boolean" },
+        "generated_at": { "$ref": "common.schema.json#/$defs/timestamp" }
+      }
+    },
+    "set_visit_hidden": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["visit_id", "hidden", "generated_at"],
+      "properties": {
+        "visit_id": { "$ref": "common.schema.json#/$defs/uuid" },
+        "hidden": { "type": "boolean" },
+        "generated_at": { "$ref": "common.schema.json#/$defs/timestamp" }
+      }
+    },
+    "push_message_friend": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["notification", "data"],
+      "properties": {
+        "notification": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["title", "body"],
+          "properties": {
+            "title": { "type": "string", "minLength": 1 },
+            "body": { "type": "string", "minLength": 1 }
+          }
+        },
+        "data": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["type", "user_id", "sent_at", "deeplink"],
+          "properties": {
+            "type": { "const": "friend_request" },
+            "user_id": { "$ref": "common.schema.json#/$defs/uuid" },
+            "sent_at": { "$ref": "common.schema.json#/$defs/timestamp" },
+            "deeplink": { "$ref": "common.schema.json#/$defs/deeplink" }
+          }
+        }
+      }
+    }
+  }
+}

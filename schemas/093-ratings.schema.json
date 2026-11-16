@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://contracts.moyemisto.example/schemas/093-ratings.schema.json",
+  "title": "093 — оцінки",
+  "$defs": {
+    "user_ref": {
+      "description": "Друг, який показує свої оцінки; та сама форма, що в 091-friends.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "display_name", "avatar"],
+      "properties": {
+        "id": { "$ref": "common.schema.json#/$defs/uuid" },
+        "display_name": { "type": "string", "minLength": 1 },
+        "avatar": { "oneOf": [{ "type": "null" }, { "$ref": "common.schema.json#/$defs/image" }] }
+      }
+    },
+    "friend_rating": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["user", "rating"],
+      "properties": {
+        "user": { "$ref": "#/$defs/user_ref" },
+        "rating": { "type": "integer", "minimum": 1, "maximum": 5 }
+      }
+    },
+    "place_ratings": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["average", "count", "my_rating", "can_rate", "can_rate_reason", "friends", "generated_at"],
+      "properties": {
+        "average": { "oneOf": [{ "type": "null" }, { "type": "number", "minimum": 1, "maximum": 5 }] },
+        "count": { "type": "integer", "minimum": 0 },
+        "my_rating": { "oneOf": [{ "type": "null" }, { "type": "integer", "minimum": 1, "maximum": 5 }] },
+        "can_rate": { "type": "boolean" },
+        "can_rate_reason": { "enum": ["ok", "no_accrual"] },
+        "friends": {
+          "type": "array",
+          "maxItems": 20,
+          "items": { "$ref": "#/$defs/friend_rating" }
+        },
+        "generated_at": { "$ref": "common.schema.json#/$defs/timestamp" }
+      }
+    },
+    "set_rating": { "$ref": "#/$defs/place_ratings" },
+    "report_missing_accrual": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["report_id", "generated_at"],
+      "properties": {
+        "report_id": { "$ref": "common.schema.json#/$defs/uuid" },
+        "generated_at": { "$ref": "common.schema.json#/$defs/timestamp" }
+      }
+    }
+  }
+}

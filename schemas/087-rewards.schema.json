@@ -214,6 +214,10 @@
             "null"
           ]
         },
+        "source": {
+          "description": "Звідки сертифікат. Відсутній у даних до версії 0.6.0: тоді це купівля балами.",
+          "enum": ["points", "stamp", "second_visit", "offer", "campaign"]
+        },
         "generated_at": {
           "$ref": "common.schema.json#/$defs/timestamp"
         }
@@ -275,6 +279,10 @@
             "boolean",
             "null"
           ]
+        },
+        "source": {
+          "description": "Звідки сертифікат. Відсутній у даних до версії 0.6.0: тоді це купівля балами.",
+          "enum": ["points", "stamp", "second_visit", "offer", "campaign"]
         }
       }
     },

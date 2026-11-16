@@ -1,0 +1,199 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://contracts.moyemisto.example/schemas/090-campaigns.schema.json",
+  "title": "090 — кампанії, маршрути й нагадування",
+  "$defs": {
+    "similar_place": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["place_id", "title", "image", "cashback_percent", "deeplink"],
+      "properties": {
+        "place_id": { "$ref": "common.schema.json#/$defs/uuid" },
+        "title": { "type": "string", "minLength": 1 },
+        "image": { "oneOf": [{ "type": "null" }, { "$ref": "common.schema.json#/$defs/image" }] },
+        "cashback_percent": { "type": "integer", "minimum": 1, "maximum": 10 },
+        "deeplink": { "$ref": "common.schema.json#/$defs/deeplink" }
+      }
+    },
+    "list_similar_places": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["items", "generated_at"],
+      "properties": {
+        "items": {
+          "type": "array",
+          "maxItems": 3,
+          "items": { "$ref": "#/$defs/similar_place" }
+        },
+        "generated_at": { "$ref": "common.schema.json#/$defs/timestamp" }
+      }
+    },
+    "campaign_card": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "title", "summary", "period_from", "period_to", "partners_count", "fund_left", "status"],
+      "properties": {
+        "id": { "$ref": "common.schema.json#/$defs/uuid" },
+        "title": { "type": "string", "minLength": 1 },
+        "summary": { "type": "string" },
+        "period_from": { "$ref": "common.schema.json#/$defs/local_date" },
+        "period_to": { "$ref": "common.schema.json#/$defs/local_date" },
+        "partners_count": { "type": "integer", "minimum": 1 },
+        "fund_left": { "oneOf": [{ "type": "null" }, { "type": "integer", "minimum": 0 }] },
+        "status": { "enum": ["scheduled", "active", "ended"] }
+      }
+    },
+    "list_campaigns": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["items", "generated_at"],
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/campaign_card" }
+        },
+        "generated_at": { "$ref": "common.schema.json#/$defs/timestamp" }
+      }
+    },
+    "campaign_partner": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "id", "title"],
+      "properties": {
+        "kind": { "enum": ["place", "family"] },
+        "id": { "$ref": "common.schema.json#/$defs/uuid" },
+        "title": { "type": "string", "minLength": 1 }
+      }
+    },
+    "campaign_status": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["progress_done", "progress_needed", "prize_granted", "fund_exhausted"],
+      "properties": {
+        "progress_done": { "type": "integer", "minimum": 0 },
+        "progress_needed": { "type": "integer", "minimum": 1 },
+        "prize_granted": { "oneOf": [{ "type": "null" }, { "$ref": "common.schema.json#/$defs/timestamp" }] },
+        "fund_exhausted": { "type": "boolean" }
+      }
+    },
+    "get_campaign": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["campaign", "partners", "my_status", "generated_at"],
+      "properties": {
+        "campaign": { "$ref": "#/$defs/campaign_card" },
+        "partners": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "#/$defs/campaign_partner" }
+        },
+        "my_status": { "oneOf": [{ "type": "null" }, { "$ref": "#/$defs/campaign_status" }] },
+        "generated_at": { "$ref": "common.schema.json#/$defs/timestamp" }
+      }
+    },
+    "route_card": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "title", "summary", "places_count"],
+      "properties": {
+        "id": { "$ref": "common.schema.json#/$defs/uuid" },
+        "title": { "type": "string", "minLength": 1 },
+        "summary": { "type": "string" },
+        "places_count": { "type": "integer", "minimum": 2 }
+      }
+    },
+    "list_routes": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["items", "generated_at"],
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/route_card" }
+        },
+        "generated_at": { "$ref": "common.schema.json#/$defs/timestamp" }
+      }
+    },
+    "route_place": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["place_id", "title", "image", "position", "active"],
+      "properties": {
+        "place_id": { "$ref": "common.schema.json#/$defs/uuid" },
+        "title": { "type": "string", "minLength": 1 },
+        "image": { "oneOf": [{ "type": "null" }, { "$ref": "common.schema.json#/$defs/image" }] },
+        "position": { "type": "integer", "minimum": 1 },
+        "active": { "type": "boolean" }
+      }
+    },
+    "get_route": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["route", "places", "generated_at"],
+      "properties": {
+        "route": { "$ref": "#/$defs/route_card" },
+        "places": {
+          "type": "array",
+          "minItems": 2,
+          "items": { "$ref": "#/$defs/route_place" }
+        },
+        "generated_at": { "$ref": "common.schema.json#/$defs/timestamp" }
+      }
+    },
+    "push_message_come_back": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["notification", "data"],
+      "properties": {
+        "notification": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["title", "body"],
+          "properties": {
+            "title": { "type": "string", "minLength": 1 },
+            "body": { "type": "string", "minLength": 1 }
+          }
+        },
+        "data": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["type", "reason", "sent_at", "deeplink"],
+          "properties": {
+            "type": { "const": "come_back" },
+            "reason": { "enum": ["3_days", "7_days", "30_days"] },
+            "sent_at": { "$ref": "common.schema.json#/$defs/timestamp" },
+            "deeplink": { "$ref": "common.schema.json#/$defs/deeplink" }
+          }
+        }
+      }
+    },
+    "push_message_campaign_prize": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["notification", "data"],
+      "properties": {
+        "notification": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["title", "body"],
+          "properties": {
+            "title": { "type": "string", "minLength": 1 },
+            "body": { "type": "string", "minLength": 1 }
+          }
+        },
+        "data": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["type", "campaign_id", "my_reward_id", "sent_at", "deeplink"],
+          "properties": {
+            "type": { "const": "campaign_prize" },
+            "campaign_id": { "$ref": "common.schema.json#/$defs/uuid" },
+            "my_reward_id": { "$ref": "common.schema.json#/$defs/uuid" },
+            "sent_at": { "$ref": "common.schema.json#/$defs/timestamp" },
+            "deeplink": { "$ref": "common.schema.json#/$defs/deeplink" }
+          }
+        }
+      }
+    }
+  }
+}

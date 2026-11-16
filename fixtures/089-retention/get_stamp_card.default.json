@@ -1,0 +1,25 @@
+{
+  "items": [
+    {
+      "owner": {
+        "kind": "place",
+        "id": "a0000000-0000-4000-8000-000000000041",
+        "title": "Барбершоп «Борода»"
+      },
+      "visits_needed": 5,
+      "stamps": 3,
+      "reward_title": "Стрижка машинкою"
+    },
+    {
+      "owner": {
+        "kind": "family",
+        "id": "fa000000-0000-4000-8000-000000000001",
+        "title": "Кав’ярні «Вал»"
+      },
+      "visits_needed": 4,
+      "stamps": 4,
+      "reward_title": "Капучино"
+    }
+  ],
+  "generated_at": "2027-09-12T09:00:00Z"
+}

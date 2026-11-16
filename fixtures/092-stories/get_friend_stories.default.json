@@ -1,0 +1,53 @@
+{
+  "items": [
+    {
+      "id": "b1000000-0000-4000-8000-000000000001",
+      "author": {
+        "id": "c0000000-0000-4000-8000-000000000002",
+        "display_name": "Олена",
+        "avatar": null
+      },
+      "image": {
+        "url": "https://storage.example/stories/b1000000-0000-4000-8000-000000000001.jpg",
+        "thumb_url": "https://storage.example/stories/b1000000-0000-4000-8000-000000000001_thumb.jpg",
+        "width": 1080,
+        "height": 1920,
+        "blurhash": "UbF$h@%2RjWB-;t7WCt7~qof"
+      },
+      "owner": {
+        "kind": "place",
+        "id": "a0000000-0000-4000-8000-000000000010",
+        "title": "Кав’ярня «Вал»"
+      },
+      "published_at": "2028-02-10T08:40:00Z",
+      "expires_at": "2028-02-11T08:40:00Z",
+      "status": "published",
+      "is_seen": false
+    },
+    {
+      "id": "b1000000-0000-4000-8000-000000000002",
+      "author": {
+        "id": "c0000000-0000-4000-8000-000000000002",
+        "display_name": "Олена",
+        "avatar": null
+      },
+      "image": {
+        "url": "https://storage.example/stories/b1000000-0000-4000-8000-000000000002.jpg",
+        "thumb_url": "https://storage.example/stories/b1000000-0000-4000-8000-000000000002_thumb.jpg",
+        "width": 1080,
+        "height": 1920,
+        "blurhash": "U2F$f@%2RjWB-;t7WCt7~qof"
+      },
+      "owner": {
+        "kind": "event",
+        "id": "e0000000-0000-4000-8000-000000000001",
+        "title": "«Наталка Полтавка»"
+      },
+      "published_at": "2028-02-10T08:50:00Z",
+      "expires_at": "2028-02-11T08:50:00Z",
+      "status": "published",
+      "is_seen": false
+    }
+  ],
+  "generated_at": "2028-02-10T09:00:00Z"
+}

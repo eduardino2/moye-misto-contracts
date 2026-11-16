@@ -120,7 +120,7 @@
 
 Нові посилання додаються лише в цей перелік (зміна MINOR).
 
-Заплановані посилання наступних версій (додаються в таблицю під час встановлення відповідного тегу): `moyemisto://family/<id>` (`0.3.0`, `069-families`); `moyemisto://loyalty` і `moyemisto://loyalty/qr` (`0.5.0`, `081-loyalty`, `085-qr`).
+Заплановані посилання наступних версій (додаються в таблицю під час встановлення відповідного тегу): `moyemisto://family/<id>` (`0.3.0`, `069-families`); `moyemisto://loyalty` і `moyemisto://loyalty/qr` (`0.5.0`, `081-loyalty`, `085-qr`); `moyemisto://offer/<id>`, `moyemisto://campaign/<id>`, `moyemisto://route/<id>` і `moyemisto://rewards/<my_reward_id>` (`0.6.0`, `089-retention`, `090-campaigns`); `moyemisto://profile/<id>`, `moyemisto://invite/<code>` і `moyemisto://stories/<user_id>` (`0.7.0`, `091-friends`, `092-stories`).
 
 ## 10. Функція `get_app_config`
 

@@ -55,6 +55,8 @@
 | `0.3.0`, фаза 3 | [066-promotions](contract/066-promotions.md), [068-private-masters](contract/068-private-masters.md), [069-families](contract/069-families.md) | Платне просування, приватні майстри, фемілі |
 | `0.4.0`, фаза 4 | [075-fundraisers](contract/075-fundraisers.md), [076-petitions](contract/076-petitions.md), [077-news](contract/077-news.md) | Вкладка «Громада»: збори, петиції, новини |
 | `0.5.0`, етап 5а | [081-loyalty](contract/081-loyalty.md), [083-labels](contract/083-labels.md), [085-qr](contract/085-qr.md), [086-points](contract/086-points.md), [087-rewards](contract/087-rewards.md), [088-referrals](contract/088-referrals.md) | Програма лояльності |
+| `0.6.0`, етап 5б | [089-retention](contract/089-retention.md), [090-campaigns](contract/090-campaigns.md) | Утримання: штамп-картки, пропозиції й підписки закладу; кампанії, маршрути, нагадування |
+| `0.7.0`, фаза 6 | [091-friends](contract/091-friends.md), [092-stories](contract/092-stories.md), [093-ratings](contract/093-ratings.md) | Соціальна частина: друзі й приватність, сторіз, оцінки; черга модерації — без контракту (`198-moderation`) |
 
 Чернетки написано разом із мобільними спеками; серверний розробник їх ще не переглядав.
 
@@ -80,4 +82,4 @@ node tools/check-fixtures.mjs
 
 ## Стан
 
-Контракт `0.1.0` написано, тег ще не поставлено: спершу його мають переглянути обидва розробники. Приклади даних (назви закладів, адреси, телефони, події) вигадані.
+Тег `v0.1.0` поставлено; MVP розвивається на ньому. Чернетки `0.2.0`–`0.7.0` написано, теги ще не ставились: спершу їх має переглянути обидва розробники. Приклади даних (назви закладів, адреси, телефони, події) вигадані.

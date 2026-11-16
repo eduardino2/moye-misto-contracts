@@ -1,0 +1,176 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://contracts.moyemisto.example/schemas/089-retention.schema.json",
+  "title": "089 — інструменти утримання закладу",
+  "$defs": {
+    "owner_ref": {
+      "description": "Заклад або фемілі, як у 087-rewards.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "id", "title"],
+      "properties": {
+        "kind": { "enum": ["place", "family"] },
+        "id": { "$ref": "common.schema.json#/$defs/uuid" },
+        "title": { "type": "string", "minLength": 1 }
+      }
+    },
+    "stamp_card": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["owner", "visits_needed", "stamps", "reward_title"],
+      "properties": {
+        "owner": { "$ref": "#/$defs/owner_ref" },
+        "visits_needed": { "type": "integer", "minimum": 2 },
+        "stamps": { "type": "integer", "minimum": 0 },
+        "reward_title": { "type": "string", "minLength": 1 }
+      }
+    },
+    "get_stamp_card": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["items", "generated_at"],
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/stamp_card" }
+        },
+        "generated_at": { "$ref": "common.schema.json#/$defs/timestamp" }
+      }
+    },
+    "offer_card": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "owner", "text", "reward", "valid_until", "accepted_at"],
+      "properties": {
+        "id": { "$ref": "common.schema.json#/$defs/uuid" },
+        "owner": { "$ref": "#/$defs/owner_ref" },
+        "text": { "type": "string", "minLength": 1 },
+        "reward": { "oneOf": [{ "type": "null" }, { "$ref": "087-rewards.schema.json#/$defs/reward_card" }] },
+        "valid_until": { "oneOf": [{ "type": "null" }, { "$ref": "common.schema.json#/$defs/timestamp" }] },
+        "accepted_at": { "oneOf": [{ "type": "null" }, { "$ref": "common.schema.json#/$defs/timestamp" }] }
+      }
+    },
+    "list_offers": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["items", "generated_at"],
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/offer_card" }
+        },
+        "generated_at": { "$ref": "common.schema.json#/$defs/timestamp" }
+      }
+    },
+    "accept_offer": { "$ref": "#/$defs/offer_card" },
+    "place_subscription": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["place_id", "place_title", "image", "subscribed_at"],
+      "properties": {
+        "place_id": { "$ref": "common.schema.json#/$defs/uuid" },
+        "place_title": { "type": "string", "minLength": 1 },
+        "image": { "oneOf": [{ "type": "null" }, { "$ref": "common.schema.json#/$defs/image" }] },
+        "subscribed_at": { "$ref": "common.schema.json#/$defs/timestamp" }
+      }
+    },
+    "place_subscriptions": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["items", "generated_at"],
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/place_subscription" }
+        },
+        "generated_at": { "$ref": "common.schema.json#/$defs/timestamp" }
+      }
+    },
+    "push_message_offer": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["notification", "data"],
+      "properties": {
+        "notification": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["title", "body"],
+          "properties": {
+            "title": { "type": "string", "minLength": 1 },
+            "body": { "type": "string", "minLength": 1 }
+          }
+        },
+        "data": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["type", "offer_id", "place_id", "sent_at", "deeplink"],
+          "properties": {
+            "type": { "const": "offer_new" },
+            "offer_id": { "$ref": "common.schema.json#/$defs/uuid" },
+            "place_id": { "$ref": "common.schema.json#/$defs/uuid" },
+            "sent_at": { "$ref": "common.schema.json#/$defs/timestamp" },
+            "deeplink": { "$ref": "common.schema.json#/$defs/deeplink" }
+          }
+        }
+      }
+    },
+    "push_message_reward": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["notification", "data"],
+      "properties": {
+        "notification": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["title", "body"],
+          "properties": {
+            "title": { "type": "string", "minLength": 1 },
+            "body": { "type": "string", "minLength": 1 }
+          }
+        },
+        "data": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["type", "reason", "owner_kind", "owner_id", "my_reward_id", "sent_at", "deeplink"],
+          "properties": {
+            "type": { "const": "reward_earned" },
+            "reason": { "enum": ["stamp", "second_visit"] },
+            "owner_kind": { "enum": ["place", "family"] },
+            "owner_id": { "$ref": "common.schema.json#/$defs/uuid" },
+            "my_reward_id": { "$ref": "common.schema.json#/$defs/uuid" },
+            "sent_at": { "$ref": "common.schema.json#/$defs/timestamp" },
+            "deeplink": { "$ref": "common.schema.json#/$defs/deeplink" }
+          }
+        }
+      }
+    },
+    "push_message_promo": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["notification", "data"],
+      "properties": {
+        "notification": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["title", "body"],
+          "properties": {
+            "title": { "type": "string", "minLength": 1 },
+            "body": { "type": "string", "minLength": 1 }
+          }
+        },
+        "data": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["type", "place_id", "promo_id", "sent_at", "deeplink"],
+          "properties": {
+            "type": { "const": "promo_published" },
+            "place_id": { "$ref": "common.schema.json#/$defs/uuid" },
+            "promo_id": { "$ref": "common.schema.json#/$defs/uuid" },
+            "sent_at": { "$ref": "common.schema.json#/$defs/timestamp" },
+            "deeplink": { "$ref": "common.schema.json#/$defs/deeplink" }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "notification": {
+    "title": "Чернігів сумує без вас",
+    "body": "Три дні без візитів до закладів — зазирніть, там вас чекають."
+  },
+  "data": {
+    "type": "come_back",
+    "reason": "3_days",
+    "sent_at": "2027-09-12T06:00:00Z",
+    "deeplink": "moyemisto://home"
+  }
+}

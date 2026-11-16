@@ -2,7 +2,9 @@
   "prefs": {
     "alert_start": true,
     "alert_end": true,
-    "event_reminder": false
+    "event_reminder": false,
+    "marketing": true,
+    "social": false
   },
   "alert_community": {
     "id": "0b8f6f1e-2f0a-4d1b-8a53-5f2c9d7e0101",

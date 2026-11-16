@@ -1,0 +1,18 @@
+{
+  "average": 4.7,
+  "count": 13,
+  "my_rating": 4,
+  "can_rate": true,
+  "can_rate_reason": "ok",
+  "friends": [
+    {
+      "user": {
+        "id": "c0000000-0000-4000-8000-000000000002",
+        "display_name": "Олена",
+        "avatar": null
+      },
+      "rating": 5
+    }
+  ],
+  "generated_at": "2028-02-10T09:20:00Z"
+}

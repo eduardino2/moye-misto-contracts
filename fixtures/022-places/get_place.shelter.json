@@ -39,5 +39,6 @@
   },
   "share_url": "https://moyemisto.example/p/a0000000-0000-4000-8000-000000000020",
   "updated_at": "2026-10-28T09:00:00Z",
-  "generated_at": "2026-11-10T09:00:00Z"
+  "generated_at": "2026-11-10T09:00:00Z",
+  "rating": { "average": null, "count": 0 }
 }

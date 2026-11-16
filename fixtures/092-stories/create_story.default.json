@@ -1,0 +1,24 @@
+{
+  "id": "b1000000-0000-4000-8000-000000000003",
+  "author": {
+    "id": "c0000000-0000-4000-8000-000000000001",
+    "display_name": "Олена",
+    "avatar": null
+  },
+  "image": {
+    "url": "https://storage.example/stories/b1000000-0000-4000-8000-000000000003.jpg",
+    "thumb_url": "https://storage.example/stories/b1000000-0000-4000-8000-000000000003_thumb.jpg",
+    "width": 1080,
+    "height": 1920,
+    "blurhash": "U3F$f@%2RjWB-;t7WCt7~qof"
+  },
+  "owner": {
+    "kind": "place",
+    "id": "a0000000-0000-4000-8000-000000000010",
+    "title": "Кав’ярня «Вал»"
+  },
+  "published_at": "2028-02-10T09:05:00Z",
+  "expires_at": "2028-02-11T09:05:00Z",
+  "status": "pending",
+  "is_seen": true
+}
