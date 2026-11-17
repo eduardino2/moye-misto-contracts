@@ -1,0 +1,19 @@
+{
+  "member": null,
+  "rules": {
+    "version": "2027-09",
+    "url": "https://moyemisto.example/loyalty-rules"
+  },
+  "can_join": false,
+  "join_blocker": "not_available",
+  "balance": 0,
+  "debt": null,
+  "expiring": null,
+  "tier": null,
+  "streak": null,
+  "counters": {
+    "active_certificates": 0,
+    "labels": 0
+  },
+  "generated_at": "2027-09-10T09:00:00Z"
+}

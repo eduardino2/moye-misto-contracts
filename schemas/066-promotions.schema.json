@@ -3,14 +3,42 @@
   "$id": "https://contracts.moyemisto.example/schemas/066-promotions.schema.json",
   "title": "066 — платне просування",
   "$defs": {
+    "event_card": {
+      "description": "Картка події у формі версії 0.3.0: картка 021 разом із полем promotion_id. При встановленні тегу 0.3.0 поле переноситься в 021 event_card.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id", "title", "image", "categories", "venue", "starts_at", "ends_at", "next_session_at", "sessions_count",
+        "price", "age_limit", "status", "badges", "is_promoted", "ending_soon", "distance_m", "promotion_id"
+      ],
+      "properties": {
+        "id": { "$ref": "common.schema.json#/$defs/uuid" },
+        "title": { "type": "string", "minLength": 1 },
+        "image": { "anyOf": [{ "$ref": "common.schema.json#/$defs/image" }, { "type": "null" }] },
+        "categories": { "type": "array", "minItems": 1, "items": { "$ref": "common.schema.json#/$defs/slug" } },
+        "venue": { "$ref": "021-events.schema.json#/$defs/venue_ref" },
+        "starts_at": { "$ref": "common.schema.json#/$defs/timestamp" },
+        "ends_at": { "$ref": "common.schema.json#/$defs/timestamp" },
+        "next_session_at": { "anyOf": [{ "$ref": "common.schema.json#/$defs/timestamp" }, { "type": "null" }] },
+        "sessions_count": { "type": "integer", "minimum": 0 },
+        "price": { "anyOf": [{ "$ref": "common.schema.json#/$defs/price" }, { "type": "null" }] },
+        "age_limit": { "type": ["integer", "null"], "minimum": 0, "maximum": 21 },
+        "status": { "enum": ["scheduled", "rescheduled", "cancelled"] },
+        "badges": { "type": "array", "items": { "$ref": "common.schema.json#/$defs/badge" } },
+        "is_promoted": { "type": "boolean" },
+        "ending_soon": { "type": "boolean" },
+        "distance_m": { "type": ["integer", "null"], "minimum": 0 },
+        "promotion_id": { "anyOf": [{ "$ref": "common.schema.json#/$defs/uuid" }, { "type": "null" }] }
+      }
+    },
     "promo_item": {
       "type": "object",
       "additionalProperties": false,
       "required": ["kind", "event", "place"],
       "properties": {
         "kind": { "enum": ["event", "place"] },
-        "event": { "anyOf": [{ "$ref": "021-events.schema.json#/$defs/event_card" }, { "type": "null" }] },
-        "place": { "anyOf": [{ "$ref": "022-places.schema.json#/$defs/place_card" }, { "type": "null" }] }
+        "event": { "anyOf": [{ "$ref": "#/$defs/event_card" }, { "type": "null" }] },
+        "place": { "anyOf": [{ "$ref": "069-families.schema.json#/$defs/place_card" }, { "type": "null" }] }
       }
     },
     "get_promo_feed": {
@@ -18,7 +46,7 @@
       "additionalProperties": false,
       "required": ["items", "generated_at"],
       "properties": {
-        "items": { "type": "array", "items": { "$ref": "#/$defs/promo_item" }, "maxItems": 10 },
+        "items": { "type": "array", "items": { "$ref": "#/$defs/promo_item" }, "maxItems": 2 },
         "generated_at": { "$ref": "common.schema.json#/$defs/timestamp" }
       }
     },
@@ -35,7 +63,7 @@
           "required": ["title", "limit"],
           "properties": {
             "title": { "type": "string", "minLength": 1 },
-            "limit": { "type": "integer", "minimum": 1, "maximum": 10 }
+            "limit": { "type": "integer", "minimum": 1, "maximum": 2 }
           }
         },
         "data": { "anyOf": [{ "$ref": "#/$defs/get_promo_feed" }, { "type": "null" }] }

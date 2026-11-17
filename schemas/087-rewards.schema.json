@@ -15,7 +15,8 @@
         "price_points",
         "valid_days",
         "stock_left",
-        "per_user_limit"
+        "per_user_limit",
+        "already_owned"
       ],
       "properties": {
         "id": {
@@ -96,6 +97,32 @@
             "null"
           ],
           "minimum": 1
+        },
+        "already_owned": {
+          "description": "Для прикраси: чи вже є вона в користувача (для гостя й неучасника false); для сертифіката null.",
+          "type": [
+            "boolean",
+            "null"
+          ]
+        }
+      }
+    },
+    "refund_points": {
+      "description": "Що станеться з балами під час повернення сертифіката (рішення 94): returns — повернуться на баланс, expires — згорять одразу, бо їхній строк уже минув.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "returns",
+        "expires"
+      ],
+      "properties": {
+        "returns": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "expires": {
+          "type": "integer",
+          "minimum": 0
         }
       }
     },
@@ -137,6 +164,8 @@
         "purchased_at",
         "valid_until",
         "refundable_until",
+        "refund_points",
+        "partner_leaves_at",
         "redeemed_at",
         "redeemed_place_title",
         "is_applied",
@@ -184,6 +213,27 @@
           ]
         },
         "refundable_until": {
+          "anyOf": [
+            {
+              "$ref": "common.schema.json#/$defs/timestamp"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "refund_points": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/refund_points"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "partner_leaves_at": {
+          "description": "Коли заклад (фемілі) сертифіката виходить із програми; після цього сертифікат не гаситься, а бали повертаються автоматично (рішення 101). null, якщо виходу не заплановано.",
           "anyOf": [
             {
               "$ref": "common.schema.json#/$defs/timestamp"

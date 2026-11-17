@@ -39,7 +39,8 @@
         "badges": [],
         "is_promoted": true,
         "ending_soon": false,
-        "distance_m": 1240
+        "distance_m": null,
+        "promotion_id": "9a000000-0000-4000-8000-000000000001"
       },
       "place": null
     },
@@ -94,8 +95,16 @@
           }
         ],
         "is_promoted": true,
-        "distance_m": 350,
-        "verified_at": "2026-10-20"
+        "distance_m": null,
+        "verified_at": "2026-10-20",
+        "family": {
+          "id": "fa000000-0000-4000-8000-000000000001",
+          "title": "Кав’ярні «Вал»",
+          "display": "single",
+          "places_count": 2,
+          "open_count": 1
+        },
+        "promotion_id": "9a000000-0000-4000-8000-000000000002"
       }
     }
   ],

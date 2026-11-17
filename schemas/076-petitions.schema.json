@@ -28,13 +28,18 @@
         "items": { "type": "array", "items": { "$ref": "#/$defs/petition_card" } },
         "next_cursor": { "type": ["string", "null"] },
         "source": {
-          "type": "object",
-          "additionalProperties": false,
-          "required": ["title", "url"],
-          "properties": {
-            "title": { "type": "string", "minLength": 1 },
-            "url": { "$ref": "common.schema.json#/$defs/url" }
-          }
+          "anyOf": [
+            {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["title", "url"],
+              "properties": {
+                "title": { "type": "string", "minLength": 1 },
+                "url": { "$ref": "common.schema.json#/$defs/url" }
+              }
+            },
+            { "type": "null" }
+          ]
         },
         "synced_at": { "anyOf": [{ "$ref": "common.schema.json#/$defs/timestamp" }, { "type": "null" }] },
         "generated_at": { "$ref": "common.schema.json#/$defs/timestamp" }

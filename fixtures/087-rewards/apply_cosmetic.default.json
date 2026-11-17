@@ -9,7 +9,8 @@
     "price_points": 300,
     "valid_days": null,
     "stock_left": null,
-    "per_user_limit": 1
+    "per_user_limit": 1,
+    "already_owned": true
   },
   "status": "active",
   "code_payload": null,
@@ -17,6 +18,8 @@
   "purchased_at": "2027-08-15T10:00:00Z",
   "valid_until": null,
   "refundable_until": null,
+  "refund_points": null,
+  "partner_leaves_at": null,
   "redeemed_at": null,
   "redeemed_place_title": null,
   "is_applied": true,

@@ -19,7 +19,8 @@
     "price_points": 2500,
     "valid_days": 30,
     "stock_left": 11,
-    "per_user_limit": 1
+    "per_user_limit": 1,
+    "already_owned": null
   },
   "valid_until": "2027-10-01T21:00:00Z",
   "accepted_at": "2027-09-12T09:05:00Z"

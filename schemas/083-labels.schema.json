@@ -44,7 +44,7 @@
           "items": {
             "$ref": "common.schema.json#/$defs/uuid"
           },
-          "minItems": 1
+          "minItems": 0
         },
         "title": {
           "type": "string",

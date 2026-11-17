@@ -43,6 +43,15 @@
         "text": { "type": "string", "minLength": 1 }
       }
     },
+    "member_blocked": {
+      "description": "Учасника заблокувала адміністрація (рішення 96): text — готове пояснення для показу.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["text"],
+      "properties": {
+        "text": { "type": "string", "minLength": 1 }
+      }
+    },
     "get_loyalty": {
       "type": "object",
       "additionalProperties": false,
@@ -53,8 +62,12 @@
             {
               "type": "object",
               "additionalProperties": false,
-              "required": ["joined_at"],
-              "properties": { "joined_at": { "$ref": "common.schema.json#/$defs/timestamp" } }
+              "required": ["joined_at", "rules_version", "blocked"],
+              "properties": {
+                "joined_at": { "$ref": "common.schema.json#/$defs/timestamp" },
+                "rules_version": { "type": "string", "minLength": 1 },
+                "blocked": { "anyOf": [{ "$ref": "#/$defs/member_blocked" }, { "type": "null" }] }
+              }
             },
             { "type": "null" }
           ]
@@ -144,7 +157,7 @@
           "additionalProperties": false,
           "required": ["type", "sent_at", "deeplink"],
           "properties": {
-            "type": { "enum": ["points_accrued", "points_expiring", "loyalty_reminders"] },
+            "type": { "enum": ["points_accrued", "points_expiring", "label_granted", "reward_refunded"] },
             "sent_at": { "$ref": "common.schema.json#/$defs/timestamp" },
             "deeplink": { "$ref": "common.schema.json#/$defs/deeplink" }
           }

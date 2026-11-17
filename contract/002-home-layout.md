@@ -49,6 +49,8 @@
 | `events_today` | `title`, `limit` | відповідь `get_events_feed` для стрічки `today` | `021-events` |
 | `ending_soon` | `title`, `limit` | відповідь `get_events_feed` для стрічки `ending_soon` | `021-events` |
 
+Типи віджетів наступних версій описано в їхніх контрактах разом зі схемою віджета: `promo` (`066-promotions`, `0.3.0`), `news` (`077-news`, `0.4.0`), `fundraisers` (`075-fundraisers`, `0.4.0`, 1–3 активні збори), `stories` (`092-stories`, `0.7.0`). Старі версії додатку пропускають їх за правилом 1 для додатку.
+
 **Плитка сітки категорій** (`config.tiles[]`): `id`, `title`, `icon`, `deeplink`. Перелік посилань — у `001-conventions`, розділ 9.
 
 Плитки Чернігова в MVP:

@@ -30,9 +30,9 @@
             "lng": 31.3105
           }
         },
-        "starts_at": "2026-11-05T08:00:00Z",
-        "ends_at": "2026-11-19T21:00:00Z",
-        "next_session_at": "2026-11-10T12:30:00Z",
+        "starts_at": "2026-12-05T08:00:00Z",
+        "ends_at": "2026-12-19T21:00:00Z",
+        "next_session_at": "2026-12-12T12:30:00Z",
         "sessions_count": 14,
         "price": {
           "from": 130,
@@ -45,7 +45,7 @@
         "badges": [],
         "is_promoted": false,
         "ending_soon": false,
-        "distance_m": 1240
+        "distance_m": null
       },
       "place": null
     },
@@ -91,7 +91,7 @@
         "badges": [],
         "is_promoted": false,
         "ending_soon": false,
-        "distance_m": 420
+        "distance_m": null
       },
       "place": null
     }

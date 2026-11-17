@@ -41,6 +41,26 @@
         "generated_at": { "$ref": "common.schema.json#/$defs/timestamp" }
       }
     },
+    "widget_fundraisers": {
+      "description": "Віджет головної fundraisers (рішення 92): 1–3 активні збори; дотик відкриває сторінку збору.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "type", "config", "data"],
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "type": { "const": "fundraisers" },
+        "config": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["title", "limit"],
+          "properties": {
+            "title": { "type": "string", "minLength": 1 },
+            "limit": { "type": "integer", "minimum": 1, "maximum": 3 }
+          }
+        },
+        "data": { "anyOf": [{ "$ref": "#/$defs/list_fundraisers" }, { "type": "null" }] }
+      }
+    },
     "get_fundraiser": {
       "type": "object",
       "additionalProperties": false,

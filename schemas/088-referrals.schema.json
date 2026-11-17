@@ -3,6 +3,41 @@
   "$id": "https://contracts.moyemisto.example/schemas/088-referrals.schema.json",
   "title": "088 — запрошення друга й ачівки",
   "$defs": {
+    "referral_state": {
+      "description": "Стан запрошення: invited[] для запрошувача й invited_by для запрошеного.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "name",
+        "status",
+        "status_text",
+        "updated_at"
+      ],
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "status": {
+          "enum": [
+            "registered",
+            "pending",
+            "rewarded",
+            "cap_reached",
+            "not_rewarded"
+          ]
+        },
+        "status_text": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "updated_at": {
+          "$ref": "common.schema.json#/$defs/timestamp"
+        }
+      }
+    },
     "get_referral": {
       "type": "object",
       "additionalProperties": false,
@@ -14,6 +49,7 @@
         "monthly_limit",
         "used_this_month",
         "invited",
+        "invited_by",
         "can_apply_code",
         "generated_at"
       ],
@@ -44,38 +80,18 @@
         "invited": {
           "type": "array",
           "items": {
-            "type": "object",
-            "additionalProperties": false,
-            "required": [
-              "name",
-              "status",
-              "status_text",
-              "updated_at"
-            ],
-            "properties": {
-              "name": {
-                "type": "string",
-                "minLength": 1
-              },
-              "status": {
-                "enum": [
-                  "registered",
-                  "phone_verified",
-                  "rewarded",
-                  "cap_reached"
-                ]
-              },
-              "status_text": {
-                "type": [
-                  "string",
-                  "null"
-                ]
-              },
-              "updated_at": {
-                "$ref": "common.schema.json#/$defs/timestamp"
-              }
-            }
+            "$ref": "#/$defs/referral_state"
           }
+        },
+        "invited_by": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/referral_state"
+            },
+            {
+              "type": "null"
+            }
+          ]
         },
         "can_apply_code": {
           "type": "boolean"

@@ -1,0 +1,17 @@
+{
+  "code": "MARIA3P",
+  "share_url": "https://moyemisto.example/i/MARIA3P",
+  "share_text": "Приєднуйся до «Мого Міста»: отримаємо по 200 балів через 7 днів після твоєї першої покупки.",
+  "bonus_points": 200,
+  "monthly_limit": 10,
+  "used_this_month": 0,
+  "invited": [],
+  "invited_by": {
+    "name": "Олена",
+    "status": "pending",
+    "status_text": "Бонус 200 балів — 15 вересня",
+    "updated_at": "2027-09-08T19:00:00Z"
+  },
+  "can_apply_code": false,
+  "generated_at": "2027-09-10T09:00:00Z"
+}

@@ -1,6 +1,8 @@
 {
   "member": {
-    "joined_at": "2027-08-01T10:00:00Z"
+    "joined_at": "2027-08-01T10:00:00Z",
+    "rules_version": "2027-09",
+    "blocked": null
   },
   "rules": {
     "version": "2027-09",
@@ -12,7 +14,7 @@
   "debt": null,
   "expiring": {
     "points": 150,
-    "at": "2027-09-24T21:00:00Z"
+    "at": "2027-09-24T20:59:59Z"
   },
   "tier": {
     "level": 3,

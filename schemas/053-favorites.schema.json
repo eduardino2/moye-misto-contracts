@@ -28,10 +28,10 @@
     "get_favorite_ids": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["events", "places", "version", "generated_at"],
+      "required": ["events", "places", "version", "not_modified", "generated_at"],
       "properties": {
         "events": {
-          "type": "array",
+          "type": ["array", "null"],
           "items": {
             "type": "object",
             "additionalProperties": false,
@@ -42,8 +42,9 @@
             }
           }
         },
-        "places": { "type": "array", "items": { "$ref": "common.schema.json#/$defs/uuid" } },
+        "places": { "type": ["array", "null"], "items": { "$ref": "common.schema.json#/$defs/uuid" } },
         "version": { "type": "integer", "minimum": 0 },
+        "not_modified": { "type": "boolean" },
         "generated_at": { "$ref": "common.schema.json#/$defs/timestamp" }
       }
     },

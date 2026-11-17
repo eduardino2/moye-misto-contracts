@@ -1,0 +1,35 @@
+{
+  "member": {
+    "joined_at": "2027-08-01T10:00:00Z",
+    "rules_version": "2027-09",
+    "blocked": {
+      "text": "Участь у програмі призупинено через порушення правил. Бали й сертифікати недоступні. Якщо це помилка, напишіть у підтримку."
+    }
+  },
+  "rules": {
+    "version": "2027-09",
+    "url": "https://moyemisto.example/loyalty-rules"
+  },
+  "can_join": false,
+  "join_blocker": null,
+  "balance": 1240,
+  "debt": null,
+  "expiring": null,
+  "tier": {
+    "level": 3,
+    "title": "Мешканець",
+    "earned_total": 2310,
+    "next_level_at": 4000
+  },
+  "streak": {
+    "weeks": 5,
+    "this_week_done": true,
+    "freeze_available": true,
+    "week_ends_at": "2027-09-12T21:00:00Z"
+  },
+  "counters": {
+    "active_certificates": 0,
+    "labels": 2
+  },
+  "generated_at": "2027-09-10T09:00:00Z"
+}

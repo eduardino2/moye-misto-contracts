@@ -13,14 +13,20 @@
     "price_points": 700,
     "valid_days": 30,
     "stock_left": 42,
-    "per_user_limit": 2
+    "per_user_limit": 2,
+    "already_owned": null
   },
   "status": "active",
   "code_payload": "MMC.4H7N2K9Q",
-  "code_text": "4827 1935",
+  "code_text": "4827 1935 0642",
   "purchased_at": "2027-09-05T17:00:00Z",
   "valid_until": "2027-10-05T17:00:00Z",
   "refundable_until": "2027-09-12T17:00:00Z",
+  "refund_points": {
+    "returns": 700,
+    "expires": 0
+  },
+  "partner_leaves_at": null,
   "redeemed_at": null,
   "redeemed_place_title": null,
   "is_applied": null,

@@ -58,7 +58,15 @@
       ],
       "is_promoted": false,
       "distance_m": 350,
-      "verified_at": "2026-10-20"
+      "verified_at": "2026-10-20",
+      "family": {
+        "id": "fa000000-0000-4000-8000-000000000001",
+        "title": "Кав’ярні «Вал»",
+        "display": "single",
+        "places_count": 2,
+        "open_count": 1
+      },
+      "promotion_id": null
     },
     {
       "id": "a0000000-0000-4000-8000-000000000011",
@@ -99,7 +107,15 @@
       ],
       "is_promoted": false,
       "distance_m": 920,
-      "verified_at": null
+      "verified_at": null,
+      "family": {
+        "id": "fa000000-0000-4000-8000-000000000001",
+        "title": "Кав’ярні «Вал»",
+        "display": "single",
+        "places_count": 2,
+        "open_count": 1
+      },
+      "promotion_id": null
     }
   ],
   "share_url": "https://moyemisto.example/f/fa000000-0000-4000-8000-000000000001",

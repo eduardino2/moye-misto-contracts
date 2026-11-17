@@ -54,7 +54,7 @@
           }
         ],
         "is_promoted": false,
-        "distance_m": 350,
+        "distance_m": null,
         "verified_at": "2026-10-20"
       }
     }

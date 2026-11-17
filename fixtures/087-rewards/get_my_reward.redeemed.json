@@ -13,7 +13,8 @@
     "price_points": 700,
     "valid_days": 30,
     "stock_left": 42,
-    "per_user_limit": 2
+    "per_user_limit": 2,
+    "already_owned": null
   },
   "status": "redeemed",
   "code_payload": null,
@@ -21,6 +22,8 @@
   "purchased_at": "2027-09-05T17:00:00Z",
   "valid_until": "2027-10-05T17:00:00Z",
   "refundable_until": null,
+  "refund_points": null,
+  "partner_leaves_at": null,
   "redeemed_at": "2027-09-08T08:30:00Z",
   "redeemed_place_title": "Кав’ярня «Вал» на Преображенській",
   "is_applied": null,

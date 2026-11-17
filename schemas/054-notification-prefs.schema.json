@@ -7,11 +7,14 @@
       "description": "Код типу → увімкнено. Нові типи додаються новими ключами.",
       "type": "object",
       "additionalProperties": false,
-      "required": ["alert_start", "alert_end", "event_reminder", "marketing", "social"],
+      "required": ["alert_start", "alert_end", "event_reminder", "points_accrued", "points_expiring", "label_granted", "marketing", "social"],
       "properties": {
         "alert_start": { "type": "boolean" },
         "alert_end": { "type": "boolean" },
         "event_reminder": { "type": "boolean" },
+        "points_accrued": { "type": "boolean" },
+        "points_expiring": { "type": "boolean" },
+        "label_granted": { "type": "boolean" },
         "marketing": { "type": "boolean" },
         "social": { "type": "boolean" }
       }

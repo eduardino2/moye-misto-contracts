@@ -9,7 +9,20 @@
       "price_points": 300,
       "valid_days": null,
       "stock_left": null,
-      "per_user_limit": 1
+      "per_user_limit": 1,
+      "already_owned": true
+    },
+    {
+      "id": "d7000000-0000-4000-8000-000000000102",
+      "kind": "cosmetic",
+      "title": "Фон профілю «Нічний Чернігів»",
+      "image": null,
+      "partner": null,
+      "price_points": 500,
+      "valid_days": null,
+      "stock_left": null,
+      "per_user_limit": 1,
+      "already_owned": false
     }
   ],
   "next_cursor": null,

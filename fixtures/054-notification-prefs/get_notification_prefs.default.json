@@ -3,6 +3,9 @@
     "alert_start": true,
     "alert_end": true,
     "event_reminder": true,
+    "points_accrued": true,
+    "points_expiring": true,
+    "label_granted": true,
     "marketing": true,
     "social": true
   },

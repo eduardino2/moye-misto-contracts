@@ -15,6 +15,35 @@
         "open_count": { "type": ["integer", "null"], "minimum": 0 }
       }
     },
+    "place_card": {
+      "description": "Картка місця у формі версії 0.3.0: картка 022 разом із полями family (069) і promotion_id (066). При встановленні тегу 0.3.0 ці поля переносяться в 022 place_card.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id", "title", "image", "categories", "address", "district", "location", "location_approximate",
+        "open_status", "price_text", "contacts", "badges", "is_promoted", "distance_m", "verified_at",
+        "family", "promotion_id"
+      ],
+      "properties": {
+        "id": { "$ref": "common.schema.json#/$defs/uuid" },
+        "title": { "type": "string", "minLength": 1 },
+        "image": { "anyOf": [{ "$ref": "common.schema.json#/$defs/image" }, { "type": "null" }] },
+        "categories": { "type": "array", "minItems": 1, "items": { "$ref": "common.schema.json#/$defs/slug" } },
+        "address": { "type": ["string", "null"] },
+        "district": { "type": ["string", "null"] },
+        "location": { "anyOf": [{ "$ref": "common.schema.json#/$defs/geo_point" }, { "type": "null" }] },
+        "location_approximate": { "type": "boolean" },
+        "open_status": { "$ref": "022-places.schema.json#/$defs/open_status" },
+        "price_text": { "type": ["string", "null"] },
+        "contacts": { "type": "array", "items": { "$ref": "022-places.schema.json#/$defs/contact" } },
+        "badges": { "type": "array", "items": { "$ref": "common.schema.json#/$defs/badge" } },
+        "is_promoted": { "type": "boolean" },
+        "distance_m": { "type": ["integer", "null"], "minimum": 0 },
+        "verified_at": { "anyOf": [{ "$ref": "common.schema.json#/$defs/local_date" }, { "type": "null" }] },
+        "family": { "anyOf": [{ "$ref": "#/$defs/family_ref" }, { "type": "null" }] },
+        "promotion_id": { "anyOf": [{ "$ref": "common.schema.json#/$defs/uuid" }, { "type": "null" }] }
+      }
+    },
     "get_family": {
       "type": "object",
       "additionalProperties": false,
@@ -23,7 +52,7 @@
         "family": { "$ref": "#/$defs/family_ref" },
         "description": { "type": ["string", "null"] },
         "image": { "anyOf": [{ "$ref": "common.schema.json#/$defs/image" }, { "type": "null" }] },
-        "places": { "type": "array", "items": { "$ref": "022-places.schema.json#/$defs/place_card" }, "minItems": 1 },
+        "places": { "type": "array", "items": { "$ref": "#/$defs/place_card" }, "minItems": 1 },
         "share_url": { "$ref": "common.schema.json#/$defs/url" },
         "loyalty": { "anyOf": [{ "$ref": "081-loyalty.schema.json#/$defs/place_loyalty" }, { "type": "null" }] },
         "generated_at": { "$ref": "common.schema.json#/$defs/timestamp" }
