@@ -18,13 +18,14 @@
     "get_family": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["family", "description", "image", "places", "share_url", "generated_at"],
+      "required": ["family", "description", "image", "places", "share_url", "loyalty", "generated_at"],
       "properties": {
         "family": { "$ref": "#/$defs/family_ref" },
         "description": { "type": ["string", "null"] },
         "image": { "anyOf": [{ "$ref": "common.schema.json#/$defs/image" }, { "type": "null" }] },
         "places": { "type": "array", "items": { "$ref": "022-places.schema.json#/$defs/place_card" }, "minItems": 1 },
         "share_url": { "$ref": "common.schema.json#/$defs/url" },
+        "loyalty": { "anyOf": [{ "$ref": "081-loyalty.schema.json#/$defs/place_loyalty" }, { "type": "null" }] },
         "generated_at": { "$ref": "common.schema.json#/$defs/timestamp" }
       }
     }

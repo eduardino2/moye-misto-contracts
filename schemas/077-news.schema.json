@@ -20,7 +20,7 @@
         "id": { "$ref": "common.schema.json#/$defs/uuid" },
         "title": { "type": "string", "minLength": 1 },
         "summary": { "type": ["string", "null"], "maxLength": 300 },
-        "image": { "anyOf": [{ "$ref": "common.schema.json#/$defs/image" }, { "type": "null" }] },
+        "image": { "description": "У 0.4.0 завжди null: фото новин з'явиться окремою спекою як зміна MINOR.", "type": "null" },
         "source": { "$ref": "#/$defs/news_source" },
         "published_at": { "$ref": "common.schema.json#/$defs/timestamp" },
         "is_important": { "type": "boolean" },

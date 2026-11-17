@@ -9,6 +9,7 @@
   "can_join": false,
   "join_blocker": null,
   "balance": 1240,
+  "debt": null,
   "expiring": {
     "points": 150,
     "at": "2027-09-24T21:00:00Z"

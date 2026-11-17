@@ -25,10 +25,28 @@
         "week_ends_at": { "$ref": "common.schema.json#/$defs/timestamp" }
       }
     },
+    "place_loyalty": {
+      "description": "Блок loyalty у get_place (022) і get_family (069): відсоток, який отримає користувач, після комісії платформи.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["cashback_percent"],
+      "properties": {
+        "cashback_percent": { "type": "number", "minimum": 0.1, "maximum": 100 }
+      }
+    },
+    "debt": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["points", "text"],
+      "properties": {
+        "points": { "type": "integer", "minimum": 1 },
+        "text": { "type": "string", "minLength": 1 }
+      }
+    },
     "get_loyalty": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["member", "rules", "can_join", "join_blocker", "balance", "expiring", "tier", "streak", "counters", "generated_at"],
+      "required": ["member", "rules", "can_join", "join_blocker", "balance", "debt", "expiring", "tier", "streak", "counters", "generated_at"],
       "properties": {
         "member": {
           "anyOf": [
@@ -52,7 +70,8 @@
         },
         "can_join": { "type": "boolean" },
         "join_blocker": { "type": ["string", "null"] },
-        "balance": { "type": "integer", "minimum": 0 },
+        "balance": { "type": "integer" },
+        "debt": { "anyOf": [{ "$ref": "#/$defs/debt" }, { "type": "null" }] },
         "expiring": {
           "anyOf": [
             {

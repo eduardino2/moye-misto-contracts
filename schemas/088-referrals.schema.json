@@ -49,6 +49,7 @@
             "required": [
               "name",
               "status",
+              "status_text",
               "updated_at"
             ],
             "properties": {
@@ -60,7 +61,14 @@
                 "enum": [
                   "registered",
                   "phone_verified",
-                  "rewarded"
+                  "rewarded",
+                  "cap_reached"
+                ]
+              },
+              "status_text": {
+                "type": [
+                  "string",
+                  "null"
                 ]
               },
               "updated_at": {

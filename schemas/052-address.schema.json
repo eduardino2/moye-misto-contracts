@@ -6,13 +6,12 @@
     "address": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["title", "location", "city_id", "community", "power_queue", "suggested_power_queue", "updated_at"],
+      "required": ["title", "location", "city_id", "community", "suggested_power_queue", "updated_at"],
       "properties": {
         "title": { "type": "string", "minLength": 3, "maxLength": 200 },
         "location": { "$ref": "common.schema.json#/$defs/geo_point" },
         "city_id": { "anyOf": [{ "$ref": "common.schema.json#/$defs/uuid" }, { "type": "null" }] },
         "community": { "anyOf": [{ "$ref": "common.schema.json#/$defs/community" }, { "type": "null" }] },
-        "power_queue": { "type": ["string", "null"] },
         "suggested_power_queue": { "type": ["string", "null"] },
         "updated_at": { "$ref": "common.schema.json#/$defs/timestamp" }
       }
@@ -20,9 +19,10 @@
     "get_address": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["address", "generated_at"],
+      "required": ["address", "power_queue", "generated_at"],
       "properties": {
         "address": { "anyOf": [{ "$ref": "#/$defs/address" }, { "type": "null" }] },
+        "power_queue": { "type": ["string", "null"] },
         "generated_at": { "$ref": "common.schema.json#/$defs/timestamp" }
       }
     },

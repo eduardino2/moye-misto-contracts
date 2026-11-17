@@ -152,6 +152,7 @@
         "status": {
           "enum": [
             "active",
+            "blocked_by_debt",
             "redeemed",
             "refunded",
             "expired"
@@ -256,6 +257,7 @@
         "status": {
           "enum": [
             "active",
+            "blocked_by_debt",
             "redeemed",
             "refunded",
             "expired"

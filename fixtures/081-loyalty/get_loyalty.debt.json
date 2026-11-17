@@ -1,0 +1,34 @@
+{
+  "member": {
+    "joined_at": "2027-08-01T10:00:00Z"
+  },
+  "rules": {
+    "version": "2027-09",
+    "url": "https://moyemisto.example/loyalty-rules"
+  },
+  "can_join": false,
+  "join_blocker": null,
+  "balance": -300,
+  "debt": {
+    "points": 300,
+    "text": "Борг 300 балів. Поки його не погашено, сертифікати не діють. Погасити можна новими покупками або грошима на касі будь-якого закладу-учасника"
+  },
+  "expiring": null,
+  "tier": {
+    "level": 3,
+    "title": "Мешканець",
+    "earned_total": 2310,
+    "next_level_at": 4000
+  },
+  "streak": {
+    "weeks": 5,
+    "this_week_done": true,
+    "freeze_available": true,
+    "week_ends_at": "2027-09-12T21:00:00Z"
+  },
+  "counters": {
+    "active_certificates": 0,
+    "labels": 2
+  },
+  "generated_at": "2027-09-10T09:00:00Z"
+}

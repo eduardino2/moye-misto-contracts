@@ -11,6 +11,7 @@
         "place_ids",
         "title",
         "benefit",
+        "conditions",
         "granted_at"
       ],
       "properties": {
@@ -52,6 +53,12 @@
         "benefit": {
           "type": "string",
           "maxLength": 120
+        },
+        "conditions": {
+          "type": [
+            "string",
+            "null"
+          ]
         },
         "granted_at": {
           "$ref": "common.schema.json#/$defs/timestamp"

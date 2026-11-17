@@ -128,7 +128,7 @@
       "additionalProperties": false,
       "required": [
         "card", "description", "images", "opening_hours", "attributes", "upcoming_events", "fuel_prices",
-        "source", "share_url", "updated_at", "generated_at", "rating"
+        "source", "share_url", "updated_at", "generated_at", "rating", "loyalty"
       ],
       "properties": {
         "card": { "$ref": "#/$defs/place_card" },
@@ -151,6 +151,10 @@
             "average": { "oneOf": [{ "type": "null" }, { "type": "number", "minimum": 1, "maximum": 5 }] },
             "count": { "type": "integer", "minimum": 0 }
           }
+        },
+        "loyalty": {
+          "description": "З версії 0.5.0: відсоток кешбеку для користувача (081-loyalty, розділ «Відсоток на сторінці закладу»); null — заклад не партнер програми.",
+          "anyOf": [{ "$ref": "081-loyalty.schema.json#/$defs/place_loyalty" }, { "type": "null" }]
         }
       }
     }

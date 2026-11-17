@@ -11,7 +11,7 @@
         "place_id": { "$ref": "common.schema.json#/$defs/uuid" },
         "title": { "type": "string", "minLength": 1 },
         "image": { "oneOf": [{ "type": "null" }, { "$ref": "common.schema.json#/$defs/image" }] },
-        "cashback_percent": { "type": "integer", "minimum": 1, "maximum": 10 },
+        "cashback_percent": { "$ref": "081-loyalty.schema.json#/$defs/place_loyalty/properties/cashback_percent" },
         "deeplink": { "$ref": "common.schema.json#/$defs/deeplink" }
       }
     },

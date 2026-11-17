@@ -14,9 +14,11 @@
         "organizer": {
           "type": "object",
           "additionalProperties": false,
-          "required": ["name", "verified_at"],
+          "required": ["name", "kind", "registration_code", "verified_at"],
           "properties": {
             "name": { "type": "string", "minLength": 1 },
+            "kind": { "enum": ["foundation", "ngo", "volunteer"] },
+            "registration_code": { "type": ["string", "null"], "pattern": "^\\d{8}$" },
             "verified_at": { "$ref": "common.schema.json#/$defs/local_date" }
           }
         },

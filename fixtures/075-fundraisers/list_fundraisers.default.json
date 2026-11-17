@@ -6,6 +6,8 @@
       "image": null,
       "organizer": {
         "name": "Благодійний фонд «Північ»",
+        "kind": "foundation",
+        "registration_code": "40123456",
         "verified_at": "2027-04-20"
       },
       "goal_text": "Пікап для медичної роти чернігівської бригади.",
@@ -22,6 +24,8 @@
       "image": null,
       "organizer": {
         "name": "Волонтерка Ірина Савченко",
+        "kind": "volunteer",
+        "registration_code": null,
         "verified_at": "2027-03-02"
       },
       "goal_text": "Десять дронів і запасні акумулятори.",

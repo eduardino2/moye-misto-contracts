@@ -5,6 +5,8 @@
     "image": null,
     "organizer": {
       "name": "Благодійний фонд «Північ»",
+      "kind": "foundation",
+      "registration_code": "40123456",
       "verified_at": "2027-04-20"
     },
     "goal_text": "Пікап для медичної роти чернігівської бригади.",

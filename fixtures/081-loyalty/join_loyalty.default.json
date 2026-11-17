@@ -9,6 +9,7 @@
   "can_join": false,
   "join_blocker": null,
   "balance": 0,
+  "debt": null,
   "expiring": null,
   "tier": {
     "level": 1,

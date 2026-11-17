@@ -30,20 +30,33 @@
         "scheduled_for": { "$ref": "common.schema.json#/$defs/timestamp" }
       }
     },
+    "privacy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["current_version", "accepted_version", "accepted_at", "url"],
+      "properties": {
+        "current_version": { "type": "string", "minLength": 1 },
+        "accepted_version": { "type": ["string", "null"], "minLength": 1 },
+        "accepted_at": { "anyOf": [{ "$ref": "common.schema.json#/$defs/timestamp" }, { "type": "null" }] },
+        "url": { "type": "string", "pattern": "^https://" }
+      }
+    },
     "get_me": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["user", "deletion", "has_address", "generated_at"],
+      "required": ["user", "deletion", "has_address", "privacy", "generated_at"],
       "properties": {
         "user": { "$ref": "#/$defs/user" },
         "deletion": { "anyOf": [{ "$ref": "#/$defs/deletion" }, { "type": "null" }] },
         "has_address": { "type": "boolean" },
+        "privacy": { "$ref": "#/$defs/privacy" },
         "generated_at": { "$ref": "common.schema.json#/$defs/timestamp" }
       }
     },
     "update_profile": { "$ref": "#/$defs/get_me" },
     "request_account_deletion": { "$ref": "#/$defs/get_me" },
     "cancel_account_deletion": { "$ref": "#/$defs/get_me" },
+    "accept_privacy_policy": { "$ref": "#/$defs/get_me" },
     "ok": {
       "type": "object",
       "additionalProperties": false,
