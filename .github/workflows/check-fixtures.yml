@@ -1,0 +1,22 @@
+# Перевірка контракту: кожен приклад у fixtures/ відповідає своїй схемі (WORKFLOW.md, «Як змінювати контракт»).
+# Запускається на кожен pull request і на кожен пуш у main; зламаний приклад не проходить.
+name: check-fixtures
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  fixtures:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Приклади відповідають схемам
+        run: node tools/check-fixtures.mjs
