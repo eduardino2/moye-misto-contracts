@@ -128,7 +128,7 @@
       "additionalProperties": false,
       "required": [
         "card", "description", "images", "opening_hours", "attributes", "upcoming_events", "fuel_prices",
-        "source", "share_url", "updated_at", "generated_at", "rating", "loyalty"
+        "source", "share_url", "updated_at", "generated_at"
       ],
       "properties": {
         "card": { "$ref": "#/$defs/place_card" },

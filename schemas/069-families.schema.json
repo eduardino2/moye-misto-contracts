@@ -47,7 +47,7 @@
     "get_family": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["family", "description", "image", "places", "share_url", "loyalty", "generated_at"],
+      "required": ["family", "description", "image", "places", "share_url", "generated_at"],
       "properties": {
         "family": { "$ref": "#/$defs/family_ref" },
         "description": { "type": ["string", "null"] },

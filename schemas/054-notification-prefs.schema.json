@@ -4,10 +4,10 @@
   "title": "054 — налаштування сповіщень в акаунті",
   "$defs": {
     "prefs": {
-      "description": "Код типу → увімкнено. Нові типи додаються новими ключами.",
+      "description": "Код типу → увімкнено. Нові типи додаються новими ключами. Обов'язкові лише ключі 0.2.0; ключ пізнішої версії стає обов'язковим із її тегом (WORKFLOW §4).",
       "type": "object",
       "additionalProperties": false,
-      "required": ["alert_start", "alert_end", "event_reminder", "points_accrued", "points_expiring", "label_granted", "marketing", "social"],
+      "required": ["alert_start", "alert_end", "event_reminder"],
       "properties": {
         "alert_start": { "type": "boolean" },
         "alert_end": { "type": "boolean" },
