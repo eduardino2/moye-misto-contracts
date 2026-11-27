@@ -37,6 +37,10 @@
         "status": { "enum": ["scheduled", "rescheduled", "cancelled"] },
         "badges": { "type": "array", "items": { "$ref": "common.schema.json#/$defs/badge" } },
         "is_promoted": { "type": "boolean" },
+        "promotion_id": {
+          "description": "З версії 0.3.0 (спека 166-promotions): ідентифікатор просування, якщо is_promoted дорівнює true; інакше null. Для подій аналітики (066).",
+          "anyOf": [{ "$ref": "common.schema.json#/$defs/uuid" }, { "type": "null" }]
+        },
         "ending_soon": { "type": "boolean" },
         "distance_m": { "type": ["integer", "null"], "minimum": 0 }
       }

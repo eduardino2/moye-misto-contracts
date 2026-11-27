@@ -44,7 +44,15 @@
         "badges": { "type": "array", "items": { "$ref": "common.schema.json#/$defs/badge" } },
         "is_promoted": { "type": "boolean" },
         "distance_m": { "type": ["integer", "null"], "minimum": 0 },
-        "verified_at": { "anyOf": [{ "$ref": "common.schema.json#/$defs/local_date" }, { "type": "null" }] }
+        "verified_at": { "anyOf": [{ "$ref": "common.schema.json#/$defs/local_date" }, { "type": "null" }] },
+        "family": {
+          "description": "З версії 0.3.0 (спека 169-families): фемілі, до якої входить заклад. null — заклад не у фемілі.",
+          "anyOf": [{ "$ref": "069-families.schema.json#/$defs/family_ref" }, { "type": "null" }]
+        },
+        "promotion_id": {
+          "description": "З версії 0.3.0 (спека 166-promotions): ідентифікатор просування, якщо is_promoted дорівнює true; інакше null. Для подій аналітики (066).",
+          "anyOf": [{ "$ref": "common.schema.json#/$defs/uuid" }, { "type": "null" }]
+        }
       }
     },
     "time_interval": {
